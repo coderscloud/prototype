@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CodersCloud</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+  <head>
+    <title>Coders Cloud</title>
+    <%= csrf_meta_tag %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->    
+    <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+    <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  </head>
+  <body>
+    <div class="container">
+      <header class="round">
+      
+        <nav id="header_links">
+          <ul>
+            <li><%= link_to "Home", home_path %></li>
+            <li><%= link_to "Help", help_path %></li>
+            <li><%= link_to "Sign in", signin_path %></li>
+          </ul>
+        </nav>
+		<div id="header_navigation" > 
+					<a href="/" id="logo"></a> 
+			      <ul class="navigation">
+		            <li><%= link_to "Home", '/pages/home' %></li>
+		            <li><%= link_to "Help", '#' %></li>
+		            <li><%= link_to "Sign in", '#' %></li>
+		          </ul>
 
-<%= yield %>
 
-</body>
+				</div>
+      </header>
+      <section class="round">
+        <%= yield %>
+      </section>
+    </div>
+ 	<%= render 'layouts/olark' %>
+  </body>
 </html>
