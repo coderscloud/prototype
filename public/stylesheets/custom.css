@@ -1,0 +1,152 @@
+.container {
+  width: 984px;
+}
+
+body {
+  background-color: #DCE9F5;
+}
+
+header {
+	margin-top: 10px;
+	height: 84px; 
+	background: url(images/header_gradient.png) repeat-x;
+	
+	width: 984px;
+	
+}
+
+#logo { 
+	margin-left: 10px;
+	float: left; 
+	display: inline-block;
+	height: 52px;
+	width: 240px;
+	background: transparent url(images/logo.png) no-repeat 0 0;
+	margin-top: -15px;
+}
+
+header img {
+  padding: 1em;
+  background: #fff;
+}
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #fff;
+}
+
+section h1 {
+  font-size: 200%;
+}
+
+/* Links */
+
+a {
+  color: #09c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #069;
+}
+
+
+
+#header_links {
+	padding-top: 10px;
+	height: 20px;
+}
+
+#header_links ul {
+	float: right;
+}
+#header_links li {
+	float: left;
+	list-style-type: none;
+}
+
+#header_links li a {
+	color: #DEEEFF;
+	display: inline-block;
+	border-left: 1px solid #799FD7;
+	border-right: 1px solid #799FD7;
+	padding: 0px 6px;
+	text-shadow: 0px -1px 0px #6F859A;
+}
+
+
+#header_links li.first a {
+	border-left: 0px;
+}
+
+#header_links li.last a {
+	border-right: 0px;
+	padding-right: 0px;
+}
+
+
+
+#header_navigation {
+	height: 55px;
+	width: 800px;
+}
+
+#header_navigation a:hover {
+	text-decoration: none;
+}
+
+header .navigation {
+	float: left;
+	margin-left: 30px;
+	margin-top: 19px;
+	position: relative;
+}
+
+header .navigation li { 
+	list-style-type: none;
+	float: left;
+	padding: 0px 15px;
+	font-size: 15px;
+	font-weight: bold;
+	height: 35px;
+	line-height: 35px;
+}
+
+header .navigation li a {
+	color: #98AFCF;
+}
+
+header .navigation li.active { 
+	background-color: #7F9BBC;
+	background: #809CBD; /* old browsers */
+	background: -moz-linear-gradient(top, #7C9ABD 0%, #6984A6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7C9ABD), color-stop(100%,#6984A6));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7C9ABD', endColorstr='#6984A6',GradientType=0 );
+	-webkit-box-shadow: 0px -1px 1px #527094;
+	box-shadow: 0px -1px 1px #527094;
+	-moz-box-shadow: 0px -1px 1px #527094;
+}
+
+header .navigation li.active a {
+	color: #FFFFCC;
+	text-shadow: 0px -1px 0px #47576B;
+}
+
+header .navigation li:hover a { 
+	color: white;
+}
+
+/* Round corners */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}

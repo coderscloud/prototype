@@ -1,5 +1,9 @@
 CodersCloud::Application.routes.draw do
+  get "users/new"
+
   match '/help',    :to => 'pages#help'
+  match '/signup',    :to => 'users#new'
+  match '/signin',    :to => 'pages#signin'
 
   root :to => 'pages#home'
 
