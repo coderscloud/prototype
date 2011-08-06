@@ -10,7 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110503214130) do
+ActiveRecord::Schema.define(:version => 20110526215726) do
+
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "country"
+    t.string   "overview"
+    t.string   "skills"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login"
@@ -19,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20110503214130) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.integer  "fb_user_id"
+    t.string   "email_hash"
   end
 
 end

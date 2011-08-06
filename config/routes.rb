@@ -1,5 +1,7 @@
 CodersCloud::Application.routes.draw do
 
+  match '/auth/:provider/callback' => 'authentications#create'
+  resources :authentications
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]

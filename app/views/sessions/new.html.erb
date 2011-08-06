@@ -1,17 +1,45 @@
-<h1>Sign in</h1>
 
-<%= form_for(:session, :url => sessions_path) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign in" %>
-  </div>
+<div id="social_login">
+<p>ou inscrivez vous avec l'un de ces services :</p>
+
+
+<a href="/auth/twitter" class="auth_provider">
+  <%= image_tag "twitter_64.png", :size => "64x64", :alt => "Twitter" %>
+  Twitter
+</a>
+<a href="/auth/facebook" class="auth_provider">
+  <%= image_tag "facebook_64.png", :size => "64x64", :alt => "Facebook" %>
+  Facebook
+</a>
+<a href="/auth/google_apps" class="auth_provider">
+  <%= image_tag "google_64.png", :size => "64x64", :alt => "Google" %>
+  Google
+</a>
+<a href="/auth/open_id" class="auth_provider">
+  <%= image_tag "openid_64.png", :size => "64x64", :alt => "OpenID" %>
+  OpenID
+</a>
+
+<br>
+
+</div>
+
+<div id="login">
+<h1>Se connecter</h1>
+
+<%= simple_form_for(:session, :url => sessions_path) do |f| %>
+
+    <%= f.input:email , :required => false%>
+    <%= f.input :password , :required => false%>
+    <%= f.button :submit, :value => "Se connecter", :class => "btn btn-m" %>
+ 
 <% end %>
+<br>
+  <p><strong>Nouvel utilisateur? </strong><%= link_to "S'inscrire !", signup_path %></p>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+</div>
+
+<div class="clear"> </div>
+
+ 
+

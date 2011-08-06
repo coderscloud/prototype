@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @title = "CodersCloud Home page"
+    @title = "CodersCloud"
   end
 
   def help
-    @title = "Help"
+    @title = "Aide"
   end
 end

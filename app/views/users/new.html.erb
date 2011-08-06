@@ -1,23 +1,12 @@
-	<h1>Sign up</h1>
+	<h1>Inscription</h1>
 <%= render 'shared/error_messages' %>
-<%= form_for(@user) do |f| %>
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.text_field :login %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirmation" %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+
+<%= simple_form_for @user, :validate => true do |f| %>
+
+    <%= f.input :login, :required => false%>
+    <%= f.input :email, :required => false %>
+    <%= f.input  :password, :required => false %>
+    <%= f.input :password_confirmation, :label => "Confirmation", :required => false %>
+    <%= f.button :submit,  :value => "S'inscrire", :class => "btn btn-m"  %>
+
 <% end %>

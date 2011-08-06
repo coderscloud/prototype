@@ -1,3 +1,5 @@
+# encoding : utf-8
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -38,5 +40,8 @@ module CodersCloud
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    # Set french locale 
+    config.i18n.default_locale = :fr
   end
 end
