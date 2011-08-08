@@ -1,5 +1,7 @@
 CodersCloud::Application.routes.draw do
 
+  get "projects/new"
+
   match '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
 

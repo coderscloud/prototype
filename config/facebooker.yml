@@ -1,0 +1,12 @@
+development:
+  api_key: 2e432dd1e911892613c652e14e24e30a
+  secret_key: e7acb4c4ab78bf50fb9d0560601b59e6
+  canvas_page_name:
+  callback_url: http://localhost:3000/
+  pretty_errors: true
+  set_asset_host_to_callback_url: true
+  tunnel:
+    public_host_username:
+    public_host:
+    public_port: 4007
+    local_port: 3000
