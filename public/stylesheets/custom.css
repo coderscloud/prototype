@@ -370,3 +370,36 @@ width:744px;float:left}
 	clear:both;margin-top:15px;text-align:right;font-size:15px;font-weight:normal;color:#06f}
 #content-switcher-placeholder img.loading{
 	display:block;margin:0 auto;padding:100px 0} 
+	
+.proj_type_select label img.selected {
+	
+	margin-right: 30px;
+	border:3px solid #97B9E8;
+}
+.proj_type_select label  {
+
+	float: left;
+/* 	position: relative;  Set the absolute positioning base coordinate */
+	width: 96px;
+	height: 96px;
+
+  text-decoration: none;
+  margin-right: 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+	 font-size: 15px;
+	border:3px solid transparent;
+}
+
+.proj_type_select label img {
+	display: block;
+
+
+	width: 96px; height: 96px;
+/* 	position: absolute;
+	left: 0; top: 0;  */
+
+
+}
+	

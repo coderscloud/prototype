@@ -1,7 +1,7 @@
 CodersCloud::Application.routes.draw do
 
-  get "projects/new"
-
+ # get "applications/index"
+  resources :applications
   match '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
 
@@ -10,7 +10,9 @@ CodersCloud::Application.routes.draw do
   match '/help',    :to => 'pages#help'
   match '/signup',    :to => 'users#new'
   match '/signin',    :to => 'sessions#new'
-    match '/signout',    :to => 'sessions#destroy'
+  match '/signout',    :to => 'sessions#destroy'
+  resources :projects
+  match '/test', :to => 'projects#new'
     
   root :to => 'pages#home'
 

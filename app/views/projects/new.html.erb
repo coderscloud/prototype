@@ -1,2 +1,36 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
+
+
+<!-- <%= simple_form_for @project, :validate => true do |f| %>
+
+    <%= f.input :title, :required => false%> 
+	<%= f.association :pr_project_type , :as => :radio,:label_method => :ptype, :label => "Project types", :label_html => {:class => "test"} %>
+   
+
+<% end %> -->
+
+<%= simple_form_for @project, :validate => true do |f| %>
+
+ 	<%= f.input :title, :required => false%>
+	
+	<div class="proj_type_select">
+	 <% for prtype in PrProjectType.find(:all) %>
+	
+	       <%= radio_button_tag "project[pr_project_type_id]", prtype.id, @project.pr_project_type_id == prtype.id, 
+			:style => "display:none"  %>
+		   <%= label :project,:pr_project_type_id, "#{prtype.image_path}#{prtype.ptype}".html_safe, :value => prtype.id  %>	   
+	 <% end %>
+	</div>	
+	<div class="clear"> </div>
+	
+	<%= f.association :pr_nb_user , :label_method => :number, :label => "Nombres d'utilisateurs" %>
+	<%= f.association :pr_usage_freq , :label_method => :freq, :label => "Fréquence d'utilisation" %>
+	<%= f.association :pr_process_time , :label_method => :time, :label => "Temps de réponse exigé" %>
+	
+	<%= f.input :application_tokens, :as => :text, :label => "Applications" %>
+	
+    <%= f.button :submit,  :value => "S'inscrire", :class => "btn btn-m"  %>
+
+	
+
+<% end %> 
+
