@@ -27,6 +27,7 @@
 	<%= f.association :pr_process_time , :label_method => :time, :label => "Temps de réponse exigé" %>
 	
 	<%= f.input :application_tokens, :as => :text, :label => "Applications" %>
+	<%= f.input :prog_lang_tokens, :as => :text, :label => "Langages de programmation" %>
 	
     <%= f.button :submit,  :value => "S'inscrire", :class => "btn btn-m"  %>
 

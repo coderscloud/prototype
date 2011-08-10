@@ -30,3 +30,7 @@ end
 ["Xapian","Talend","Asterisk","ADV","SpagoBI","FreeNX","BookmarkSync","JFire","Mifos","OpenERP","SQL Ledger","NewGenLib","Molekel","OpenAFS","Weka","RapidMiner"].each do |app|
   Application.find_or_create_by_name(app)
 end
+
+["C#","C","C++","Langage D","Pascal","Basic","Asp","java","Javascript","Python","Boo","ASP","Assembler","Eiffel","Perl","Rebol","Ruby","Tcl","NetRexx","Lua","Cobol","Fortran","Lisp","Scheme","Prolog","SQL","Forth","Scala","XML"].each do |lang|
+  ProgLang.find_or_create_by_name(lang)
+end

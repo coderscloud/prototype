@@ -1,7 +1,8 @@
 CodersCloud::Application.routes.draw do
 
- # get "applications/index"
-  resources :applications
+ 
+  resources :applications, :only => [:index]
+  match '/prog_langs',    :to => 'prog_langs#index'
   match '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
 

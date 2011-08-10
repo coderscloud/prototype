@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110810094922) do
+ActiveRecord::Schema.define(:version => 20110810153351) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20110810094922) do
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "developments", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "prog_lang_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,6 +73,12 @@ ActiveRecord::Schema.define(:version => 20110810094922) do
     t.datetime "updated_at"
   end
 
+  create_table "prog_langs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projects", :force => true do |t|
     t.integer  "employer_id"
     t.string   "title"
@@ -75,6 +88,12 @@ ActiveRecord::Schema.define(:version => 20110810094922) do
     t.integer  "pr_usage_freq_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "objective"
+    t.integer  "pr_arch_id"
+    t.string   "func_skills"
+    t.datetime "start_date"
+    t.datetime "deliv_date"
+    t.integer  "estimated_load"
   end
 
   create_table "users", :force => true do |t|
