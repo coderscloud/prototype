@@ -4,10 +4,16 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
-  def create
+  def create      
       @project = Project.new(params[:project])
-      @project.save
-      redirect_to @project
+      if @project.save
+        flash[:success] = "Welcome to Coders Cloud!"
+        redirect_to @project
+      else
+        @title = "Sign up"
+        render 'new'
+      end
+      
   end
 
 end

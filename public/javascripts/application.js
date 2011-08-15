@@ -125,11 +125,105 @@ $(document).ready(function() {
 	 });
 	
 	//used for applications input token
-	$('#project_application_tokens').tokenInput('/applications.json', { crossDomain: false });  
+	$('#project_application_tokens').tokenInput('/applications.json', { crossDomain: false  });  
 	
 	//used for programming langages input token
-	$('#project_prog_lang_tokens').tokenInput('/prog_langs.json', { crossDomain: false });
+	$('#project_prog_lang_tokens').tokenInput('/prog_langs.json', { crossDomain: false, theme: 'facebook' }  );
+	
+	// Initialize Smart Wizard
+	        $('#wizard').smartWizard(
+					 {
+					  // Properties
+					    selected: 0,  // Selected Step, 0 = first step   
+					    keyNavigation: true, // Enable/Disable key navigation(left and right keys are used if enabled)
+					    enableAllSteps: false,  // Enable/Disable all steps on first load
+					    transitionEffect: 'slideleft', // Effect on navigation, none/fade/slide/slideleft
+					    contentURL:null, // specifying content url enables ajax content loading
+					    contentCache:true, // cache step contents, if false content is fetched always from ajax url
+					    cycleSteps: false, // cycle step navigation
+					    enableFinishButton: false, // makes finish button enabled always
+					    errorSteps:[],    // array of step numbers to highlighting as error steps
+					    labelNext:'Suivant', // label for Next button
+					    labelPrevious:'Precédant', // label for Previous button
+					    labelFinish:'Terminer',  // label for Finish button        
+					  // Events
+					    onLeaveStep: leaveAStepCallback, // triggers when leaving a step
+					    onShowStep: null,  // triggers when showing a step
+					    onFinish: null  // triggers when Finish button is clicked
+					 }
+					);
+		     function leaveAStepCallback(obj){
+		        var step_num= obj.attr('rel'); // get the current step number
+		        return validateSteps(step_num); // return false to stay on step and true to continue navigation 
+		      }
+
+		      function onFinishCallback(){
+		       if(validateAllSteps()){
+		        $('form').submit();
+		       }
+		      }
+					//validations for wizard's forms
+          var project_title = new LiveValidation('project_title');
+					project_title.add( Validate.Presence );
+					var project_objective = new LiveValidation('project_objective');
+					project_objective.add( Validate.Presence );
+					var project_start_date = new LiveValidation('project_start_date');
+					project_start_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
+					project_start_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );					
+					var project_deliv_date = new LiveValidation('project_deliv_date');
+					project_deliv_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
+					project_deliv_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );
+									
+		      // Your Step validation logic
+		      function validateSteps(stepnumber){
+		        var isStepValid = true;
+		        if(stepnumber == 1){	
+							if (($('input[type=radio]:checked').size() == 0))
+							{
+								isStepValid=false;
+								 $('#wizard').smartWizard('setError',{stepnum:1,iserror:!isStepValid});
+									$('#wizard').smartWizard('showMessage',"Vous devez choisir un type de projet");
+							}
+							else{
+								$('#wizard').smartWizard('setError',{stepnum:1,iserror:!true});							
+							}						
+						}
+						
+		        if(stepnumber == 4){		
+							isStepValid = LiveValidation.massValidate( [ project_title, project_objective ] );
+							setError(stepnumber,isStepValid);
+						}
+						if(stepnumber == 6){		
+							isStepValid = LiveValidation.massValidate( [ project_start_date ] );
+							
+							setError(stepnumber,isStepValid);
+						}
+	
+     				return isStepValid;
+		      }
+		
+			   function setError(step,state){
+			       	$('#wizard').smartWizard('setError',{stepnum:step,iserror:!state}); 
+							if (!state) {$('#wizard').smartWizard('showMessage',"Veuillez corriger les erreurs de l'étape "+step+".");}
+			   }
+			
+			
+
+
+					
+			
+	//DAtepicker 
+	$('#project_start_date').datepicker({ showAnim: 'fold' });
+	$('#project_deliv_date').datepicker({ showAnim: 'fold' });
+
+	$( "#wizardd2" ).dialog({
+				autoOpen: false,
+				height: 500,
+				width: 1000,
+				modal: false});
+		
 
 });
+
 
 

@@ -9,6 +9,8 @@ gem 'simple_form'
 gem 'mocha'
 gem 'jquery-rails'
 gem 'client_side_validations'
+gem 'carrierwave'
+
 
 group :development do
   gem 'rspec-rails', '2.5.0'
