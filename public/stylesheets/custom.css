@@ -371,6 +371,8 @@ width:744px;float:left}
 #content-switcher-placeholder img.loading{
 	display:block;margin:0 auto;padding:100px 0} 
 	
+	
+/*for creating project wizard*/
 .proj_type_select label img.selected {
 	
 	margin-right: 30px;
@@ -392,6 +394,7 @@ width:744px;float:left}
 	border:3px solid transparent;
 }
 
+
 #Step1_content{
 	padding-left: 100px;
 	padding-top: 40px;
@@ -411,7 +414,7 @@ width:744px;float:left}
 
 #Step4_content{
 	padding-left: 50px;
-	padding-top: 50px;
+	padding-top: 30px;
 }
 
 #Step4_content input {
@@ -420,7 +423,17 @@ width:744px;float:left}
 }
 #Step4_content input.text {
   width: 300px;
+}
+#Step4_content label {
+  float: left;
+  width: 200px;
+  text-align: left;
+  margin: 2px 20px;
+  padding-top : 4px;
+}
 
+input[type="file"] {
+	boder:transparent;
 }
 
 #Step5_content{
@@ -440,17 +453,10 @@ width:744px;float:left}
 
 .proj_type_select label img {
 	display: block;
-
-
 	width: 96px; height: 96px;
-/* 	position: absolute;
-	left: 0; top: 0;  */
+
 }
 	
-	
-/*simple form for wizard
-/* stylesheets/application.css */
-
 .simple_form .swMain  .input label {
   float: left;
   width: 200px;
@@ -458,7 +464,11 @@ width:744px;float:left}
   margin: 2px 20px;
   padding-top : 4px;
 }
+/*for creating project wizard*/
 
+
+
+/*for Live validation plugin*/
 .LV_validation_message{
     font-weight:bold;
     margin:0 0 0 5px;
@@ -487,3 +497,4 @@ textarea.LV_invalid_field:hover,
 textarea.LV_invalid_field:active {
     border: 1px solid #CC0000;
 }
+/*for Live validation plugin*/

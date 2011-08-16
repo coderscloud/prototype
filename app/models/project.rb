@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   attr_accessible :title, :employer_id, :pr_project_type_id, :pr_nb_user_id,  :pr_process_time_id, :pr_usage_freq_id, :application_tokens,
-                  :prog_lang_tokens, :func_skills, :pr_arch_id, :objective,:deliv_date, :start_date, :estimated_load
+                  :prog_lang_tokens, :func_skills, :pr_arch_id, :objective,:deliv_date, :start_date, :estimated_load, :specfile
   
   belongs_to :pr_process_time
   belongs_to :pr_project_type
@@ -14,11 +14,16 @@ class Project < ActiveRecord::Base
   has_many :developments
   has_many :prog_langs, :through => :developments
   
+
+  mount_uploader :specfile, SpecfileUploader #for specs files upload
+  
   attr_reader :application_tokens # used for applications associations
   attr_reader :prog_lang_tokens # used for programming languages associations
   
   validates(:pr_project_type_id, :presence => true)
   validates(:title, :presence => true)
+  
+  
   
   def application_tokens=(ids)
     self.application_ids = ids.split(",")

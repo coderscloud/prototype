@@ -1,14 +1,4 @@
 
-
-<!-- <%= simple_form_for @project, :validate => true do |f| %>
-
-    <%= f.input :title, :required => false%> 
-	<%= f.association :pr_project_type , :as => :radio,:label_method => :ptype, :label => "Project types", :label_html => {:class => "test"} %>
-   
-
-<% end %> -->
-
-
 <% if @project.errors.any? %>
   <div id="error_explanation">
     <p>Erreur lors de l'enregistrement du projet:</p>
@@ -20,11 +10,8 @@
   </div>
 <% end %>
 
-<%= simple_form_for @project do |f| %>
+<%= simple_form_for @project, :html => {:multipart => true} do |f| %>
 		
-    <!-- <%= f.button :submit,  :value => "S'inscrire", :class => "btn btn-m"  %> -->
-<div id="wizard2">
-
 	<div id="wizard" class="swMain">
 	  <ul>
 	    <li><a href="#step-1">
@@ -71,8 +58,8 @@
 	      </a></li>
 	  </ul>
 	  <div id="step-1">   
-	      <h2 class="StepTitle">Step 1 Content</h2>
-				<div id="Step1_content">
+		<h2 class="StepTitle">Step 1 Content</h2>
+			<div id="Step1_content">
 				<div class="proj_type_select">
 				 <% for prtype in PrProjectType.find(:all) %>
 
@@ -81,9 +68,10 @@
 					   <%= label :project,:pr_project_type_id, "#{prtype.image_path}#{prtype.ptype}".html_safe, :value => prtype.id  %>	   
 				 <% end %>
 				</div>	
-				</div>	
+			</div>	
 				
 			 	<div class="clear"> </div>
+
 	      
 	  </div>
 	  <div id="step-2">
@@ -108,6 +96,9 @@
 		<div id="Step4_content">   
 		<%= f.input :title, :required => false, :label => "Nom du projet"%> 
 		<%= f.input :objective, :required => false, :label => "Objectif", :input_html => { :cols => 47, :rows => 7 }%> 
+		<%= label :project,:specfile, "Spécification"%>	
+		<%= f.file_field :specfile, :class => "file_input" 	%>  
+
 	  </div>	  
                           
 	  </div>
@@ -130,9 +121,7 @@
 	<%= f.input :deliv_date, :label => "Date de livraison estimée", :discard_hour => true, :as => :string %> 
 	<%= f.input :estimated_load, :label => "Charge estimée", :as => :string%> 
 	
-	<!-- t.datetime "start_date"
-    t.datetime "deliv_date"
-    t.integer  "estimated_load" -->
+
 	                            
 	  </div>	 
 	 </div>
