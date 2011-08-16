@@ -57,8 +57,8 @@
 	          </span>                   
 	      </a></li>
 	  </ul>
-	  <div id="step-1">   
-		<h2 class="StepTitle">Step 1 Content</h2>
+		  <div id="step-1">   
+			<h2 class="StepTitle">Step 1 Content</h2>
 			<div id="Step1_content">
 				<div class="proj_type_select">
 				 <% for prtype in PrProjectType.find(:all) %>
@@ -70,69 +70,55 @@
 				</div>	
 			</div>	
 				
-			 	<div class="clear"> </div>
-
-	      
-	  </div>
-	  <div id="step-2">
-	      <h2 class="StepTitle">Step 2 Content</h2> 
-			<div id="Step2_content">
-			<%= f.association :pr_nb_user , :label_method => :number, :label => "Nombres d'utilisateurs" %>
-			<%= f.association :pr_usage_freq , :label_method => :freq, :label => "Fréquence d'utilisation" %>
-	       <%= f.association :pr_process_time , :label_method => :time, :label => "Temps de réponse exigé" %>
-	  		</div>  
-	</div>                     
-	  <div id="step-3">
-						
-	      <h2 class="StepTitle">Step 3 Title</h2>  
-		<div id="Step3_content"> 
-	       	<%= f.input :application_tokens, :as => :text, :label => "Applications" %>
-	  </div>
+		 	<div class="clear"> </div>	      
+		  </div>
+	  
+		<div id="step-2">
+		      <h2 class="StepTitle">Step 2 Content</h2> 
+				<div id="Step2_content">
+					<%= f.association :pr_nb_user , :label_method => :number, :label => "Nombres d'utilisateurs" %>
+					<%= f.association :pr_usage_freq , :label_method => :freq, :label => "Fréquence d'utilisation" %>
+			       	<%= f.association :pr_process_time , :label_method => :time, :label => "Temps de réponse exigé" %>
+		  		</div>  
+		</div>                     
+		<div id="step-3">						
+			<h2 class="StepTitle">Step 3 Title</h2>  
+			<div id="Step3_content"> 
+		       	<%= f.input :application_tokens, :as => :text, :label => "Applications" %>
+		  	</div>
 		</div>	  
 	
 	
-	  <div id="step-4">
-	      <h2 class="StepTitle">Step 4 Title</h2>
-		<div id="Step4_content">   
-		<%= f.input :title, :required => false, :label => "Nom du projet"%> 
-		<%= f.input :objective, :required => false, :label => "Objectif", :input_html => { :cols => 47, :rows => 7 }%> 
-		<%= label :project,:specfile, "Spécification"%>	
-		<%= f.file_field :specfile, :class => "file_input" 	%>  
-
-	  </div>	  
-                          
-	  </div>
+		<div id="step-4">
+			<h2 class="StepTitle">Step 4 Title</h2>
+			<div id="Step4_content">   
+				<%= f.input :title, :required => false, :label => "Nom du projet"%> 
+				<%= f.input :objective, :required => false, :label => "Objectif", :input_html => { :cols => 47, :rows => 7 }%> 
+				<%= label :project,:specfile, "Spécification"%>	
+				<%= f.file_field :specfile, :class => "file_input" 	%>  
+			</div>	  
+		</div>
 	
-
-	  <div id="step-5">
-	      <h2 class="StepTitle">Step 5 Title</h2> 
-			<div id="Step5_content">  
+		<div id="step-5">
+			<h2 class="StepTitle">Step 5 Title</h2> 
+				<div id="Step5_content">  
 					<%= f.association :pr_arch , :label_method => :arch, :label => "Architecture" %>		
 					<%= f.input :prog_lang_tokens, :as => :text, :label => "Langages de programmation" %>  
 					<%= f.input :func_skills, :required => false, :label => "Compétences fonctionnelles"%> 
-		  </div>                            
-	  </div>
+			  	</div>                            
+		</div>
 	
-	  <div id="step-6">
-				 
-	      <h2 class="StepTitle">Step 6 Title</h2> 
-		<div id="Step6_content"> 
-	<%= f.input :start_date, :label => "Date de début estimée", :discard_hour => true, :as => :string%>  
-	<%= f.input :deliv_date, :label => "Date de livraison estimée", :discard_hour => true, :as => :string %> 
-	<%= f.input :estimated_load, :label => "Charge estimée", :as => :string%> 
-	
-
-	                            
-	  </div>	 
-	 </div>
-	
+		<div id="step-6">
+			<h2 class="StepTitle">Step 6 Title</h2> 
+			<div id="Step6_content"> 
+				<%= f.input :start_date, :label => "Date de début estimée", :discard_hour => true, :as => :string%>  
+				<%= f.input :deliv_date, :label => "Date de livraison estimée", :discard_hour => true, :as => :string %> 
+				<%= f.input :estimated_load, :label => "Charge estimée", :as => :string%> 	                            
+		  	</div>	 
+		</div>
 	
 	</div>
-	
-
-
 	<div class="clear"> </div>
-		</div>
 
 <% end %> 
 
