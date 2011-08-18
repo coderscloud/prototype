@@ -8,6 +8,8 @@ class Project < ActiveRecord::Base
   belongs_to :pr_nb_user
   belongs_to :pr_arch
   
+  belongs_to :employer, :class_name=>'User'
+  
   has_many :interfacings
   has_many :applications, :through => :interfacings
   

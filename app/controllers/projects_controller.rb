@@ -1,19 +1,25 @@
+# encoding: utf-8
+
 class ProjectsController < ApplicationController
   
   def new
      @project = Project.new
   end
 
-  def create      
-      @project = Project.new(params[:project])
+  def create  
+      @user = current_user
+      @project = current_user.projects.new(params[:project])
       if @project.save
-        flash[:success] = "Welcome to Coders Cloud!"
+        flash[:success] = "le projet a été rajouté avec succès"
         redirect_to @project
       else
-        @title = "Sign up"
-        render 'new'
-      end
-      
+        flash[:error] = "Une erreur s'est produite lors de la création du projet"
+        redirect_to 'new'
+      end     
+  end
+  
+  def show
+    @project = Project.find(params[:id])
   end
 
 end
