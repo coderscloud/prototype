@@ -216,11 +216,7 @@ $(document).ready(function() {
 	$('#project_start_date').datepicker({ dateFormat: 'dd/mm/yy' });
 	$('#project_deliv_date').datepicker({ dateFormat: 'dd/mm/yy'});
 
-	$( "#wizardd2" ).dialog({
-				autoOpen: false,
-				height: 500,
-				width: 1000,
-				modal: false});
+
 		
 
 });

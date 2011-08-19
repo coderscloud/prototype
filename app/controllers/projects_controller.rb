@@ -23,8 +23,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def deny_access
-    redirect_to signin_path, :notice => "Veuillez vous connecter pour accéder à cette page."
+  def authenticate
+       deny_access unless signed_in?
   end
+
 end
 
