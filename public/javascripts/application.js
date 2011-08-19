@@ -213,8 +213,8 @@ $(document).ready(function() {
 					
 			
 	//DAtepicker 
-	$('#project_start_date').datepicker({ showAnim: 'fold' });
-	$('#project_deliv_date').datepicker({ showAnim: 'fold' });
+	$('#project_start_date').datepicker({ dateFormat: 'dd/mm/yy' });
+	$('#project_deliv_date').datepicker({ dateFormat: 'dd/mm/yy'});
 
 	$( "#wizardd2" ).dialog({
 				autoOpen: false,
