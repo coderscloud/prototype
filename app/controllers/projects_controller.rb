@@ -2,6 +2,7 @@
 
 class ProjectsController < ApplicationController
   
+  before_filter :authenticate, :only => [:create]
   def new
      @project = Project.new
   end
@@ -22,5 +23,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def deny_access
+    redirect_to signin_path, :notice => "Veuillez vous connecter pour accéder à cette page."
+  end
 end
 

@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20110816072221) do
     t.string   "title"
     t.integer  "pr_project_type_id"
     t.integer  "pr_nb_user_id"
-    t.integer  "pr_process_delay_id"
+    t.integer  "pr_process_time_id"
     t.integer  "pr_usage_freq_id"
     t.datetime "created_at"
     t.datetime "updated_at"
