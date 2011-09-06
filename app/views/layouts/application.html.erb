@@ -34,7 +34,7 @@
 	 
     <ul id="menu">
 		<% if signed_in? %>
-			<li><%= link_to "Mon Profil", "#" %>
+			<li><%= link_to "Mon Profil", user_path(current_user) %>
 				<ul>
 					<li>
 					
