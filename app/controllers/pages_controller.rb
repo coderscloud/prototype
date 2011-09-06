@@ -3,7 +3,10 @@ class PagesController < ApplicationController
     @title = "CodersCloud"
   end
 
-  def help
-    @title = "Aide"
+  def projsearch
+    @search = Project.search(params[:search])
+    @projects = @search.all
   end
+  
+
 end

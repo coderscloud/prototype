@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   def create  
       @user = current_user
       @project = current_user.projects.new(params[:project])
+  
       if @project.save
         flash[:success] = "le projet a été rajouté avec succès"
         redirect_to @project
@@ -25,6 +26,12 @@ class ProjectsController < ApplicationController
 
   def authenticate
        deny_access unless signed_in?
+  end
+  
+  def index
+    
+    @search = Project.search(params[:search])
+    @projects = @search.all
   end
 
 end

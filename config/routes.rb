@@ -8,12 +8,15 @@ CodersCloud::Application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
+  match '/proj_search',    :to => 'pages#projsearch'
   match '/help',    :to => 'pages#help'
   match '/signup',    :to => 'users#new'
   match '/signin',    :to => 'sessions#new'
   match '/signout',    :to => 'sessions#destroy'
   resources :projects
-  match '/test', :to => 'projects#new'
+   match '/jj',    :to => 'projects#new'
+  match '/signout',    :to => 'sessions#destroy'
+
     
   root :to => 'pages#home'
 

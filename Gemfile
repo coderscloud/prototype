@@ -10,7 +10,8 @@ gem 'mocha'
 gem 'jquery-rails'
 gem 'client_side_validations'
 gem 'carrierwave'
-
+gem 'sunspot_rails'
+gem "meta_search"
 
 group :development do
   gem 'rspec-rails', '2.5.0'

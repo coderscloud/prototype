@@ -22,7 +22,7 @@ header {
 	height: 52px;
 	width: 240px;
 	background: transparent url(images/logo.png) no-repeat 0 0;
-	margin-top: -15px;
+	margin-top: -45px;
 }
 
 header img {
@@ -96,54 +96,124 @@ a:visited {
 
 
 #header_navigation {
-	height: 55px;
-	width: 800px;
+
+	width: 850px;
 }
 
 #header_navigation a:hover {
 	text-decoration: none;
 }
 
-header .navigation {
-	float: left;
-	margin-left: 30px;
-	margin-top: 19px;
-	position: relative;
+#menu, #menu ul /* Liste */     
+{
+        padding : 0; /* pas de marge intérieure */
+        margin : 0; /* ni extérieure */
+        list-style : none; /* on supprime le style par défaut de la liste */
+        line-height : 21px; /* on définit une hauteur pour chaque élément */
+        text-align : center; /* on centre le texte qui se trouve dans la liste */
 }
 
-header .navigation li { 
-	list-style-type: none;
-	float: left;
-	padding: 0px 15px;
-	font-size: 15px;
-	font-weight: bold;
-	height: 35px;
-	line-height: 35px;
+#menu /* Ensemble du menu */
+{
+        font-weight : bold; /* on met le texte en gras */
+        font-family : Arial; /* on utilise Arial, c'est plus beau ^^ */
+        font-size : 14px; /* hauteur du texte : 12 pixels */
+				margin-top : 32px;
 }
 
-header .navigation li a {
-	color: #98AFCF;
+#menu a /* Contenu des listes */
+{
+        display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
+        padding : 0; /* aucune marge intérieure */
+        /* background : #000; couleur de fond */        
+        color : #fff; /* couleur du texte */
+        text-decoration : none; /* on supprime le style par défaut des liens (la plupart du temps = souligné) */
+        
 }
 
-header .navigation li.active { 
-	background-color: #7F9BBC;
-	background: #809CBD; /* old browsers */
-	background: -moz-linear-gradient(top, #7C9ABD 0%, #6984A6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7C9ABD), color-stop(100%,#6984A6));
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7C9ABD', endColorstr='#6984A6',GradientType=0 );
-	-webkit-box-shadow: 0px -1px 1px #527094;
-	box-shadow: 0px -1px 1px #527094;
-	-moz-box-shadow: 0px -1px 1px #527094;
+
+
+#menu li /* Elements des listes */      
+{ 
+        float : left; 
+        /* pour IE qui ne reconnaît pas "transparent" */
+        border-right : 1px solid #fff; /* on met une bordure blanche à droite de chaque élément */
 }
 
-header .navigation li.active a {
-	color: #FFFFCC;
-	text-shadow: 0px -1px 0px #47576B;
+/* IE ne reconnaissant pas le sélecteur ">" */
+html>body #menu li
+{
+        border-right: 1px solid transparent ; /* on met une bordure transparente à droite de chaque élément */
+				width : 144px; /* largeur */
 }
 
-header .navigation li:hover a { 
-	color: white;
+#menu li ul /* Sous-listes */
+{ 
+        position: absolute; /* Position absolue */
+        width: 144px; /* Largeur des sous-listes */
+        left: -999em; /* Hop, on envoie loin du champ de vision */
 }
+
+
+#menu li ul li /* Éléments de sous-listes */
+{
+        /* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+        border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+width : 144px; /* largeur */
+
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" */
+html>body #menu li ul li                
+{
+        border-top : 1px solid transparent; /* on met une bordure transparente en haut de chaque élément */
+
+}
+
+#menu li ul ul 
+{
+        margin    : -22px 0 0 144px ; /* On décale les sous-sous-listes pour qu'elles ne soient pas au dessus des sous-listes */ 
+        /* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+        border-left     : 1px solid #fff ; /* Petite bordure à gauche pour ne pas coller ... */      
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" ... je me répète ;-) */
+html>body #menu li ul ul                
+{
+        border-left     : 1px solid transparent ; /* on met une bordure transparente sur la gauche de chaque élément */
+}
+#menu li:hover ul ul /* Sous-sous-listes lorsque la souris passe sur un élément de liste */
+{
+        left: -999em; /* On expédie les sous-sous-listes hors du champ de vision */
+}
+
+#menu li:hover ul, #menu li li:hover ul  /* Sous-listes lorsque la souris passe sur un élément de liste ET sous-sous-lites lorsque la souris passe sur un élément de sous-liste */
+{
+        left: auto; /* Repositionnement normal */
+        min-height: 0; /* Corrige un bug sous IE */
+}
+
+#menu a:hover 
+{
+background-color: #C0C0C0;
+background: #C0C0C0; /* old browsers */
+-moz-border-radius:    4px;
+-webkit-border-radius: 3px;
+border-radius:         3px;
+}
+
+#menu li ul li a/* Éléments de sous-listes */
+{
+       background-color: #7F9BBC;
+			background: #809CBD; /* old browsers */
+			text-align: left;
+			padding-left: 10px;
+			font-weight : normal; 
+			-moz-border-radius:    4px;
+		  -webkit-border-radius: 3px;
+		  border-radius:         3px;
+}
+
 
 /* Round corners */
 
@@ -276,7 +346,7 @@ div.content textarea,div.console input,div.console select{
 }
 .btn:hover,.btn:focus,input[type=submit].btn:hover,input[type=submit].btn:focus,button.btn:hover,button.btn:focus{border-color:#999 #999 #888;background-position:0 -6px;color:#000;text-decoration:none;}
 	
-	
+
 /* stylesheets/application.css */
 .simple_form label {
   float: left;
@@ -500,7 +570,7 @@ textarea.LV_invalid_field:active {
 }
 /*for Live validation plugin*/
 
-
+/*for project view*/
 .sideblock {
 	-moz-box-shadow:rgba(200,200,200,1) 0 4px 18px;
 	-webkit-box-shadow:rgba(200,200,200,1) 0 4px 18px;
@@ -528,4 +598,309 @@ float: left;
 width: 250px;
 font-weight: bold;
 color: #666;
+}
+/*for project view     */
+
+
+
+/*for projects list    */
+.projlist {
+border: 3px solid;
+border-color: #EBEBEB;
+min-height: 450px;
+-moz-border-radius:15px;-khtml-border-radius:15px;
+-webkit-border-radius:15px;border-radius:15px;
+}
+
+.projobj {
+
+border-bottom: 1px solid;
+border-color: #EBEBEB;
+
+}
+
+.projleft p {
+color: #888;
+font-size: 11px;
+margin-top: 6px;
+line-height: 15px;
+max-height: 30px;
+overflow: hidden;
+padding-left: 1px;
+}
+
+.projlang {
+position: relative;
+top: 2px;
+margin-left: 4px;
+padding-top: 4px;
+}
+
+.projlang a {
+display: inline-block;
+font-size: 11px;
+height: 15px;
+line-height: 15px;
+background-color: #E0E0E0;
+color: #6E6E6E;
+padding: 1px 5px;
+white-space: nowrap;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+}
+
+.projright {
+float: right;
+width: 165px;
+height: 84px;
+border-left: 1px solid #C9C9C9;
+margin-top: 10px;
+padding-left: 10px;
+font-size: 12px;
+color: #666;
+position: relative;
+z-index: 2;
+}
+
+.projrightinner {
+overflow: hidden;
+}
+
+
+.projtype {
+color: #62970B;
+font-size: 18px;
+font-weight: bold;
+padding-top: 10px;
+padding-left: 10px;
+
+}
+
+.projstatus {
+/*display: block;*/
+font-weight: bold;
+color: #F9A000;
+line-height: 23px;
+padding-top: 5px;
+height: 25px;
+padding-left: 10px;
+}
+
+.projtype .biddingCaption {
+float: left;
+line-height: 18px;
+}
+
+.projleft {
+height: 70px;
+padding: 10px 5px 0 5px;
+overflow: hidden;
+
+}
+
+
+.projobj h4 {
+font-size: 14px;
+font-weight: bold;
+line-height: 17px;
+max-height: 34px;
+overflow: hidden;
+margin-bottom :0;
+}
+
+
+.projobj h4 a {
+color: #016797;
+}
+
+
+
+.projbtm {
+clear: both;
+height: 33px;
+border-bottom: 1px solid #EEE;
+font-size: 12px;
+line-height: 27px;
+padding-left: 5px;
+color: #8C8C8C;
+}
+
+.new {
+padding-left: 1px;
+padding-right: 1px;
+color: #FFFFFF;
+font-size: 10px;
+background-color: #339900;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+
+}
+
+
+fieldset {
+background: none;
+margin: 0;
+padding: 0;
+position: relative;
+}
+
+
+fieldset legend span {
+display: block;
+width: 100px;
+position: absolute;
+top: 0;
+left: 0;
+text-align: right;
+font-weight: bold;
+white-space: normal;
+}
+
+.multi-check.scroll {
+position: relative;
+padding: 0;
+}
+
+.multi-check {
+height: 5em;
+border: 1px solid #7F7F7F;
+padding-bottom: 2px;
+overflow: auto;
+overflow-x: hidden;
+font-size: 85%;
+}
+
+fieldset ul {
+width: auto;
+margin-left: auto;
+float: none;
+margin-left: 110px;
+}
+
+.multi-check li.checked {
+background-color: #DDD;
+border-bottom: 1px solid #CCC;
+}
+
+.multi-check li {
+padding: 1px 0 1px 4px;
+margin-bottom: 0;
+}
+
+fieldset li {
+margin: 0 0 8px 0;
+clear: both;
+}
+
+.multi-check input {
+vertical-align: middle;
+margin: 0 0 0 -20px;
+margin-left: 0;
+
+}
+
+
+.multi-check li label {
+display: inline;
+float: none;
+margin: 0;
+padding: 0;
+width: auto;
+text-align: auto;
+font-weight: normal;
+}
+
+.multi-check li label {
+padding: 5px 0 0 0;
+vertical-align: middle;
+}
+
+.multi-check.no-scroll {
+	overflow: none;
+	border: 0;
+	padding: 0;
+}
+
+.datepicker {
+
+	background:url('images/datepicker.gif') no-repeat 98% ;
+}
+
+.sidebar fieldset legend span {
+display: block;
+width: auto;
+position:relative;
+top: 0;
+left: 0;
+text-align: left;
+font-weight: bold;
+white-space: normal;
+}
+
+.sidebar fieldset ul {
+width: auto;
+margin-left: auto;
+float: none;
+margin-left: 0px;
+}
+
+.sidebar  ul, ol {
+margin-top: 8px;
+padding-left: 1em;
+margin-right: 0px;
+}
+
+.sidebar  hr {
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.sidebar  input[type='text'] {
+	width:140px;
+	font:12px "Helvetica Neue",Helvetica Neue,Helvetica,Arial,sans-serif;
+	padding:4px 10px;-webkit-border-radius:5px;outline:none;-moz-border-radius:5px;
+
+}
+		
+.sidebar  label {
+	display: block;
+	width: auto;
+	float:none;
+	font-weight: bold;
+	white-space: normal;
+	text-align: left;
+	margin:0px;
+
+}
+#keywords-input {
+	float:left;
+}
+#btn-search  {
+	border: 1px solid #06598B;
+	background-color: #06598B;
+	width: 22px;
+	height: 22px;
+	margin-left: 0px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding-left: 5px;
+	padding-top: 0px;
+	float: right;
+	margin-top:3px;
+	background:url('images/search.png') 50% 40%;
+	
+
+	cursor: pointer;
+	text-indent: -1234px;
+	
+}
+
+
+.sort_by  {
+			text-align: right;
+			padding:5px;
+			border-bottom:3px solid #EBEBEB;
+			display:block;
 }

@@ -1,0 +1,38 @@
+
+<div class="projobj">
+	<div class="projright">
+		<div class="projtype">
+			<%= project.pr_project_type.ptype %>
+	 	</div>
+		<div class="projstatus">
+			<%= project.status %>
+	 	</div>
+		
+ 	</div>
+	<div class="projleft">
+		<h4>  
+			<%= link_to  project.title, project_path(project.id) %> 
+			<% if (project.created_at > Time.now-5.days) %>
+				<span class="new">nouveau!</span>  <!-- to display only if project is newer than 5 days -->
+			<% end %>
+	
+		
+		</h4>
+		<p><%=  project.objective[0..128]+ "..." %> <%=link_to  "plus de détails", project_path(project.id) %></p>
+		
+	 
+	</div>
+	<div class="projlang">
+		<% for app in project.applications %>
+			<%= link_to app.name, project_path(project.id)  %> 
+		<% end %>
+	
+	</div>
+		
+	<div class="projbtm">
+	Posté il y a <%=  time_ago_in_words(project.created_at) %>
+	</div>
+</div>
+			
+
+

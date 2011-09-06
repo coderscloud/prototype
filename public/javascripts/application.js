@@ -163,17 +163,18 @@ $(document).ready(function() {
 		       }
 		      }
 					//validations for wizard's forms
-          var project_title = new LiveValidation('project_title');
-					project_title.add( Validate.Presence );
-					var project_objective = new LiveValidation('project_objective');
-					project_objective.add( Validate.Presence );
-					var project_start_date = new LiveValidation('project_start_date');
-					project_start_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
-					project_start_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );					
-					var project_deliv_date = new LiveValidation('project_deliv_date');
-					project_deliv_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
-					project_deliv_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );
-									
+					if ($('#wizard').length){ //if we are in wizard page
+	          var project_title = new LiveValidation('project_title');
+						project_title.add( Validate.Presence );
+						var project_objective = new LiveValidation('project_objective');
+						project_objective.add( Validate.Presence );
+						var project_start_date = new LiveValidation('project_start_date');
+						project_start_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
+						project_start_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );					
+						var project_deliv_date = new LiveValidation('project_deliv_date');
+						project_deliv_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
+						project_deliv_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );
+					}
 		      // Your Step validation logic
 		      function validateSteps(stepnumber){
 		        var isStepValid = true;
@@ -208,18 +209,24 @@ $(document).ready(function() {
 			   }
 			
 			
-
-
 					
+
+
 			
 	//DAtepicker 
-	$('#project_start_date').datepicker({ dateFormat: 'dd/mm/yy' });
-	$('#project_deliv_date').datepicker({ dateFormat: 'dd/mm/yy'});
+		$('.datepicker').datepicker({ dateFormat: 'dd/mm/yy'}); //for_project_search 
 
+  //check all fonctionality for projects types
+	$(function () { // this line makes sure this code runs on page load
+		$('.checkall').click(function () {
+			$(this).parents('ul:eq(0)').find(':checkbox').attr('checked', this.checked);
+		});
+	});
 
 		
-
+		
+		
 });
 
-
+		
 

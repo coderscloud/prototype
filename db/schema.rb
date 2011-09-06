@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110816072221) do
+ActiveRecord::Schema.define(:version => 20110823152248) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20110816072221) do
     t.datetime "deliv_date"
     t.integer  "estimated_load"
     t.string   "specfile"
+    t.string   "status"
   end
 
   create_table "specfiles", :force => true do |t|

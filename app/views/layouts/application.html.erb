@@ -15,32 +15,50 @@
  <body>
 	<div class="container">
     <header class="round">
-     
        <nav id="header_links">
          <ul>
-           <li><%= link_to "Home", root_path %></li>
-           <li><%= link_to "Aide", help_path %></li>
-           <% if signed_in? %>
+			<li><%= link_to "Home", root_path %>		
+			</li>
+          	<li><%= link_to "Aide", help_path %></li>
+           	<% if signed_in? %>
     		 	<li><%= link_to "Paramètres", authentications_path %></li>
-	      	<li><%= link_to "Déconnexion", signout_path, :method => :delete %></li>
+	      		<li><%= link_to "Déconnexion", signout_path, :method => :delete %></li>
 		     <% else %>
 		      <li><%= link_to "Se connecter", signin_path %></li>
 		     <% end %>
           </ul>
         </nav>
-		<div id="header_navigation" > 
-					<a href="/" id="logo"></a> 
-			      <ul class="navigation">
-					<% if signed_in? %>
-						<li><%= link_to "My Profile", current_user %></li>
-					<% end %>
-		            <li><%= link_to "Home", '/pages/home' %></li>
-		            <li><%= link_to "Help", '#' %></li>
-		            <li><%= link_to "Sign in", '#' %></li>
-		          </ul>
+	<div> 
+		
+	<a href="/" id="logo"></a> 
+	 
+    <ul id="menu">
+		<% if signed_in? %>
+			<li><%= link_to "Mon Profil", "#" %>
+				<ul>
+					<li>
+					
+					</li>
+				</ul>
+				</li>
+		<% end %>
+        <li>
+			<%= link_to "Projets", '#' %>
+			<ul>
+				<li>
+					<%= link_to "Poster", new_project_path %>
+				</li>
+				<li>
+					<%= link_to "Rechercher", proj_search_path %>
+				</li>
+			</ul>
+		</li>
+        <li><%= link_to "Aide", '#' %></li>
+       </ul>
 
+	</div>
 
-				</div>
+	
       </header>
       <section class="round">
 	    <% flash.each do |key, value| %>

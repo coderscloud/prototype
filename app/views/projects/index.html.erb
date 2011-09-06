@@ -1,0 +1,106 @@
+<div class="span-5 sidebar" >	
+<%= simple_form_for @search, :url => projects_path, :html => {:method => :get} do |f| %>
+
+
+<%= f.label :title_or_objective_contains, :label => "Mots clés", :required => false %>
+<%= f.text_field :title_or_objective_contains %>
+	 
+<%= f.button :submit, :id => "btn-search" %>
+
+<%= f.input :created_at_greater_than, :input_html => { :class => 'datepicker' },  :label => "Posté après", :required => false,:format => :long %>
+<%= f.input :start_date_greater_than, :input_html => { :class => 'datepicker' },  :label => "Débute après", :required => false, :format => :long   %>
+
+
+	<fieldset>
+		<legend>
+			<span>
+				Status
+			</span>
+		</legend>
+		<ul class="multi-check no-scroll" style="height: 70px; overflow-y: auto; ">
+			<% f.checks :status_in,
+    		[['Actif', 'Actif'], ['En cours', 'En cours'], ['Realisé', 'Realisé']], :class => 'checkboxy' do |check| %>
+ 				<li> 
+				<%= check.box %> <%= check.label %> 
+				</li>
+
+			<% end %>
+		</ul>
+
+	</fieldset>
+
+	
+	<fieldset>
+		<legend>
+			<span>
+				Applications connexes
+			</span>
+		</legend>
+		<ul class="multi-check scroll" style="height: 105px; overflow-y: auto; ">
+  			<% f.collection_checks :applications_id_in, Application.all,
+      		:id, :name do |check| %>
+   				<li> 
+				<%= check.box %> <%= check.label %> 
+				</li>
+
+			<% end %>
+		</ul>
+
+	</fieldset>
+
+
+	<fieldset>
+		<legend>
+			<span>
+				Type
+			</span>
+		</legend>
+		<ul class="multi-check no-scroll" style="height: 90px; overflow-y: auto; ">
+			<% f.collection_checks :pr_project_type_id_in, PrProjectType.all,
+    		:id, :ptype do |check| %>
+ 				<li> 
+				<%= check.box %> <%= check.label %> 
+				</li>
+
+			<% end %>
+		</ul>
+
+	</fieldset>
+
+
+	
+	<fieldset>
+		<legend>
+			<span>
+				Langages de programmation 
+			</span>
+		</legend>
+		<ul class="multi-check scroll" style="height: 105px; overflow-y: auto; ">
+  			<% f.collection_checks :prog_langs_id_in, ProgLang.all,
+      		:id, :name do |check| %>
+   				<li> 
+				<%= check.box %> <%= check.label %> 
+				</li>
+
+			<% end %>
+		</ul>
+
+	</fieldset>
+	
+
+	<% end %>
+</div>		
+		
+<div class="span-18" summary="all projects" > 
+	<div class="projlist"> 
+		<div class="sort_by">
+			<span>Classer par  </span>
+
+			<%= sort_link @search, :created_at_and_title,'Date de création' %>
+			<span> | </span>
+			<%= sort_link @search, :title,'Nom' %>
+		</div>
+	
+		<%= render @projects %>
+	</div>
+</div>
