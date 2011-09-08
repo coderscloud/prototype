@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   
    attr_accessor :password
-  attr_accessible :login, :email, :password, :password_confirmation
+  attr_accessible :login, :email, :password, :password_confirmation, :avatar
   
   has_many :projects, :foreign_key => "employer_id"
 
@@ -32,6 +32,9 @@ class User < ActiveRecord::Base
                          :confirmation => true,
                          :length       => { :within => 6..40 }
                          before_save :encrypt_password
+
+
+  mount_uploader :avatar, AvatarUploader
 
    def has_password?(submitted_password)
      encrypted_password == encrypt(submitted_password)

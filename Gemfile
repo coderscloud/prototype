@@ -10,6 +10,7 @@ gem 'mocha'
 gem 'jquery-rails'
 gem 'client_side_validations'
 gem 'carrierwave'
+gem 'rmagick'
 gem 'sunspot_rails'
 gem "meta_search"
 

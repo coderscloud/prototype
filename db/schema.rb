@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110823152248) do
+ActiveRecord::Schema.define(:version => 20110907141932) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20110823152248) do
     t.string   "salt"
     t.integer  "fb_user_id"
     t.string   "email_hash"
+    t.string   "avatar"
   end
 
 end

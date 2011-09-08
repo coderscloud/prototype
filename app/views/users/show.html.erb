@@ -4,6 +4,9 @@
 			<li class="active">
 				<%= link_to "Overview", @user %>	
 			</li>
+            <li>
+                <%= link_to "Edit", edit_user_path(current_user) %>
+            </li>
 			<li >
 				<%= link_to "Skills", root_path %>	
 			</li>
@@ -13,7 +16,11 @@
 <div class="contents">
 	<div id="content-switcher-placeholder">
   		<%= gravatar_for @user %>
-  		<%= @user.login %>
+        <% if @user.avatar_url %>
+        <%= image_tag @user.avatar_url(:thumb).to_s %>
+        <%end %>
+        <%= @user.login %>
+        <%= @user.email %>
 	</div>
 </div>
 
