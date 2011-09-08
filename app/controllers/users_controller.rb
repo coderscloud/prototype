@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         render 'new'
       end
    end
-   private
+    private
 
    def authenticate
         deny_access unless signed_in?

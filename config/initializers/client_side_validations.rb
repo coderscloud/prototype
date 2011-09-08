@@ -12,3 +12,4 @@ require 'client_side_validations/formtastic' if defined?(::Formtastic)
 #   end
 # end
 
+

@@ -217,12 +217,42 @@ $(document).ready(function() {
 		$('.datepicker').datepicker({ dateFormat: 'dd/mm/yy'}); //for_project_search 
 
   //check all fonctionality for projects types
-	$(function () { // this line makes sure this code runs on page load
-		$('.checkall').click(function () {
-			$(this).parents('ul:eq(0)').find(':checkbox').attr('checked', this.checked);
-		});
-	});
 
+		function CheckAll(name,id )
+		{
+		   $("#"+id).click(function()				
+			{
+				var checked_status = this.checked;
+				this.checked=true;
+				$("input[name='"+ name +"']").each(function()
+				{
+					this.checked = false;
+				});
+			});
+			
+				$("input[name='"+ name +"']").click(function()				
+				{
+					var checked_status = this.checked;
+					if (checked_status){
+						$("#"+id).each(function()
+						{
+							this.checked = false;
+						});
+					}
+				});
+		}
+		
+		CheckAll('search[pr_project_type_id_in][]',"chk_proj_type");
+		CheckAll('search[status_in][]',"chk_proj_status");
+		CheckAll('search[applications_id_in][]',"chk_proj_apps");
+		CheckAll('search[prog_langs_id_in][]',"chk_proj_langs");
+
+		
+		
+		
+	
+		
+		
 		
 		
 		

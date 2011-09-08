@@ -360,6 +360,11 @@ div.content textarea,div.console input,div.console select{
   margin-bottom: 10px;
 }
 
+
+.simple_form input:focus {
+
+}
+
 .simple_form div.boolean, .simple_form input[type='submit'] {
   margin-left: 120px;
 }
@@ -375,11 +380,18 @@ div.content textarea,div.console input,div.console select{
 }
 
 .simple_form .error {
-  clear: left;
-  margin-left: 120px;
+ clear: left;
+  margin: 0px 0px 0px 20px;
   font-size: 12px;
   color: #D00;
-  display: block;
+/*  display: block;*/ 
+
+  border:none;
+	background:url("images/error.png") no-repeat;
+  padding:0px;
+	background-position: left center;
+	padding-left:18px;
+	
 }
 
 .simple_form .hint {
@@ -389,6 +401,12 @@ div.content textarea,div.console input,div.console select{
   color: #555;
   display: block;
   font-style: italic;
+}
+
+input[type=text]:focus, input[type=password]:focus, input.text:focus, input.title:focus, textarea:focus, input[type=email]:focus  {
+	
+  border-color: rgba(82, 168, 236, 0.75);
+   box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
 }
 
 section #social_login {
@@ -903,4 +921,8 @@ margin-bottom: 5px;
 			padding:5px;
 			border-bottom:3px solid #EBEBEB;
 			display:block;
+}
+
+.multi-check .alllabel{
+	font-weight: bold;
 }

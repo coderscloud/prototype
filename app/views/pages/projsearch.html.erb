@@ -15,14 +15,18 @@
 			</span>
 		</legend>
 		<ul class="multi-check no-scroll" style="height: 100px; overflow-y: auto; ">
+			<li> 
+				<%= check_box_tag "chk_proj_status","chk_proj_status",true %> 
+				<label class="alllabel" for="chk_proj_status">Tous les status</label>
+			</li>
 			<% f.checks :status_in,
-    		[['Actif', 'Actif'], ['En cours', 'En cours'], ['Realisé', 'Realisé']], :class => 'checkboxy' do |check| %>
+    		[['Actif', 'Actif'], ['En cours', 'En cours'], ['Realisé', 'Realisé']] ,:class => 'checkboxy' do |check| %>
  				<li> 
 				<%= check.box %> <%= check.label %> 
 				</li>
 
-			<% end %>
-		</ul>
+			 <% end %> 
+		 </ul> 
 
 	</fieldset>
 
@@ -36,6 +40,10 @@
 			</span>
 		</legend>
 		<ul class="multi-check scroll" style="height: 105px; overflow-y: auto; ">
+			<li> 
+				<%= check_box_tag "chk_proj_apps","chk_proj_apps",true %> 
+				<label class="alllabel" for="chk_proj_apps">Toutes les apps</label>
+			</li>
   			<% f.collection_checks :applications_id_in, Application.all,
       		:id, :name do |check| %>
    				<li> 
@@ -57,8 +65,8 @@
 		</legend>
 		<ul class="multi-check no-scroll" style="height: 105px; overflow-y: auto; ">
 			<li> 
-			<%= check_box_tag "chk_proj_status","chk_proj_status",true, :class=>'checkall' %> 
-			<label for="chk_proj_status">Tous les types</label>
+			<%= check_box_tag "chk_proj_type","chk_proj_stype",true %> 
+			<label class="alllabel" for="chk_proj_type">Tous les types</label>
 			</li>
 			<% f.collection_checks :pr_project_type_id_in, PrProjectType.all,
     		:id, :ptype do |check| %>
@@ -78,6 +86,10 @@
 			</span>
 		</legend>
 		<ul class="multi-check scroll" style="height: 105px; overflow-y: auto; ">
+			<li> 
+				<%= check_box_tag "chk_proj_langs","chk_proj_langs",true %> 
+				<label class="alllabel" for="chk_proj_langs">Tous les languages</label>
+			</li>
   			<% f.collection_checks :prog_langs_id_in, ProgLang.all,
       		:id, :name do |check| %>
    				<li> 

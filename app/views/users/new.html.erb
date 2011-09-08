@@ -6,7 +6,7 @@
 <%= simple_form_for @user, :validate => true do |f| %>
 
     <%= f.input :login, :required => false%>
-    <%= f.input :email, :required => false %>
+    <%= f.input :email, :required => false, :type=>"text" %>
     <%= f.input  :password, :required => false %>
     <%= f.input :password_confirmation, :label => "Confirmation", :required => false %>
     <%= f.button :submit,  :value => "S'inscrire", :class => "btn btn-m"  %>
