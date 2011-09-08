@@ -1,0 +1,14 @@
+<h1>Edit user</h1>
+<%= render 'shared/error_messages' %>
+
+<%= simple_form_for @user, :html => {:multipart => true}, :validate => true do |f| %>
+    <%= f.input :login, :required => false%>
+    <%= f.input :email, :required => false %>
+    <%= f.file_field :avatar%>
+    
+    <%= f.input  :password, :required => false %>
+    <%= f.input :password_confirmation, :label => "Confirmation", :required => false %>
+
+    <%= f.submit "Update" %> 
+<% end %>
+
