@@ -1026,12 +1026,22 @@ fieldset legend{
 	width:250px;
 	}
 	
-	.simple_form .error {
-	  clear: left;
-	  margin-left: 120px;
-	  font-size: 12px;
-	  color: #D00;
-	  display: block;
+	.field_with_errors .error {
+		-moz-box-shadow:#DDD 0 0 6px;
+		-webkit-box-shadow:#DDD 0 0 6px;
+		box-shadow:#DDD 0 0 6px;
+		background-color:#000;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		-khtml-border-radius:4px;
+		border-radius:4px;
+		color:#fff;
+		font-size:11px;
+		height:15px;
+		padding:4px 10px;
+		margin-top:2px;
+
+	  
 	}
 .form input[type=submit] {
     clear: both;

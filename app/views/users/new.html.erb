@@ -8,12 +8,15 @@
 				
 			<%= simple_form_for @user, :validate => true, :html => { :class => "form"} do |f| %>
 
-			    <%= f.input :login, :required => true%>
+			    <%= f.input :login, :required => true%> <em></em>
+				<div class="clearfix"></div>
 			    <%= f.input :email, :required => false, :type=>"text" %>
+				<div class="clearfix"> </div>
 			    <%= f.input  :password, :required => false %>
+				<div class="clearfix"> 	</div>
 			    <%= f.input :password_confirmation, :label => "Confirmation", :required => false %>
 				<div class="action clearfix"> 	
-				
+				<div class="clearfix"> 	</div>				
 			    	<%= f.button :submit,  :value => "S'inscrire", :class => "button button-gray"  %>
 				</div>
 			<% end %>
