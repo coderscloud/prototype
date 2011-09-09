@@ -1,14 +1,37 @@
 <h1>Edit user</h1>
 <%= render 'shared/error_messages' %>
 
-<%= simple_form_for @user, :html => {:multipart => true}, :validate => true do |f| %>
+<div class="demo">
+    
+    <%= simple_form_for @user, :html => {:multipart => true}, :validate => true do |f| %>
+
+<div id="tabs">
+	<ul>
+         <li><%= link_to "Informations générales", "#tabs-1" %></li>
+         <li><%= link_to "Mot de passe", "#tabs-2" %></li>
+	</ul>
+    
+    <div id="tabs-1">
     <%= f.input :login, :required => false%>
     <%= f.input :email, :required => false %>
-    <%= f.file_field :avatar%>
+    <%= f.file_field :avatar, :value => @user.avatar_url%>
     
+
+	</div>
+	<div id="tabs-2">
     <%= f.input  :password, :required => false %>
-    <%= f.input :password_confirmation, :label => "Confirmation", :required => false %>
+    <%= f.input :password_confirmation, :label => "Confirmation", :required => false%>
+	</div>
+</div>
 
     <%= f.submit "Update" %> 
+</div><!-- End demo -->
+
+
+
+<div class="demo-description" style="display: none; ">
+<p>Click tabs to swap between content that is broken into logical sections.</p>
+</div><!-- End demo-description -->
+    
 <% end %>
 

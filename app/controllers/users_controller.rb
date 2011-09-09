@@ -29,6 +29,10 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
+   # params[:user].delete(:password) if params[:user][:password].blank?  
+    
+    #@user.updating_password = false if params[:user][:password].blank?  
+
     if @user.update_attributes(params[:user])
         flash[:success] = "Profile updated."
         redirect_to @user

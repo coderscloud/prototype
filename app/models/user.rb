@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   
    attr_accessor :password
   attr_accessible :login, :email, :password, :password_confirmation, :avatar
+
+  attr_accessor :updating_password
   
   has_many :projects, :foreign_key => "employer_id"
 
@@ -28,13 +30,20 @@ class User < ActiveRecord::Base
                     :uniqueness => { :case_sensitive => false }
   
   # Automatically create the virtual attribute 'password_confirmation'.
-    validates :password, :presence     => true,
+    validates :password, :presence => true,
                          :confirmation => true,
-                         :length       => { :within => 6..40 }
-                         before_save :encrypt_password
+                         :length       => { :within => 6..40 },
+                         :if => :should_validate_password?
 
+  #  validates_presence_of :password, :if => :should_validate_password?
 
-  mount_uploader :avatar, AvatarUploader
+    before_save :encrypt_password, :if  => :should_validate_password?
+
+    mount_uploader :avatar, AvatarUploader
+    
+   def should_validate_password?
+        updating_password || new_record?
+   end
 
    def has_password?(submitted_password)
      encrypted_password == encrypt(submitted_password)
