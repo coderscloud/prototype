@@ -6,70 +6,116 @@
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->    
-    <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
-    <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
-    <%= stylesheet_link_tag 'smart_wizard','token-input','token-input-mac','token-input-facebook','jquery-ui','custom', :media => 'screen' %>
-    <%= javascript_include_tag :defaults,'jquery', "rails.validations", "jquery.tokeninput", "jquery.smartWizard-2.0.js","jquery-ui.min","livevalidation"  %>
+
+    <%= stylesheet_link_tag 'smart_wizard','token-input','token-input-mac','token-input-facebook','jquery-ui',"reset","grid","style","messages","forms","tables" %>
+    
+<%= javascript_include_tag "jquery", "rails.validations", "jquery.tokeninput", "jquery.smartWizard-2.0.js","jquery.ui.min","livevalidation","jquery.tools.min.js","jquery.cookie.js","jquery.tables.js","jquery.flot.js","global.js"   %>
   </head>
  <body>
-	<div class="container">
-    <header class="round">
-       <nav id="header_links">
-         <ul>
-			<li><%= link_to "Home", root_path %>		
-			</li>
-          	<li><%= link_to "Aide", help_path %></li>
-           	<% if signed_in? %>
-    		 	<li><%= link_to "Paramètres", authentications_path %></li>
-	      		<li><%= link_to "Déconnexion", signout_path, :method => :delete %></li>
-		     <% else %>
-		      <li><%= link_to "Se connecter", signin_path %></li>
-		     <% end %>
-          </ul>
-        </nav>
-	<div> 
-		
-	<a href="/" id="logo"></a> 
-	 
-    <ul id="menu">
-		<% if signed_in? %>
-			<li><%= link_to "Mon Profil", "#" %>
-				<ul>
-					<li>
-					
+  <div id="wrapper">
+	  <header>
+          <div class="clearfix">
+              <div class="shortcuts">
+                  <ul class="clearfix">
+                      <li><a href="#" title="Monitor Activities"><img src="images/woofunction-icons/activity_monitor.png" /><span>Activity</span></a></li>
+
+                      <li><a href="#" title="Add/Edit Contacts"><img src="images/woofunction-icons/address_book_32.png" /><span>Contacts</span><em>300</em></a></li>
+                      <li><a href="#" title="View Recent Comments"><img src="images/woofunction-icons/comment_32.png" /><span>Comments</span></a><em>20</em></li>
+                      <li><a href="#" title="View Recent Orders"><img src="images/woofunction-icons/basket_32.png" /><span>Orders</span><em>20</em></a></li>
+                      <li><a href="#" title="Read Mail"><img src="images/woofunction-icons/email_32.png" /><span>Mail</span><em>4</em></a></li>
+                      <li><a href="#" title="Send Newsletters"><img src="images/woofunction-icons/newspaper_32.png" /><span>Newsletters</span></a></li>
+
+                      <li><a href="#" title="View Alerts"><img src="images/woofunction-icons/error_button.png" /><span>Alerts</span><em>20</em></a></li>
+                      <li><a href="#" title="View Reports"><img src="images/woofunction-icons/chart_32.png" /><span>Reports</span></a></li>
+                      <li><a href="#" title="Advanced Search"><img src="images/woofunction-icons/search_button_32.png" /><span>Search</span></a></li>
+                      <li><a href="#" title="Add/Edit Users"><img src="images/woofunction-icons/user_32.png" /><span>Users</span><em>5</em></a></li>
+                  </ul>
+              </div>
+
+              <div class="clear"></div>
+
+             
+              <nav>
+				<ul class="clearfix">
+					<li><%= link_to "Dashboard", '#', :class=>"chevron" %>
+					<li><%= link_to "Projets", '#', :class=>"arrow-down" %>
+						<ul>
+						    <li><%= link_to "Rechercher", proj_search_path %></li>
+							<li><%= link_to "Poster", new_project_path %></li>
+						</ul>
 					</li>
-				</ul>
-				</li>
-		<% end %>
-        <li>
-			<%= link_to "Projets", '#' %>
-			<ul>
-				<li>
-					<%= link_to "Poster", new_project_path %>
-				</li>
-				<li>
-					<%= link_to "Rechercher", proj_search_path %>
-				</li>
-			</ul>
-		</li>
-        <li><%= link_to "Aide", '#' %></li>
-       </ul>
+					<% if signed_in? %>
+						<li><%= link_to "Mon Profil", "#" %>
+							<ul>
+								<li>
 
-	</div>
-
+								</li>
+							</ul>
+						</li>
+					<% end %>
+					
+					<li class="fr action">
+						<% if !signed_in? %> 
+						    <%= link_to "S'inscrire", new_user_path, :class => "button button-orange" %>
+					     <% end %>					
+				    </li>
+									
+					<li class="fr action">
+						<% if !signed_in? %> 
+						    <%= link_to "Se connecter", "#", :class => "has-popupballoon button button-blue" %>
+					        <div class="popupballoon bottom"> 
+					            <h3>Connexion</h3> 
+					            <!-- E-mail<br /> 
+					            <input type="text" /><br /> 
+					            Mote de passe<br /> 
+					            <input type="text" /><br />  -->
+								<%= simple_form_for(:session, :url => sessions_path) do |f| %>
+								    <%= f.input:email , :required => false%> 
+								    <%= f.input :password , :required => false%>
+									<hr>
+								    <%= f.button :submit, :value => "Se connecter", :class => "button button-orange" %>
+									<div class="button button-gray close">Annuler</div> 
+								<% end %> 
+					        </div> 
+					     <% else %>
+							<%= link_to "Se déconnecter", signout_path, :method => :delete, :class => "button button-red" %>
+					     <% end %>					
+				    </li>
+					
+					<li class="fr"><%= link_to "Administration", '#', :class=>"arrow-down" %>
+						<ul>
+				           	<% if signed_in? %>
+				    		 	<li><%= link_to "Paramètres", authentications_path %></li>
+					      		<li><%= link_to "Déconnexion", signout_path, :method => :delete %></li>
+						     <% else %>
+						      <li><%= link_to "Se connecter", signin_path %></li>
+						     <% end %>
+						</ul>
+					</li>	
+				
+	          	</ul>
+              </nav>         
+		</div>
+		
+	</header>
 	
-      </header>
-      <section class="round">
-	    <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
-        <%= yield %>
-		 	<div class="clear"> </div>
-      </section>
-    </div>
+
+		
+	
+      		<section>
+				<div class="container_8 clearfix">  
+					<section class="main-section grid_8">
+			    		<% flash.each do |key, value| %>
+		          			<div class="flash <%= key %>"><%= value %></div>
+		        		<% end %>
+		        		<%= yield %>
+		    		</section>
+				</div>
+			</section>
+				
+
  	<%= render 'layouts/olark' %>
 	<%= debug(params) if Rails.env.development? %>
-	   
+	    </div>   
   </body>
 </html>

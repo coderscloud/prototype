@@ -1,14 +1,22 @@
-	<h1>Inscription</h1>
-	
-
-<%= render 'shared/error_messages' %>
+<div class="main-content">
+	<header> 
+        <h2>Inscription</h2> 
+    </header>
+	<section class="clearfix"> 
+		<%= render 'shared/error_messages' %>
+		
 				
-<%= simple_form_for @user, :validate => true do |f| %>
+			<%= simple_form_for @user, :validate => true, :html => { :class => "form"} do |f| %>
 
-    <%= f.input :login, :required => false%>
-    <%= f.input :email, :required => false, :type=>"text" %>
-    <%= f.input  :password, :required => false %>
-    <%= f.input :password_confirmation, :label => "Confirmation", :required => false %>
-    <%= f.button :submit,  :value => "S'inscrire", :class => "btn btn-m"  %>
-
-<% end %>
+			    <%= f.input :login, :required => true%>
+			    <%= f.input :email, :required => false, :type=>"text" %>
+			    <%= f.input  :password, :required => false %>
+			    <%= f.input :password_confirmation, :label => "Confirmation", :required => false %>
+				<div class="action clearfix"> 	
+				
+			    	<%= f.button :submit,  :value => "S'inscrire", :class => "button button-gray"  %>
+				</div>
+			<% end %>
+    </section> 
+</div>
+		
