@@ -1,27 +1,30 @@
-<div class="aside">
-	<div class="content-switcher-list">
-		<ul>
-			<li class="active">
-				<%= link_to "Overview", @user %>	
-			</li>
-            <li>
-                <%= link_to "Edit", edit_user_path(current_user) %>
-            </li>
-			<li >
-				<%= link_to "Skills", root_path %>	
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="contents">
-	<div id="content-switcher-placeholder">
+<h1>User</h1>
+
+    
+<div id="tabs">
+
+    <ul>
+         <li><%= link_to "Informations générales", "#tabs-1" %></li>
+         <li><%= link_to "test", "#tabs-2" %></li>
+	</ul>
+    
+
+    <div id="tabs-1">
   		<%= gravatar_for @user %>
         <% if @user.avatar_url %>
         <%= image_tag @user.avatar_url(:thumb).to_s %>
         <%end %>
         <%= @user.login %>
         <%= @user.email %>
-	</div>
+        </div>
+    
+    <div id="tabs-2">
+        <p>
+        test
+        </p>
+    </div>
+
+
 </div>
 
 

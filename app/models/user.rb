@@ -12,6 +12,7 @@
 
 class User < ActiveRecord::Base
   has_many :authentications
+#  has_many :profiles, :dependant => :destroy
   
    attr_accessor :password
   attr_accessible :login, :email, :password, :password_confirmation, :avatar

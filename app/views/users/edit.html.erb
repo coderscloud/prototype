@@ -1,7 +1,7 @@
 <h1>Edit user</h1>
 <%= render 'shared/error_messages' %>
 
-<div class="demo">
+<div class="form_edit">
     
     <%= simple_form_for @user, :html => {:multipart => true}, :validate => true do |f| %>
 
@@ -25,13 +25,10 @@
 </div>
 
     <%= f.submit "Update" %> 
-</div><!-- End demo -->
+</div><!-- End Form Edit-->
 
 
 
-<div class="demo-description" style="display: none; ">
-<p>Click tabs to swap between content that is broken into logical sections.</p>
-</div><!-- End demo-description -->
     
 <% end %>
 

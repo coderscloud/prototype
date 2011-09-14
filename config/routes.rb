@@ -7,6 +7,7 @@ CodersCloud::Application.routes.draw do
   resources :authentications
 
   resources :users
+  resources :profiles
   resources :sessions, :only => [:new, :create, :destroy]
   match '/proj_search',    :to => 'pages#projsearch'
   match '/help',    :to => 'pages#help'
