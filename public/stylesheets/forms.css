@@ -1032,16 +1032,22 @@ fieldset legend{
     color: #DD0000;
     font-size: 12px;
     margin-bottom: 5px;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: 0;
     margin-top: 10px;
     padding-bottom: 0;
-    padding-left: 18px;
+    padding-left: 25px;
     padding-right: 0;
     padding-top: 5px;
 		display: table-cell;
 		
 
+
+	  background-image: url("/images/cross-small.png");
+	  background-origin: padding-box;
+	  background-position: left center;
+	  background-repeat: no-repeat;
+	  background-size: auto auto;
 
 	  
 	}
