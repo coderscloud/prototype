@@ -1031,26 +1031,32 @@ fieldset legend{
     clear: left;
     color: #DD0000;
     font-size: 12px;
-    margin-bottom: 5px;
-    margin-left: 40px;
+    margin-bottom: 0px;
+    margin-left: 60px;
     margin-right: 0;
-    margin-top: 10px;
+    margin-top: 0px;
     padding-bottom: 0;
-    padding-left: 25px;
+    padding-left: 40px;
     padding-right: 0;
     padding-top: 5px;
 		display: table-cell;
 		
-
-
-	  background-image: url("/images/cross-small.png");
+	  background-image: url("/images/error.png");
 	  background-origin: padding-box;
-	  background-position: left center;
+	  background-position:  25px 7px;
 	  background-repeat: no-repeat;
 	  background-size: auto auto;
 
 	  
 	}
+
+	.field_with_errors input {
+
+
+	   border-color: #DD0000;
+	  
+
+		}
 	
 
 

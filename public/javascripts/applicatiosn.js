@@ -124,11 +124,7 @@ $(document).ready(function() {
 	 
 	 });
 	
-	//used for applications input token
-	$('#project_application_tokens').tokenInput('/applications.json', { crossDomain: false  });  
-	
-	//used for programming langages input token
-	$('#project_prog_lang_tokens').tokenInput('/prog_langs.json', { crossDomain: false, theme: 'facebook' }  );
+
 	
 	// Initialize Smart Wizard
 	        $('#wizard').smartWizard(
@@ -209,7 +205,11 @@ $(document).ready(function() {
 			   }
 			
 			
-					
+				//used for applications input token
+				$('#project_application_tokens').tokenInput('/applications.json', { crossDomain: false  });  
+
+				//used for programming langages input token
+				$('#project_prog_lang_tokens').tokenInput('/prog_langs.json', { crossDomain: false, theme: 'facebook' }  );				
 
 
 			

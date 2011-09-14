@@ -23,4 +23,49 @@
 			<% end %>
     </section> 
 </div>
+
+<div class="main-content grid_4 alpha"> 
+        <header> 
+            <ul class="action-buttons clearfix fr"> 
+                <li><a class="modalInput button button-blue" rel="#simpledialog">Simple Dialog</a></li> 
+            </ul> 
+            <h2>Forms</h2> 
+        </header> 
+        <section class="clearfix"> 
+            <form class="form"> 
+                <div class="clearfix"> 
+                    <label>Name <em>*</em><small>Enter your name</small></label><input type="text" name="name" required="required" /> 
+                </div> 
+                <div class="clearfix"> 
+                    <label>Email <em>*</em><small>A valid email address</small></label><input type="email" required="required" /> 
+                </div> 
+                <div class="clearfix"> 
+                    <label>Birthdate<small>mm/dd/yyyy</small></label><input type="date" name="date" /> 
+                </div> 
+                <div class="clearfix"> 
+                    <label>Username <em>*</em><small>Alphanumeric (max 12 char.)</small></label><input type="text" name="username" required="required" maxlength="12" /> 
+                </div> 
+                <div class="clearfix"> 
+                    <label>Password<small>max. 30 char.</small></label><input type="password" name="password" maxlength="30" /> 
+                </div> 
+                <div class="clearfix"> 
+                    <label>Password check<small>Re-enter your password</small></label><input type="password" name="check" data-equals="password" maxlength="30" /> 
+                </div> 
+                <div class="clearfix"> 
+                    <label>Website <em>*</em><small>A valid URL</small></label><input type="url" required="required" /> 
+                </div> 
+                <div class="clearfix"> 
+                    <label>Timezone<small>Your timezone</small></label><select><option>America/Los Angeles</option><option>America/New York</option><option>Asia/Manila</option></select> 
+                </div> 
+                <div class="clearfix"> 
+                    <label>Photo<small>80x80 jpeg/png format</small></label><input type="file" /> 
+                </div> 
+                <div class="action clearfix"> 
+                    <button class="button button-gray" type="submit"><span class="accept"></span>OK</button> 
+                    <button class="button button-gray" type="reset">Reset</button> 
+                </div> 
+            </form> 
+        </section> 
+    </div> 
+    <!-- End Forms Section -->
 		
