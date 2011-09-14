@@ -7,11 +7,12 @@
 		
 				
 			<%= simple_form_for @user, :validate => true, :html => { :class => "form"} do |f| %>
-
-			    <%= f.input :login, :required => true%> <em></em>
-				<div class="clearfix"></div>
+		
+			    <%= f.input :login, :required => true, :wrapper_html => { :class => "clearfix"} %> 
+				
+				<div class="clearfix"> 
 			    <%= f.input :email, :required => false, :type=>"text" %>
-				<div class="clearfix"> </div>
+				</div>
 			    <%= f.input  :password, :required => false %>
 				<div class="clearfix"> 	</div>
 			    <%= f.input :password_confirmation, :label => "Confirmation", :required => false %>
