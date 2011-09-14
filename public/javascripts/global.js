@@ -284,11 +284,11 @@ $(document).ready(function() {
     /**
      * attach calendar to date inputs
      */
-    $(":date")
-		.wrap('<span class="ui-date" />')
-        .dateinput({trigger: true, format: 'mm/dd/yyyy', selectors: true})
-        .focus(function(){$(this).parent().addClass('ui-focused'); return false;})
-        .blur(function(){$(this).parent().removeClass('ui-focused'); return false;});
+     $(".datepicker")
+     		.wrap('<span class="ui-date" />')
+            .dateinput({trigger: true, format: 'mm/dd/yyyy', selectors: true})
+            .focus(function(){$(this).parent().addClass('ui-focused'); return false;})
+            .blur(function(){$(this).parent().removeClass('ui-focused'); return false;});
 
     /**
      * add close buttons to closeable message boxes
