@@ -2,7 +2,8 @@
 
 class ProjectsController < ApplicationController
   
-  before_filter :authenticate, :only => [:create]
+  before_filter :authenticate, :only => [:new]
+  
   def new
      @project = Project.new
   end
@@ -33,6 +34,7 @@ class ProjectsController < ApplicationController
     @search = Project.search(params[:search])
     @projects = @search.all
   end
+  
 
 end
 

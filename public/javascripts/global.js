@@ -93,12 +93,12 @@ $(document).ready(function() {
 							project_title.add( Validate.Presence );
 							var project_objective = new LiveValidation('project_objective');
 							project_objective.add( Validate.Presence );
-							var project_start_date = new LiveValidation('project_start_date');
-							project_start_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
-							project_start_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );					
-							var project_deliv_date = new LiveValidation('project_deliv_date');
-							project_deliv_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
-							project_deliv_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );
+							// var project_start_date = new LiveValidation('project_start_date');
+							// project_start_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
+							// project_start_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );					
+							// var project_deliv_date = new LiveValidation('project_deliv_date');
+							// project_deliv_date.add( Validate.Format, { pattern: /[0-3][0-9]\/(0|1)[0-9]\/(19|20)[0-9]{2}/i, failureMessage: "Date invalide" } );
+							// project_deliv_date.add( Validate.Length, { is: 10, failureMessage: "Date invalide" }  );
 						}
 			      // Your Step validation logic
 			      function validateSteps(stepnumber){
@@ -119,11 +119,11 @@ $(document).ready(function() {
 								isStepValid = LiveValidation.massValidate( [ project_title, project_objective ] );
 								setError(stepnumber,isStepValid);
 							}
-							if(stepnumber == 6){		
-								isStepValid = LiveValidation.massValidate( [ project_start_date ] );
-
-								setError(stepnumber,isStepValid);
-							}
+							// if(stepnumber == 6){		
+							// 	isStepValid = LiveValidation.massValidate( [ project_start_date ] );
+							// 
+							// 	setError(stepnumber,isStepValid);
+							// }
 
 	     				return isStepValid;
 			      }
@@ -201,42 +201,42 @@ $(document).ready(function() {
      * Skin select elements
      */
     // $('select:not([multiple])').each(function(){
-    //        var select = this;
-    //        $(this).wrap('<span class="ui-select" />')
-    //            .before('<span class="ui-select-value" />')
-    //            .bind('change click', function(){
-    //                $(this).prev().html($(this).find('option:selected').text());
-    //            })
-    //            .after('<a class="ui-select-button button button-gray"><span></span></a>')
-    //            .prev().html($(this).find('option:selected').text());
-    //        $(this).mousedown(function(){
-    //            $(this).next().addClass("active");
-    //        }).mouseup(function(){
-    //            $(this).next().removeClass("active");
-    //        }).hover(function(){
-    //            $(this).next().addClass("hover");
-    //        }, function(){
-    //            $(this).next().removeClass("hover");
-    //        }).parent().disableSelection();
-    //    });
-    // 
-    //    /**
-    //     * Skin file input elements
-    //     */
-    //    $(':file').each(function(){
-    //        var file = this;
-    //        $(this).attr('size', 25).wrap('<span class="ui-file" />')
-    //            .before('<span class="ui-file-value">No file chosen</span><button class="ui-file-button button button-gray">Browse...</button>')
-    //            .change(function(){
-    //                $(file).parent().find('.ui-file-value').html($(this).val()? $(this).val() : 'No file chosen');
-    //            })
-    //            .hover(
-    //                function(){ $(file).prev().addClass('hover');},
-    //                function(){ $(file).prev().removeClass('hover');}
-    //            ).mousedown(function(){$(file).prev().addClass('active');})
-    //            .bind('mouseup mouseleave', function(){$(file).prev().removeClass('active');})
-    //            .parent().disableSelection();
-    //    });
+    //          var select = this;
+    //          $(this).wrap('<span class="ui-select" />')
+    //              .before('<span class="ui-select-value" />')
+    //              .bind('change click', function(){
+    //                  $(this).prev().html($(this).find('option:selected').text());
+    //              })
+    //              .after('<a class="ui-select-button button button-gray"><span></span></a>')
+    //              .prev().html($(this).find('option:selected').text());
+    //          $(this).mousedown(function(){
+    //              $(this).next().addClass("active");
+    //          }).mouseup(function(){
+    //              $(this).next().removeClass("active");
+    //          }).hover(function(){
+    //              $(this).next().addClass("hover");
+    //          }, function(){
+    //              $(this).next().removeClass("hover");
+    //          }).parent().disableSelection();
+    //      });
+      
+         /**
+          * Skin file input elements
+          */
+         $(':file').each(function(){
+             var file = this;
+             $(this).attr('size', 50).wrap('<span class="ui-file" />')
+                 .before('<span class="ui-file-value">Pas de fichiers</span><button class="ui-file-button button button-gray">Parcourir...</button>')
+                 .change(function(){
+                     $(file).parent().find('.ui-file-value').html($(this).val()? $(this).val() : 'No file chosen');
+                 })
+                 .hover(
+                     function(){ $(file).prev().addClass('hover');},
+                     function(){ $(file).prev().removeClass('hover');}
+                 ).mousedown(function(){$(file).prev().addClass('active');})
+                 .bind('mouseup mouseleave', function(){$(file).prev().removeClass('active');})
+                 .parent().disableSelection();
+         });
    
     /**
      * Setup tooltips
@@ -284,11 +284,12 @@ $(document).ready(function() {
     /**
      * attach calendar to date inputs
      */
-     $(".datepicker")
-     		.wrap('<span class="ui-date" />')
-            .dateinput({trigger: true, format: 'mm/dd/yyyy', selectors: true})
-            .focus(function(){$(this).parent().addClass('ui-focused'); return false;})
-            .blur(function(){$(this).parent().removeClass('ui-focused'); return false;});
+		$('.datepicker').dateinput({format: 'dd/mm/yyyy'});
+     // $(":date")
+     //     		.wrap('<span class="ui-date" />')
+     //            .dateinput({trigger: true, format: 'mm/dd/yyyy', selectors: true})
+            // .focus(function(){$(this).parent().addClass('ui-focused'); return false;})
+            //        .blur(function(){$(this).parent().removeClass('ui-focused'); return false;});
 
     /**
      * add close buttons to closeable message boxes

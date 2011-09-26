@@ -107,7 +107,9 @@
 					<section class="main-section grid_8">
 			    		<% flash.each do |key, value| %>
 		          			<div class="flash <%= key %>"><%= value %></div>
+							</br>
 		        		<% end %>
+		
 		        		<%= yield %>
 		    		</section>
 				</div>

@@ -1,15 +1,20 @@
+<div class="main-content">
+	<header> 
+        <h2>Création d'un nouveau projet</h2> 
+    </header>
 
+	<section class="clearfix container_6">
 	
 <h2><%= @project.title %></h2>
-<hr />  
-<div class="span-16" id="project_show">
+</br>
+<div class="grid_4" id="project_show">
 	
 	<h3>Objectif du projet</h3>
-	<hr />
-	<%= simple_format (h @project.objective) %>
 
+	<%= simple_format (h @project.objective) %>
+    </br>
 	<h3>Contraintes d'utlisation</h3>
-	<hr />
+  
 	<dl class="labelsAndData"> 
 	<% if @project.pr_nb_user %> 
 		<dt>Nombre d'utlisateurs:</dt> <dd><%= @project.pr_nb_user.number %></dd>
@@ -21,16 +26,16 @@
 		<dt>Fréquence d'utilisation:</dt> <dd><%= @project.pr_usage_freq.freq %></dd>
 	<% end %>
 
-
+	</br>
 	<h3>Contraintes techniques</h3>
-	<hr />
+
 	<% if @project.pr_arch %> 
 		<dt>Architecture:</dt> <dd><%= @project.pr_arch.arch %></dd>
 	<% end %>
 	<% if @project.func_skills %> 
 		<dt>Compétences fonctionnelles:</dt> <dd><%= @project.func_skills %></dd>
 	<% end %>
-
+	</br>
 	<dt>Langages et frameworks:</dt>
 	<div class="clear"> </div>
 	<dd>		
@@ -40,9 +45,9 @@
 		<% end %>
 	</ul>
 	</dd>
-
+	</br>
 	<h3>Applications autour</h3>
-<hr />	
+	
 	<dd>
 	<ul>
 	<% for app in @project.applications %>
@@ -50,16 +55,17 @@
 	<% end %>
 	</ul>
 	</dd>
-
+	</br>
 	<h3>Fichiers joints</h3>
 	
-	<hr />	
+
 	<%= link_to @project.specfile_identifier, @project.specfile.url %>
 </div>
 
-
-<div id="job_overview" class="span-7 last  sideblock round">
-	<h3>En un clin d'oeil</h3>
+<div class="widgetc">
+<div id="job_overview" class="widget grid_2 ">
+	<header><h2>En un clin d'oeil</h2></header>
+	<section>
 	<dl class="labelsAndData"> 
 		<% if @project.pr_project_type %> 
 			<dt>Type du projet:</dt> <dd><%= @project.pr_project_type.ptype %></dd>
@@ -77,7 +83,13 @@
 		<% end %>
 		<dt>Posté par:</dt> <dd><%=link_to @project.employer.login, user_path(@project.employer.id) %></dd> 		
 	</dl>
+	</section>
 </div>
+</div>
+
+    </section> 
+</div>
+
 
 
 

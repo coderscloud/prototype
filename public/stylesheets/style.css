@@ -498,3 +498,425 @@ background-image:url(../images/overlay/transparent.png);
 color:#fff;
 }
 
+
+	/*for creating project wizard*/
+	.proj_type_select label img.selected {
+
+		margin-right: 30px;
+		border:3px solid #97B9E8;
+	}
+	.proj_type_select label  {
+
+		float: left;
+	/* 	position: relative;  Set the absolute positioning base coordinate */
+		width: 96px;
+		height: 96px;
+
+	  text-decoration: none;
+	  margin-right: 20px;
+	  text-align: center;
+	  margin-bottom: 60px;
+	  font-weight: bold;
+		 font-size: 15px;
+		border:3px solid transparent;
+	}
+
+
+	#Step1_content{
+		padding-left: 100px;
+		padding-top: 40px;
+	}
+
+	#Step2_content{
+		margin-left: 160px;
+		padding-top: 70px;
+	}
+
+	#Step3_content{
+
+		padding-left: 100px;
+		padding-top: 100px;
+	}
+
+
+	#Step4_content{
+		padding-left: 50px;
+		padding-top: 30px;
+	}
+
+	#Step4_content input {
+	  width: 300px;
+
+	}
+	#Step4_content input.text {
+	  width: 300px;
+	}
+	#Step4_content label {
+	  float: left;
+	  width: 150px;
+	  text-align: left;
+	  margin: 2px 20px;
+	  padding-top : 4px;
+	}
+
+	input[type="file"] {
+		boder:transparent;
+	}
+
+	#Step5_content{
+		padding-left: 110px;
+		padding-top: 50px;
+	}
+
+	#Step6_content{
+		padding-left: 100px;
+		padding-top: 50px;
+	}
+	#Step5_content input {
+	  width: 280px;
+
+	}
+
+
+	.proj_type_select label img {
+		display: block;
+		width: 96px; height: 96px;
+
+	}
+
+	.simple_form .swMain  .input label {
+	  float: left;
+	  width: 200px;
+	  text-align: left;
+	  margin-bottom: 20px;
+	
+	}
+	/*for creating project wizard*/
+
+
+	#job_overview dl dt {
+		width: 130px;
+	}	
+	dl dt {
+	float: left;
+	width: 250px;
+	font-weight: bold;
+	color: #666;
+	}
+
+	.widgetc .widget:before, .widgetc .widget:after {
+	    bottom: -12px;
+	}
+	
+	/*end*/
+	
+	
+	/*for projects list    */
+	.projlist {
+	border: 3px solid;
+	border-color: #EBEBEB;
+	min-height: 450px;
+	-moz-border-radius:15px;-khtml-border-radius:15px;
+	-webkit-border-radius:15px;border-radius:15px;
+
+	}
+
+	.projobj {
+
+	border-bottom: 1px solid;
+	border-color: #EBEBEB;
+
+	}
+
+	.projleft p {
+	color: #888;
+	font-size: 11px;
+	margin-top: 6px;
+	line-height: 15px;
+	max-height: 30px;
+	overflow: hidden;
+	padding-left: 1px;
+	}
+
+	.projlang {
+	position: relative;
+	top: 2px;
+	margin-left: 4px;
+	padding-top: 4px;
+	}
+
+	.projlang a {
+	display: inline-block;
+	font-size: 11px;
+	height: 15px;
+	line-height: 15px;
+	background-color: #E0E0E0;
+	color: #6E6E6E;
+	padding: 1px 5px;
+	white-space: nowrap;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	}
+
+	.projright {
+	float: right;
+	width: 165px;
+	height: 84px;
+	border-left: 1px solid #C9C9C9;
+	margin-top: 10px;
+	padding-left: 10px;
+	font-size: 12px;
+	color: #666;
+	position: relative;
+	z-index: 2;
+	}
+
+	.projrightinner {
+	overflow: hidden;
+	}
+
+
+	.projtype {
+	color: #62970B;
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-left: 10px;
+
+	}
+
+	.projstatus {
+	/*display: block;*/
+	font-weight: bold;
+	color: #F9A000;
+	line-height: 23px;
+	padding-top: 5px;
+	height: 25px;
+	padding-left: 10px;
+	}
+
+	.projtype .biddingCaption {
+	float: left;
+	line-height: 18px;
+	}
+
+	.projleft {
+	height: 70px;
+	padding: 10px 5px 0 5px;
+	overflow: hidden;
+
+	}
+
+
+	.projobj h4 {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 17px;
+	max-height: 34px;
+	overflow: hidden;
+	margin-bottom :0;
+	}
+
+
+	.projobj h4 a {
+	color: #016797;
+	}
+
+
+
+	.projbtm {
+	clear: both;
+	height: 33px;
+	border-bottom: 1px solid #EEE;
+	font-size: 12px;
+	line-height: 27px;
+	padding-left: 5px;
+	color: #8C8C8C;
+	}
+
+	.new {
+	padding-left: 1px;
+	padding-right: 1px;
+	color: #FFFFFF;
+	font-size: 10px;
+	background-color: #339900;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+
+	}
+	
+	.sort_by  {
+				text-align: right;
+				padding:5px;
+				border-bottom:3px solid #EBEBEB;
+				display:block;
+	}
+	
+	.pad10{
+		padding:10px;
+	}
+	
+		/*end projects list*/
+
+
+		.sidebar fieldset legend span {
+		display: block;
+		width: auto;
+		position:relative;
+		top: 0;
+		left: 0;
+		text-align: left;
+		font-weight: bold;
+		white-space: normal;
+		}
+
+		.sidebar fieldset ul {
+		width: auto;
+		margin-left: auto;
+		float: none;
+		margin-left: 0px;
+		}
+
+		.sidebar  ul, ol {
+		margin-top: 8px;
+		padding-left: 1em;
+		margin-right: 0px;
+		}
+
+		.sidebar  hr {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		}
+
+		.sidebar  input[type='text'] {
+			width:140px;
+			font:12px "Helvetica Neue",Helvetica Neue,Helvetica,Arial,sans-serif;
+			padding:4px 10px;-webkit-border-radius:5px;outline:none;-moz-border-radius:5px;
+
+		}
+
+		.sidebar  label {
+			display: block;
+			width: auto;
+			float:none;
+			font-weight: bold;
+			white-space: normal;
+			text-align: left;
+			margin:0px;
+
+		}
+		#keywords-input {
+			float:left;
+		}
+		#btn-search  {
+			border: 1px solid #06598B;
+			background-color: #06598B;
+			width: 22px;
+			height: 22px;
+			margin-left: 0px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px;
+			padding-left: 5px;
+			padding-top: 0px;
+			float: right;
+			margin-top:3px;
+			background:url('/images/search.png') 50% 40%;
+
+
+			cursor: pointer;
+			text-indent: -1234px;
+
+		}
+
+
+		.multi-check .alllabel{
+			font-weight: bold;
+		}
+		
+		.sidebar fieldset{
+			padding:0px;
+
+		}
+
+
+		section #social_login {
+		display: inline;
+		float: right;
+		width: 340px;
+		margin-right: 10px;
+		}
+		section #login {
+		width: 50%;
+		float: left;
+		padding-right: 30px;
+		border-right: dotted 4px #CCC;
+		}
+
+		// application.css
+		.authentications {
+		  margin-bottom: 30px;
+		}
+
+		.authentication {
+		  width: 130px;
+		  float: left;
+		  background-color: #EEE;
+		  border: solid 1px #999;
+		  padding: 5px 10px;
+		  -moz-border-radius: 8px;
+		  -webkit-border-radius: 8px;
+		  position: relative;
+		  margin-right: 10px;
+		}
+
+		.authentication .remove {
+		  text-decoration: none;
+		  position: absolute;
+		  top: 3px;
+		  right: 3px;
+		  color: #333;
+		  padding: 2px 4px;
+		  font-size: 10px;
+		}
+
+		.authentication .remove:hover {
+		  color: #CCC;
+		  background-color: #777;
+		  -moz-border-radius: 6px;
+		  -webkit-border-radius: 6px;
+		}
+
+		.authentication img {
+		  float: left;
+		  margin-right: 10px;
+		}
+
+		.authentication .provider {
+		  font-weight: bold;
+		}
+
+		.authentication .uid {
+		  color: #666;
+		  font-size: 11px;
+		}
+
+		.auth_provider img {
+		  display: block;
+		}
+
+		.auth_provider {
+		  float: left;
+		  text-decoration: none;
+		  margin-right: 20px;
+		  text-align: center;
+		  margin-bottom: 10px;
+		}
+		.auth_provider_small {
+		  margin-right: 20px;
+
+		}
+
+
+	

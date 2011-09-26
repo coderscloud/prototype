@@ -1,4 +1,13 @@
-<div class="span-5 sidebar" >	
+
+
+
+
+<div class="main-content grid_2 alpha sidebar " >	
+	<header> 
+        <h2>Critères</h2> 
+    </header>
+
+	<section class="clearfix">
 <%= simple_form_for @search, :url => projects_path, :html => {:method => :get} do |f| %>
 
 
@@ -90,9 +99,15 @@
 
 	<% end %>
 </div>		
-		
-<div class="span-18" summary="all projects" > 
-	<div class="projlist"> 
+
+<div class="main-content grid_6 omega " summary="all projects" > 
+	
+	<header> 
+        <h2>Résultats de la recherche</h2> 
+    </header>
+
+	<section class="clearfix">
+	<div class="projlist "> 
 		<div class="sort_by">
 			<span>Classer par  </span>
 
@@ -103,6 +118,10 @@
 	
 		<%= render @projects %>
 	</div>
+		</section>
 </div>
+	</section>
+				
+
 
 

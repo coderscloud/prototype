@@ -1,4 +1,10 @@
-
+<div class="main-content">
+	<header> 
+        <h2>Se connecter</h2> 
+    </header>
+	<section class="clearfix">
+		
+		
 <div id="social_login">
 <p>ou inscrivez vous avec l'un de ces services :</p>
 
@@ -25,14 +31,19 @@
 </div>
 
 <div id="login">
-<h1>Se connecter</h1>
 
-<%= simple_form_for(:session, :url => sessions_path) do |f| %>
 
+<%= simple_form_for :session, :url => sessions_path,  :html => { :class => "form"} do |f| %>
+	<div class="clearfix">
     <%= f.input:email , :required => false%> 
+</div>
+					<div class="clearfix"> 
     <%= f.input :password , :required => false%>
-    <%= f.button :submit, :value => "Se connecter", :class => "btn btn-m" %>
- 
+</div>
+			
+ 	<div class=" action clearfix">	
+    <%= f.button :submit,  :value => "Se connecter", :class => "button button-gray"  %>
+ 	</div>
 <% end %>
 <br>
   <p><strong>Nouvel utilisateur? </strong><%= link_to "S'inscrire !", signup_path %></p>
@@ -42,4 +53,4 @@
 <div class="clear"> </div>
 
  
-
+</div>

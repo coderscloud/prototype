@@ -22,7 +22,7 @@ module SessionsHelper
    end
 
     def deny_access
-      redirect_to signin_path, :notice => "Veuillez vous connecter pour accéder à cette page."
+      redirect_to signin_path, :alert => "<h3>Alerte</h3>Veuillez vous connecter pour accéder à cette page.".html_safe
     end
 
   private

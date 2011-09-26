@@ -988,12 +988,15 @@ fieldset{
 	-webkit-border-radius:5px;
 	-khtml-border-radius:5px;
 	border-radius:5px;
-	padding:20px;
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
 	margin-bottom:10px;
 	}
 fieldset legend{
-	border-left:1px solid #bbb;
-	border-right:1px solid #bbb;
+/*	border-left:1px solid #bbb;
+	border-right:1px solid #bbb;*/
+	margin-left:4px;
 	padding:0 10px;
 	}
 .form label{
@@ -1045,18 +1048,38 @@ fieldset legend{
 	  background-origin: padding-box;
 	  background-position:  25px 7px;
 	  background-repeat: no-repeat;
-	  background-size: auto auto;
-
-	  
+	  background-size: auto auto; 
 	}
+	.LV_invalid  {
 
-	.field_with_errors input {
+	    clear: left;
+	    color: #DD0000;
+	    font-size: 12px;
+	    margin-bottom: 0px;
+	    margin-left: 10px;
+	    margin-right: 0;
+	    margin-top: 0px;
+	    padding-bottom: 0;
+	    padding-left: 15px;
+	    padding-right: 0;
+/*	   padding-top: 5px;*/
+			display: inline;
 
-
-	   border-color: #DD0000;
-	  
+		  background-image: url("/images/error.png");
+		  background-origin: padding-box;
+		  background-position:  0px 1px;
+		  background-repeat: no-repeat;
+		  background-size: auto auto;
 
 		}
+			.LV_valid {
+				display:non;
+			}
+
+
+.field_with_errors input {
+	border-color: #DD0000;
+}
 	
 
 
@@ -1393,4 +1416,83 @@ input.search{
 .popupballoon .ui-select{
 	width:197px;
 	}
+
+
+
+	.multi-check.scroll {
+	position: relative;
+	padding: 0;
+	}
+
+	.multi-check {
+	height: 5em;
+/*	border: 1px solid #7F7F7F;*/
+	border:none;
+	padding-bottom: 2px;
+	overflow: auto;
+	overflow-x: hidden;
+	font-size: 85%;
+	}
+
+	fieldset ul {
+	width: auto;
+	margin-left: auto;
+	float: none;
+	
+	}
+
+	.multi-check li.checked {
+	background-color: #DDD;
+	border-bottom: 1px solid #CCC;
+	}
+
+	.multi-check li {
+	padding: 1px 0 1px 4px;
+	margin-bottom: 0;
+	}
+
+	fieldset li {
+	margin: 0 0 8px 0;
+	clear: both;
+	}
+
+	.form .multi-check input {
+	vertical-align: middle;
+
+	margin: 0 0 0 -20px;
+	margin-left: 0;
+		margin-top: 2px;
+	width:auto;
+
+	}
+
+
+	.multi-check li label {
+	display: inline;
+	float: none;
+	margin: 0;
+	padding: 0;
+	margin-left: 3px;
+	width: auto;
+	text-align: auto;
+	font-weight: normal;
+	}
+
+	.multi-check li label {
+	padding: 0 0 0 0;
+	vertical-align: middle;
+	}
+
+	.multi-check.no-scroll {
+		overflow: none;
+		border: 0;
+		padding: 0;
+	}
+	
+	#wizard_form {
+			margin-left: 70px;
+		
+			}
+		
+
 

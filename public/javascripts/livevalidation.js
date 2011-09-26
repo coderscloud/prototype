@@ -546,7 +546,7 @@ var Validate = {
      */
     Presence: function(value, paramsObj){
       	var paramsObj = paramsObj || {};
-    	var message = paramsObj.failureMessage || "Ne peut pas être vide!";
+    	var message = paramsObj.failureMessage || "Obligatoire!";
     	if(value === '' || value === null || value === undefined){ 
     	  	Validate.fail(message);
     	}
