@@ -85,9 +85,9 @@
 		<div id="step-2">
 		      <h2 class="StepTitle">Step 2 Content</h2> 
 				<div id="Step2_content">
-					<%= f.association :pr_nb_user , :label_method => :number, :label => "Nombres d'utilisateurs", :prompt => "Select your age",  :wrapper_html => { :class => "clearfix"} %>
-					<%= f.association :pr_usage_freq , :label_method => :freq, :label => "Fréquence d'utilisation", :wrapper_html => { :class => "clearfix"} %>
-			       	<%= f.association :pr_process_time , :label_method => :time, :label => "Temps de réponse exig", :class => "clearfix" %>
+					<%= f.association :pr_nb_user , :label_method => :number, :label => "Nombre d'utilisateurs", :prompt => "Selectionnez une valeur",  :wrapper_html => { :class => "clearfix"} %>
+					<%= f.association :pr_usage_freq , :label_method => :freq, :label => "Fréquence d'utilisation",:prompt => "Selectionnez une valeur", :wrapper_html => { :class => "clearfix"} %>
+			       	<%= f.association :pr_process_time , :label_method => :time, :label => "Temps de réponse exig",:prompt => "Selectionnez une valeur", :class => "clearfix" %>
 		  		</div>  
 		</div>                     
 		<div id="step-3">						
@@ -111,7 +111,7 @@
 		<div id="step-5">
 			<h2 class="StepTitle">Step 5 Title</h2> 
 				<div id="Step5_content">  
-					<%= f.association :pr_arch , :label_method => :arch, :label => "Architecture", :wrapper_html => { :class => "clearfix"} %>		
+					<%= f.association :pr_arch , :label_method => :arch, :label => "Architecture", :prompt => "Selectionnez une valeur", :wrapper_html => { :class => "clearfix"} %>		
 					<%= f.input :prog_lang_tokens, :as => :text, :label => "Langages de programmation", :wrapper_html => { :class => "clearfix"} %>  
 					<%= f.input :func_skills, :required => false, :label => "Compétences fonctionnelles", :wrapper_html => { :class => "clearfix"}%> 
 			  	</div>                            
@@ -122,7 +122,8 @@
 			<div id="Step6_content"> 
 				<%= f.input :start_date, :label => "Date de début estimée", :discard_hour => true, :as => :string, :input_html => { :class => 'datepicker' }, :wrapper_html => { :class => "clearfix"}%>  
 				<%= f.input :deliv_date, :label => "Date de livraison estimée", :discard_hour => true, :as => :string, :input_html => { :class => 'datepicker' }, :wrapper_html => { :class => "clearfix"} %> 
-				<%= f.input :estimated_load, :label => "Charge estimée", :as => :string, :wrapper_html => { :class => "clearfix"}%> 	                            
+				<%= f.input :estimated_load, :label => "Charge estimée (jours)", :input_html => { :type => 'range', :min=>"0", :max => "300", :value => "0", :class=>"range" }, :wrapper_html => { :class => "clearfix"}%> 
+					                            
 		  	</div>	 
 		</div>
 	

@@ -291,14 +291,29 @@ $(document).ready(function() {
             // .focus(function(){$(this).parent().addClass('ui-focused'); return false;})
             //        .blur(function(){$(this).parent().removeClass('ui-focused'); return false;});
 
+
+			$(".range").rangeinput({ progress: false, css: {
+			   input:  'range',        /* class name for the generated text input field */
+			   slider: 'slider',   		/* class name for rangeinput */
+			   progress: 'progress-range',   /* class name for progress bar  */
+			   handle: 'handle'        /* class name for drag handle */
+			}});
+			// 
+
     /**
      * add close buttons to closeable message boxes
      */
+
+
+
+
     $(".message.closeable").prepend('<span class="message-close"></span>')
         .find('.message-close')
         .click(function(){
             $(this).parent().fadeOut(function(){$(this).remove();});
         });
+
+
 
     /**
      * setup popup balloons (add contact / add task)

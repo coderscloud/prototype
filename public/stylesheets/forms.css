@@ -340,8 +340,25 @@ ul.action-buttons.small a span.close{
 	}
 .widget-container h2.report-icon{
 	padding-left:20px;
-	background:transparent url(../images/icons/chart_bar.png) no-repeat left center;
-	}
+	background:transparent url(/images/icons/chart_bar.png) no-repeat left center;
+}
+.widget-container h2.message-icon{
+	padding-left:20px;
+	background:transparent url(/images/icons/message.png) no-repeat left center;
+}
+.widget-container h2.bug-icon{
+	padding-left:20px;
+	background:transparent url(/images/icons/bug.png) no-repeat left center;
+}
+.widget-container h2.milestone-icon{
+	padding-left:20px;
+	background:transparent url(../images/icons/milestone.png) no-repeat left center;
+}
+.widget-container h2.task-icon{
+	padding-left:20px;
+	background:transparent url(../images/icons/task.png) no-repeat left center;
+}
+
 .widget{
 	margin-bottom:18px;
 	-moz-border-radius:5px;
@@ -392,10 +409,13 @@ ul.action-buttons.small a span.close{
 	height:4px;
 	}
 .widget header h2{
-	color:#000;
+/*	color:#5C9425; #0078A5; #A92C2C*/
+
+	color:#FFF;
 	font-size:13px;
 	line-height:30px;
 	margin:0;
+	margin-left:10px;
 	text-shadow:0 1px 0 #fff;
 	}
 .widget header h2 a{

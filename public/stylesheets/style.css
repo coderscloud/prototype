@@ -917,6 +917,25 @@ color:#fff;
 		  margin-right: 20px;
 
 		}
+		
+#project_show h3{
+	color:#F47A20;
+}
 
+#project_show h2{
+	color:#0078A5;	
+		margin-left:10px;	
+}
 
-	
+/*	color:#5C9425; #0078A5; #A92C2C*/
+
+ #project_show .widget header h2{
+/*	color:#5C9425; #0078A5; #A92C2C*/
+
+	color:#5C9425;
+	font-size:13px;
+	line-height:30px;
+	margin:0;
+	margin-left:10px;
+	text-shadow:0 1px 0 #fff;
+	}	

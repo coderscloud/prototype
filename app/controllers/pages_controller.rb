@@ -8,5 +8,11 @@ class PagesController < ApplicationController
     @projects = @search.all
   end
   
+  def dashboard
+    @project = Project.find(params[:projectid])
+    @allprojects = Project.all()
+    
+  end
+  
 
 end

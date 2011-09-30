@@ -17,7 +17,7 @@
           <div class="clearfix">
               <div class="shortcuts">
                   <ul class="clearfix">
-                      <li><a href="#" title="Monitor Activities"><img src="/images/woofunction-icons/activity_monitor.png" /><span>Activity</span></a></li>
+                      <li><a href="/" title="Aller au menu principal"><img src="/images/woofunction-icons/home_32.png" /><span>Home</span></a></li>
 
                       <li><a href="#" title="Add/Edit Contacts"><img src="/images/woofunction-icons/address_book_32.png" /><span>Contacts</span><em>300</em></a></li>
                       <li><a href="#" title="View Recent Comments"><img src="/images/woofunction-icons/comment_32.png" /><span>Comments</span></a><em>20</em></li>
@@ -37,7 +37,7 @@
              
               <nav>
 				<ul class="clearfix">
-					<li><%= link_to "Dashboard", '#', :class=>"chevron" %>
+					<li><%= link_to "Dashboard", dashboard_path(:projectid => "1"), :class=>"chevron" %>
 					<li><%= link_to "Projets", '#', :class=>"arrow-down" %>
 						<ul>
 						    <li><%= link_to "Rechercher", proj_search_path %></li>
