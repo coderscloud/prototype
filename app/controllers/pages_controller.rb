@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @title = "CodersCloud"
+    @myprojects = Project.all()
   end
 
   def projsearch

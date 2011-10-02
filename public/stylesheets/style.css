@@ -938,4 +938,59 @@ color:#fff;
 	margin:0;
 	margin-left:10px;
 	text-shadow:0 1px 0 #fff;
-	}	
+	}
+	.time{
+	
+			margin-top:-12px;
+			margin-left:20px;
+			
+	}
+	
+	#proj_info 	dd{
+
+	}
+	
+.widget-in {
+	font-size:12px;
+}
+.widget-in  td {
+	padding-top:2px;
+	padding-bottom:5px;
+	padding-left:10px;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+.red-list td{
+	background: #fae2e2;
+	color: #be4741;
+	padding: 4px 0 4px 10px;
+	font-weight: bold;
+}
+
+
+
+.blue-list td{
+	background: #e1f2fc;
+    color: #225b86;
+	padding:  4px 0 4px 10px;
+	font-weight: bold;
+	margin-top:5px;
+}
+
+.green-list td{
+    background: #e5edc4;
+    color: #3f7227;
+	padding: 4px 0 4px 10px;
+	font-weight: bold;
+	margin-top:5px;
+}
+.widget-in .new-message{
+	font-weight:bold;
+}
+
+
+

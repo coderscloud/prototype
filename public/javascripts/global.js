@@ -53,7 +53,7 @@ $(document).ready(function() {
 
 		 });
 
-
+		$("div[rel]").overlay({mask: '#000', effect: 'apple'});
 
 		// Initialize Smart Wizard
 		        $('#wizard').smartWizard(
@@ -264,7 +264,7 @@ $(document).ready(function() {
     /**
      * Setup the Accordions
      */
-    $(".accordion").tabs(".accordion section", {tabs: 'header', effect: 'slide', initialIndex: null});
+    $(".accordion").tabs(".accordion section", {tabs: 'header h2', effect: 'slide', initialIndex: null});
 
     /**
      * Setup the Tabs

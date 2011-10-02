@@ -19,16 +19,15 @@
                   <ul class="clearfix">
                       <li><a href="/" title="Aller au menu principal"><img src="/images/woofunction-icons/home_32.png" /><span>Home</span></a></li>
 
-                      <li><a href="#" title="Add/Edit Contacts"><img src="/images/woofunction-icons/address_book_32.png" /><span>Contacts</span><em>300</em></a></li>
-                      <li><a href="#" title="View Recent Comments"><img src="/images/woofunction-icons/comment_32.png" /><span>Comments</span></a><em>20</em></li>
-                      <li><a href="#" title="View Recent Orders"><img src="/images/woofunction-icons/basket_32.png" /><span>Orders</span><em>20</em></a></li>
-                      <li><a href="#" title="Read Mail"><img src="/images/woofunction-icons/email_32.png" /><span>Mail</span><em>4</em></a></li>
-                      <li><a href="#" title="Send Newsletters"><img src="/images/woofunction-icons/newspaper_32.png" /><span>Newsletters</span></a></li>
 
-                      <li><a href="#" title="View Alerts"><img src="/images/woofunction-icons/error_button.png" /><span>Alerts</span><em>20</em></a></li>
-                      <li><a href="#" title="View Reports"><img src="/images/woofunction-icons/chart_32.png" /><span>Reports</span></a></li>
-                      <li><a href="#" title="Advanced Search"><img src="/images/woofunction-icons/search_button_32.png" /><span>Search</span></a></li>
-                      <li><a href="#" title="Add/Edit Users"><img src="/images/woofunction-icons/user_32.png" /><span>Users</span><em>5</em></a></li>
+                      <li><a href="#" title="Gérer mes projets"><img src="/images/woofunction-icons/basket_32.png" /><span>Mes projets</span><em>20</em></a></li>
+                      <li><a href="#" title="Consulter mes messages"><img src="/images/woofunction-icons/email_32.png" /><span>Messages</span><em>4</em></a></li>
+
+
+                      <li><a href="#" title="Consulter les notifications"><img src="/images/woofunction-icons/error_button.png" /><span>Notifications</span><em>20</em></a></li>
+                      <li><a href="#" title="Consulter les rapports"><img src="/images/woofunction-icons/chart_32.png" /><span>Rapports</span></a></li>
+ 
+                      <li><a href="#" title="Editer mes connections"><img src="/images/woofunction-icons/user_32.png" /><span>Connections</span><em>5</em></a></li>
                   </ul>
               </div>
 
@@ -37,7 +36,7 @@
              
               <nav>
 				<ul class="clearfix">
-					<li><%= link_to "Dashboard", dashboard_path(:projectid => "1"), :class=>"chevron" %>
+					<li><%= link_to "Dashboard", '#', :class=>"chevron" %>
 					<li><%= link_to "Projets", '#', :class=>"arrow-down" %>
 						<ul>
 						    <li><%= link_to "Rechercher", proj_search_path %></li>

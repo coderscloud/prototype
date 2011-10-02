@@ -338,23 +338,23 @@ ul.action-buttons.small a span.close{
 .widget-container[draggable=true] header{
 	cursor:move;
 	}
-.widget-container h2.report-icon{
+.report-icon{
 	padding-left:20px;
 	background:transparent url(/images/icons/chart_bar.png) no-repeat left center;
 }
-.widget-container h2.message-icon{
+.message-icon{
 	padding-left:20px;
 	background:transparent url(/images/icons/message.png) no-repeat left center;
 }
-.widget-container h2.bug-icon{
+.bug-icon{
 	padding-left:20px;
 	background:transparent url(/images/icons/bug.png) no-repeat left center;
 }
-.widget-container h2.milestone-icon{
+.milestone-icon{
 	padding-left:20px;
 	background:transparent url(../images/icons/milestone.png) no-repeat left center;
 }
-.widget-container h2.task-icon{
+.task-icon{
 	padding-left:20px;
 	background:transparent url(../images/icons/task.png) no-repeat left center;
 }
@@ -1513,6 +1513,43 @@ input.search{
 			margin-left: 70px;
 		
 			}
-		
+.small-btn{
+	margin:0 ;
+	padding:0;
+}
 
+
+.small-btn li{
+	display:inline-block;
+	float:left;
+	margin:0 2px;
+	}
+.small-btn li a{
+	font-family:'Lucida Grande',Verdana,Arial,'Bitstream Vera Sans',sans-serif;
+	display:block;
+	padding:0 6px;
+	height:20px;
+	line-height:20px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+	border-radius:3px;
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+	-khtml-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+	cursor:pointer;
+	outline:none!important;
+	text-align:center;
+	text-decoration:none;
+	}
+.small-btn li a.current{
+	background:#fff;
+	-pie-background:#fff;
+	color:#666;
+	}
+.list_proj .progress {
+	margin-top: 0px;
+	margin-right: 40px;
+}
 

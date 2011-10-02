@@ -1,9 +1,56 @@
 <div class="main-content">
-	<section class="container_6 clearfix">
+	<header> 
+        <h2> 
+            <%= @project.title %>
+        </h2> 
+    </header>
+	<section class="container_6 clearfix">	
+		<div class="grid_3 clearfix">
+			<h3>Informations</h3>
+			<dl id="proj_info"class="labelsAndData"> 
+				<% if @project.pr_project_type %> 
+					<dt>Type du projet:</dt> <dd><%= @project.pr_project_type.ptype %></dd>
+				<% end %> 
+				<dt>Posté le:</dt> <dd><%= l @project.created_at, :format => :date %></dd> 
+				<!-- the l is to force the usage of localized date, it's equivalent to I18n.localize -->
+				<% if @project.start_date %> 
+					<dt>Date de début:</dt> <dd><%= l @project.start_date, :format => :date %></dd> 
+				<% end %>
+				<% if @project.deliv_date %> 
+					<dt>Date de fin:</dt> <dd><%= l @project.deliv_date, :format => :date  %></dd> 
+				<% end %>
+				<% if @project.estimated_load %> 
+					<dt>Charge estimée:</dt> <dd><%= @project.estimated_load  %> jours</dd> 
+				<% end %>
+				<dt>Posté par:</dt> <dd><%=link_to @project.employer.login, user_path(@project.employer.id) %></dd> 
+		
+				<div rel="#report-details" class="button button-green">Détails du projet</div>	
+			</dl>
+		</div>
+		<div class="grid_3 ">
+			<h3>Avancement</h3>
+			<table class="simple full">
+                   <tr>
+                       <td style="width: 40%">Avancement global</td>
+						<td style="width: 10%" class="ar"></td>
+						<td style="width: 60%"><div class="progress progress-green"><span style="width: 20%"><b>20%</b></span></div></td>
+                   </tr>
+                   <tr>
+                       <td>Tâches</td>
+					   <td class="ar">2/4</td>
+						<td><div class="progress progress-orange"><span style="width: 50%"><b>50%</b></span></div></td>
+                   </tr>
+                   <tr>
+                       <td>jalons</td><td class="ar">1/2	</td><td><div class="progress progress-blue"><span style="width: 50%"><b>50%</b></span></div></td>
+
+                   </tr>
+
+               </table>
+		</div>
 
 
-		<h1><%= @project.title %></h1>
-		<!-- <%= link_to image_tag("signupnow.png", :alt => "Sign up Now!") , signup_path %> -->
+
+		
 	</section>
 </div>
 
@@ -12,12 +59,8 @@
 
    <div class="main-content"> 
         <header> 
-            <!-- <ul class="action-buttons clearfix fr"> 
-                <li><a href="#" class="button button-gray no-text"><span class="wrench"></span></a></li> 
-                <li><a href="documentation/index.html" class="button button-gray no-text help" rel="#overlay"><span class="help"></span></a></li> 
-            </ul>  -->
             <h2> 
-                Tableau de
+                Tableau de bord
             </h2> 
         </header> 
         <section class="sortable container_6 clearfix"> 
@@ -26,7 +69,7 @@
                 </div> 
                 <div class="grid_3 widget-container" id="sortable-1" draggable="true"> 
                     <h2 class="task-icon">Tâches</h2> 
-                    <div class="widget has-details"> 
+                    <div class="widget "> 
                         <header> 
                             <ul class="fr action-buttons small"> 
                                 <li><a href="#" class="widget-close"><span class="close"></span></a></li> 
@@ -34,13 +77,49 @@
                             <h2><a >Afficher les tâches</a></h2> 
                         </header> 
                         <section> 
-                            <div id="reporting-points" class="report-preview"></div> 
+							<table class="widget-in  full">
+					              <tr class="red-list">
+					                <td style="width: 80% ;padding-left:10px;">Tâches expirées</td>
+									<td style="width: 20%">retard</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Mise en place du modèle</td>
+									<td style="width: 20%">2 jours</td>
+					              </tr>
+
+					
+					              <tr class="blue-list">
+					                <td style="width: 80%;padding-left:10px;">Tâches en cour</td>
+									<td style="width: 20%">fin dans</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">création de la charte graphique</td>
+									<td style="width: 20%">9 jours</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">développement du lot1</td>
+									<td style="width: 20%">20 jours</td>
+									
+					              <tr class="green-list">
+					                <td style="width: 80%;padding-left:10px;">Tâches à venir</td>
+									<td style="width: 20%">dans</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Développement du lot 2</td>
+									<td style="width: 20%">23 jours</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">spécification des rapports</td>
+									<td style="width: 20%">30 jours</td>
+					              </tr>
+							</table>
+                            
                         </section> 
                     </div> 
                 </div> 
                 <div class="grid_3 widget-container" id="sortable-2" draggable="true"> 
                     <h2 class="milestone-icon">Jalons</h2> 
-                    <div class="widget has-details"> 
+                    <div class="widget "> 
                         <header> 
                             <ul class="fr action-buttons small"> 
                                 <li><a href="#" class="widget-close"><span class="close"></span></a></li> 
@@ -48,13 +127,36 @@
                             <h2><a >Afficher les jalons</a></h2> 
                         </header> 
                         <section> 
-                           <div id="reporting-points" class="report-preview"></div> 
+							<table class="widget-in  full">
+					              <tr class="red-list">
+					                <td style="width: 80% ;padding-left:10px;">Jalons dépassés</td>
+									<td style="width: 20%">retard</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Fin de la conception</td>
+									<td style="width: 20%">2 jours</td>
+					              </tr>
+
+					
+					              <tr class="green-list">
+					                <td style="width: 80%;padding-left:10px;">Prochains Jalons</td>
+									<td style="width: 20%">dans</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Fin et livraison du lot1</td>
+									<td style="width: 20%">20 jours</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Fin et livraison du lot2</td>
+									<td style="width: 20%">28 jours</td>
+					              </tr>
+							</table>
                         </section> 
                     </div> 
                 </div> 
                 <div class="grid_3 widget-container" id="sortable-3" draggable="true"> 
                     <h2 class="message-icon">Messages</h2> 
-                    <div class="widget has-details"> 
+                    <div class="widget "> 
                         <header> 
                             <ul class="fr action-buttons small"> 
                                 <li><a href="#" class="widget-close"><span class="close"></span></a></li> 
@@ -62,13 +164,35 @@
                             <h2><a >Afficher les messages</a></h2> 
                         </header> 
                         <section> 
-                            <div id="reporting-line" class="report-preview"></div> 
+							<table class="widget-in  full">
+					              <tr class="blue-list">
+									<td style="width: 80%">Objet</td>
+									<td style="width: 20%">Date</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%" class="new-message">Heure du point téléphonique</td>
+									<td style="width: 20%"  class="new-message">2 oct</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%" class="new-message">Liste des objets à utiliser</td>
+									<td style="width: 20%" class="new-message">1 oct</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Charte graphique incomplète</td>
+									<td style="width: 20%">29 sept</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Suite à notre échange ce matin</td>
+									<td style="width: 20%">28 sept</td>
+					              </tr>
+				
+							</table>
                         </section> 
                     </div> 
                 </div> 
                 <div class="grid_3 widget-container" id="sortable-4" draggable="true"> 
                     <h2 class="bug-icon">Anomalies</h2> 
-                    <div class="widget has-details"> 
+                    <div class="widget "> 
                         <header> 
                             <ul class="fr action-buttons small"> 
                                 <li><a href="#" class="widget-close"><span class="close"></span></a></li> 
@@ -76,12 +200,107 @@
                             <h2><a >Afficher les anomalies</a></h2> 
                         </header> 
                         <section> 
-                            <div id="reporting-points" class="report-preview"></div> 
+							<table class="widget-in  full">
+					              <tr class="red-list">
+					                <td style="width: 10%">N°</td>
+									<td style="width: 60%">Description (ouverte)</td>
+									<td style="width: 20%">respo</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 10%">8</td>
+									<td style="width: 60%">liste d'employés incomplète</td>
+									<td style="width: 20%">moi</td>
+					              </tr>
+
+					
+					              <tr class="blue-list">
+					                <td style="width: 10%">N°</td>
+									<td style="width: 60%">Description (en correction)</td>
+									<td style="width: 20%">respo</td>					            
+					              </tr>
+								  <tr >
+					                <td style="width: 10%">2</td>
+									<td style="width: 60%">quand on choisi le type "correction", on a une erreur 202</td>
+									<td style="width: 20%">moi</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 10%">4</td>
+									<td style="width: 60%">liste d'employés incomplète</td>
+									<td style="width: 20%">moi</td>
+					              </tr>								 
+									
+					              <tr class="green-list">
+					                <td style="width: 10%">N°</td>
+									<td style="width: 60%">Description (en validation)</td>
+									<td style="width: 20%">respo</td>					               
+					              </tr>
+								  <tr >
+					                <td style="width: 10%">3</td>
+									<td style="width: 60%">Temps de calcul très long si le provider=1</td>
+									<td style="width: 20%">hichem</td>
+					              </tr>							
+							</table>
                         </section> 
                     </div> 
                 </div> 
               
         </section> 
     </div> 
+
+
     <!-- End Analytics Section --> 
 
+  <div class="overlay-details" id="report-details">
+
+        <section>
+      		
+			<h3>Objectif du projet</h3>
+
+			<%= simple_format (h @project.objective) %>
+	
+			<h3>Contraintes d'utlisation</h3>
+
+			<dl class="labelsAndData"> 
+			<% if @project.pr_nb_user %> 
+				<dt>Nombre d'utlisateurs:</dt> <dd><%= @project.pr_nb_user.number %></dd>
+			<% end %> 
+			<% if @project.pr_process_time %> 
+				<dt>Temps de réponse:</dt> <dd><%= @project.pr_process_time.time %></dd>
+			<% end %>
+			<% if @project.pr_usage_freq %> 
+				<dt>Fréquence d'utilisation:</dt> <dd><%= @project.pr_usage_freq.freq %></dd>
+			<% end %>
+
+			<h3>Contraintes techniques</h3>
+
+			<% if @project.pr_arch %> 
+				<dt>Architecture:</dt> <dd><%= @project.pr_arch.arch %></dd>
+			<% end %>
+			<% if @project.func_skills %> 
+				<dt>Compétences fonctionnelles:</dt> <dd><%= @project.func_skills %></dd>
+			<% end %>
+	
+			<dt>Langages et frameworks:</dt>
+			<div class="clear"> </div>
+			<dd>		
+			<ul>
+				<% for lang in @project.prog_langs %>
+					<li><%= lang.name %></li>
+				<% end %>
+			</ul>
+			</dd>
+	
+			<h3>Applications autour</h3>
+
+			<dd>
+			<ul>
+			<% for app in @project.applications %>
+				<li><%= app.name %></li>
+			<% end %>
+			</ul>
+			</dd>
+
+
+			
+        </section>
+    </div>
