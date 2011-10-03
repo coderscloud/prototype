@@ -1,3 +1,4 @@
+<% if signed_in? %> 
 <div class="main-content grid_4 alpha">
     <header>
         <h2>
@@ -114,3 +115,41 @@
      </div>
      <!-- End Forms Section -->
 
+<% end %> 
+
+<% if !signed_in? %> 
+	 <div id="welcome" class="main-content ">
+   
+         <section class="clearfix">
+
+			<h1 class="page-title">Linkao dfghjk fdfghj kjgfghgjj k</h1>	
+			<h2 class="page-subtitle">Linkao dfghjk fdfghj kjgfghgjj k</h2>			
+			<img alt="" src="/images/screen.png">
+        
+         </section>
+
+     </div>
+	   
+	<div class="clearfix ">
+		<div class="main-content grid_9 alpha">
+        	<section class="pilar">
+				<div class="red-title">Linkao dfghjk fdfghj kjgfghgjj k</div>
+				<p>fghjkl</p>
+         	</section>
+		</div>
+		<div class="main-content grid_9 ">
+         	<section class="pilar">
+				<div class="blue-title">Linkao dfghjk fdfghj kjgfghgjj k</div>
+				<p>yuio</p>
+         	</section>
+		</div>
+			<div class="main-content grid_9 omega">
+	         <section class="pilar">
+				<div class="green-title">Linkao dfghjk fdfghj kjgfghgjj k</div>
+				<p>ghjklm</p>
+	         </section>
+			</div>		
+	</div>
+
+<% end %> 
+	

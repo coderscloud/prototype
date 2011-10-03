@@ -992,5 +992,56 @@ color:#fff;
 	font-weight:bold;
 }
 
+#welcome.main-content {
+	background-color : #FFF;
+	text-align: center;
+	vertical-align: none;
+}
 
+#welcome .page-title {
+    display: block;
+    font-size: 3em;
+    width: 100%;
+    word-wrap: break-word;
+}
+#welcome .page-subtitle {
+    display: block;
+    font-size: 2em;
+    width: 100%;
+    word-wrap: break-word;
+	color:#CCCCCC;
+}
+.pilar .red-title{
+	display: block;
+    font-size: 2em;
+    width: 100%;
+	text-align:center;
+	margin-bottom:20px;
+	font-weight:bold;
+	color:#A92C2C;
+}
+.pilar .blue-title{
+	display: block;
+    font-size: 2em;
+    width: 100%;
+	text-align:center;
+	margin-bottom:20px;
+	color:#0078A5;
+	font-weight:bold;
+}
+.pilar .green-title{
+	display: block;
+    font-size: 2em;
+    width: 100%;
+	text-align:center;
+	margin-bottom:20px;
+	color:#5C9425;
+	font-weight:bold;
+}
+
+.pilar p{
+	display: block;
+    font-size: 1.2em;
+	color:#000;
+}
 

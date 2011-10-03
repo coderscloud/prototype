@@ -79,6 +79,9 @@
 	width:980px;
 }
 
+.container_8 .grid_9 {
+	width:310px;
+}
 
 
 /* Prefix Extra Space >> 8 Columns
@@ -234,6 +237,15 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+.grid_9 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 12px;
+	margin-right: 13px;
+}
+
 
 /* Grid >> Children (Alpha ~ First, Omega ~ Last)
 ----------------------------------------------------------------------------------------------------*/
@@ -394,6 +406,7 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
 
 /* Grid >> Children (Alpha ~ First, Omega ~ Last)
 ----------------------------------------------------------------------------------------------------*/
