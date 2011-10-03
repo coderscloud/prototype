@@ -62,7 +62,7 @@
 	<%= link_to @project.specfile_identifier, @project.specfile.url %>
 </div>
 
-<div class="widgetc">
+<div class="widgetc grid_2 ">
 <div id="job_overview" class="widget grid_2 ">
 	<header><h2>En un clin d'oeil</h2></header>
 	<section>
@@ -84,6 +84,9 @@
 		<dt>Posté par:</dt> <dd><%=link_to @project.employer.login, user_path(@project.employer.id) %></dd> 		
 	</dl>
 	</section>
+</div>
+<div class="center">
+	<%= link_to  "Postuler", project_path(@project.id),:class => "button button-blue" %>
 </div>
 </div>
 
