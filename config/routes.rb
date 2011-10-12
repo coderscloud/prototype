@@ -14,10 +14,13 @@ CodersCloud::Application.routes.draw do
   match '/signin',    :to => 'sessions#new'
   match '/signout',    :to => 'sessions#destroy'
   resources :projects
-   match '/jj',    :to => 'projects#new'
   match '/signout',    :to => 'sessions#destroy'
-    match '/dashboard',    :to => 'pages#dashboard'
+  match '/dashboard',    :to => 'pages#dashboard'
+   
 
+  resources :projects do
+    resources :offers
+  end
     
   root :to => 'pages#home'
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Coders Cloud</title>
+    <title>Linkao</title>
     <%= csrf_meta_tag %>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,7 +36,8 @@
              
               <nav>
 				<ul class="clearfix">
-					<li><%= link_to "Dashboard", '#', :class=>"chevron" %>
+					<li><a href="/" title="Aller au menu principal"><img id="logo" src="/images/logo_small.png" /></a></li>
+					<li><%= link_to "Dashboard", '#', :class=>"chevron" %></li>
 					<li><%= link_to "Projets", '#', :class=>"arrow-down" %>
 						<ul>
 						    <li><%= link_to "Rechercher", proj_search_path %></li>
@@ -116,7 +117,7 @@
 				
 
  	<%= render 'layouts/olark' %>
-	<!-- <%= debug(params) if Rails.env.development? %> -->
+	<%= debug(params) if Rails.env.development? %> 
 	    </div>   
   </body>
 </html>

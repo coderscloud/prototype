@@ -17,6 +17,8 @@ class Project < ActiveRecord::Base
   has_many :developments
   has_many :prog_langs, :through => :developments
   
+  has_many :offers
+  
 
   mount_uploader :specfile, SpecfileUploader #for specs files upload
   

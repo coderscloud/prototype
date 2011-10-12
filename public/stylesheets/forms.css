@@ -1048,7 +1048,27 @@ fieldset legend{
 	clear:right;
 	width:250px;
 	}
-	
+.form input.date {
+	margin-bottom:0px;
+
+}
+
+.form .dateinput {
+	margin-bottom:25px;
+
+}
+.form .slider {
+	margin-left:10px;
+
+}
+.form input.range {
+	width:50px;
+
+}
+.form textarea.large {
+	width:500px;
+
+}
 .field_with_errors .error {
 
     clear: left;

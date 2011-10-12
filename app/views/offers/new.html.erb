@@ -1,0 +1,42 @@
+<div class="main-content">
+	<header> 
+        <h2>Offre sur le projet:  <%= @project.title %></h2> 
+    </header>
+
+	<section class="clearfix"> 
+			<% if @offer.errors.any? %>
+			  <div id="error_explanation">
+			    <p>Erreur lors de la soumission de l'offre:</p>
+			    <ul>
+			    <% @offer.errors.full_messages.each do |msg| %>
+			      <li><%= msg %></li>
+			    <% end %>
+			    </ul>
+			  </div>
+			<% end %>
+				
+			<%= simple_form_for ([ @project, @offer ]), :validate => true, :html => { :class => "form"} do |f| %>
+				<%= f.input :submitter_id, :as => :hidden, :input_html => { :value => current_user.id }  %>
+		
+				
+	
+				<%= f.input :start_date, :label => "Date de début", :discard_hour => true, :as => :string, 
+				:input_html => { 	:class => 'datepicker' }, :wrapper_html => { :class => "dateinput clearfix"}%>  
+	
+				
+				<%= f.input :end_date, :label => "Date de livraison", :discard_hour => true, :as => :string, 
+				:input_html => { :class => 'datepicker' }, :wrapper_html => { :class => " dateinput clearfix"} %> 
+				
+				<%= f.input :nb_days, :label => "Charge estimée (jours)", :input_html => { :type => 'range', :min=>"0", 
+				:max => "300", :value => "0", :class=>"range" }, :wrapper_html => { :class => "clearfix"}%>
+				
+				<%= f.input :message, :required => true, :label => "Offre", :input_html => { :class => "large" ,:cols => 60, :rows => 10 },:wrapper_html => { :class => " clearfix"}%> 
+				
+				<div class="action clearfix"> 	
+				<div class="clearfix"> 	</div>				
+			    	<%= f.button :submit,  :value => "Soumettre", :class => "button button-gray"  %>
+				</div>
+			<% end %>
+    </section> 
+</div>
+

@@ -35,6 +35,8 @@ class ProjectsController < ApplicationController
     @projects = @search.all
   end
   
+  
+  
 
 end
 
