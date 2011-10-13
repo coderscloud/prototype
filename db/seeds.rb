@@ -14,6 +14,13 @@
 # PrProjectType.create!(:ptype => 'Outil', :image_path => "<img src='images/outil.png' />")
 # PrProjectType.create!(:ptype => 'Evolution', :image_path => "<img src='images/evolution.png' />")
 
+
+user = User.find_or_create_by_email("test@test.com")
+user.login = "test"
+user.password="testtest"
+user.password_confirmation="testtest"
+user.save()
+
 PrProjectType.find_or_create_by_ptype(:ptype => 'Excel', :image_path => "<img src='/images/excel.png' />")
 PrProjectType.find_or_create_by_ptype(:ptype => 'Access', :image_path => "<img src='/images/access.png' />")
 PrProjectType.find_or_create_by_ptype(:ptype => 'Outil', :image_path => "<img src='/images/outil.png' />")
