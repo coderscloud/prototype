@@ -17,6 +17,10 @@ class TasksController < ApplicationController
         render :action => "new"
       end
   end
-  
+
+  def index
+    @project = Project.find(params[:project_id])
+
+  end
   
 end

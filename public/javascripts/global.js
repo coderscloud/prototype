@@ -269,7 +269,8 @@ $(document).ready(function() {
     /**
      * Setup the Tabs
      */
-    $("ul.tabs").tabs("div.panes > section");
+    // $("ul.tabs").tabs("div.panes > section");
+
 
     /**
      * Setup the Sidebar tabs
