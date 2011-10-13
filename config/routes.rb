@@ -21,7 +21,11 @@ CodersCloud::Application.routes.draw do
   resources :projects do
     resources :offers
   end
-    
+
+  resources :projects do
+    resources :tasks
+  end
+  
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:

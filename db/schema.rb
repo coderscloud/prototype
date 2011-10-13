@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111003160611) do
+ActiveRecord::Schema.define(:version => 20111012162625) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -118,6 +118,18 @@ ActiveRecord::Schema.define(:version => 20111003160611) do
   create_table "specfiles", :force => true do |t|
     t.integer  "project_id"
     t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.integer  "project_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "nb_days"
+    t.string   "name"
+    t.string   "status"
+    t.integer  "progress"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

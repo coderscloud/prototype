@@ -1,0 +1,46 @@
+<div class="main-content">
+	<header> 
+        <h2>Création d'une nouvelle tâche</h2> 
+    </header>
+
+	<section class="clearfix"> 
+			<% if @task.errors.any? %>
+			  <div id="error_explanation">
+			    <p>Erreur lors de la création de la tâche:</p>
+			    <ul>
+			    <% @task.errors.full_messages.each do |msg| %>
+			      <li><%= msg %></li>
+			    <% end %>
+			    </ul>
+			  </div>
+			<% end %>
+				
+			<%= simple_form_for ([ @project, @task ]), :validate => true, :html => { :class => "form"} do |f| %>
+
+				<%= f.input :name, :label => "Nom de la tâche", :wrapper_html => { :class => "clearfix"}%>					
+	
+				<%= f.input :start_date, :label => "Date de début", :discard_hour => true, :as => :string, 
+				:input_html => { 	:class => 'datepicker' }, :wrapper_html => { :class => "dateinput clearfix"}%>  
+	
+				
+				<%= f.input :end_date, :label => "Date de livraison", :discard_hour => true, :as => :string, 
+				:input_html => { :class => 'datepicker' }, :wrapper_html => { :class => " dateinput clearfix"} %> 
+				
+				<%= f.input :nb_days, :label => "Charge estimée (jours)", :input_html => { :type => 'range', :min=>"0", 
+				:max => "300", :value => "0", :class=>"range" }, :wrapper_html => { :class => "clearfix"}%>
+				
+				<%= f.input :status, :as => :hidden, :input_html => { :value => "active" }  %>
+
+				<%= f.input :progress, :as => :hidden, :input_html => { :value => "0" }  %>
+				
+								
+				<div class="action clearfix"> 	
+				<div class="clearfix"> 	</div>				
+			    	<%= f.button :submit,  :value => "Ajouter", :class => "button button-gray"  %>
+				</div>
+			<% end %>
+    </section> 
+</div>
+
+
+
