@@ -70,16 +70,27 @@
 	                    <li><%= link_to "Tâches", project_tasks_path(@project.id), :class => "current" %></li>
 	                    <li><a href="#">Jalons</a></li>
 	                </ul>
-						<section >
-						   <script type="text/javascript">
+						<section class="with-table">
+		                    <table class="datatable tablesort selectable paginate full">
+		                        <thead>
+		                            <tr>
+		                                <th style="width: 300px">Nom</th>
+		                                <th class="tfyguhjk">Date de début</th>
+		                                <th>   Date de fin</th>
+		                                <th>   Nombre de jours</th>
+		                                <th>   Status</th>
+		                                <th>   Avancement</th>
 
 
-						 
-						        </script>
-						        <div id="flash_alert" style="display:none;padding:0.7em;" class="ui-state-highlight ui-corner-all"></div>
-						        <table id="tasks" class="scroll" cellpadding="0" cellspacing="0"></table>
-						        <div id="tasks_pager" class="scroll" style="text-align:center;"></div>
+		                            </tr>
+		                        </thead>
 
+		                        <tbody>
+
+											<%= render @tasks %>
+
+								</tbody>
+							</table>
 						</section>
                 </div> 
 			

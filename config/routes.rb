@@ -23,7 +23,11 @@ CodersCloud::Application.routes.draw do
   end
 
   resources :projects do
-    resources :tasks
+    resources :tasks do
+      collection do
+        post 'post_data'
+      end
+    end
   end
   
   root :to => 'pages#home'

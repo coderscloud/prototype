@@ -605,9 +605,13 @@ $.tools.overlay.addEffect("drop", function(css, done) {
          $(this).hide();
          done.call();      
       });
+  
 
    }
 
 
 
 );
+
+
+
