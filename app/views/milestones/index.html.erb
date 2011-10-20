@@ -1,6 +1,7 @@
 <%= render 'pages/dashboardHeader' %>
 
-<%= javascript_include_tag "jqgrid_tasks.js"   %>
+
+<%= javascript_include_tag "jqgrid_milestones.js"   %>
 
    <div class="main-content"> 
         <header> 
@@ -12,14 +13,14 @@
                 <div class="grid_6"> 
 					<ul class="tabs">
 	                    <li><%= link_to "Dashboard",dashboard_path(:projectid => @project.id) %></li>
-	                    <li><%= link_to "Tâches", project_tasks_path(@project.id), :class => "current" %></li>
-	                    <li><%= link_to "Jalons", project_milestones_path(@project.id) %></li>
+	                    <li><%= link_to "Tâches", project_tasks_path(@project.id)%></li>
+	                    <li><%= link_to "Jalons", project_milestones_path(@project.id), :class => "current" %></a></li>
 	                </ul>
 						<section >
 
 						        <div id="flash_alert" style="display:none;padding:0.7em;" class="ui-state-highlight ui-corner-all"></div>
-						        <table id="tasks" class="scroll" cellpadding="0" cellspacing="0"></table>
-						        <div id="tasks_pager" class="scroll" style="text-align:center;"></div>
+						        <table id="milestones" class="scroll" cellpadding="0" cellspacing="0"></table>
+						        <div id="milestones_pager" class="scroll" style="text-align:center;"></div>
 
 						</section>
                 </div> 
@@ -29,4 +30,4 @@
     </div> 
 
 
-   
+    <!-- End Analytics Section --> 

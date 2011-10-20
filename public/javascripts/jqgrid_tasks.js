@@ -1,8 +1,9 @@
 var lastsel;
 jQuery(document).ready(function(){
+	/*Grid fot tasks*/
           var mygrid = jQuery("#tasks").jqGrid({
-              url:'/projects/1/tasks?q=1',
-              editurl:'/projects/1/tasks/post_data',
+              url:window.location.href.slice(window.location.href.indexOf('project') - 1) + '?q=1',
+              editurl:window.location.href.slice(window.location.href.indexOf('project') - 1) +'/post_data',
               datatype: "json",
               colNames:['ID','Nom','Date de début','Date de fin','Nombre de jours','avancement','status'],
               colModel:[{name:'id', index:'id',width:35,resizable:false},
@@ -61,3 +62,11 @@ jQuery(document).ready(function(){
 
             mygrid.filterToolbar();mygrid[0].toggleToolbar()
 });
+
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('project') - 1);
+	alert(hashes);
+    return vars;
+}

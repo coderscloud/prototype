@@ -1,0 +1,111 @@
+<div class="main-content">
+	<header> 
+        <h2> 
+            <%= @project.title %>
+        </h2> 
+    </header>
+	<section class="container_6 clearfix">	
+		<div class="grid_3 clearfix">
+			<h3>Informations</h3>
+			<dl id="proj_info"class="labelsAndData"> 
+				<% if @project.pr_project_type %> 
+					<dt>Type du projet:</dt> <dd><%= @project.pr_project_type.ptype %></dd>
+				<% end %> 
+				<dt>Posté le:</dt> <dd><%= l @project.created_at, :format => :date %></dd> 
+				<!-- the l is to force the usage of localized date, it's equivalent to I18n.localize -->
+				<% if @project.start_date %> 
+					<dt>Date de début:</dt> <dd><%= l @project.start_date, :format => :date %></dd> 
+				<% end %>
+				<% if @project.deliv_date %> 
+					<dt>Date de fin:</dt> <dd><%= l @project.deliv_date, :format => :date  %></dd> 
+				<% end %>
+				<% if @project.estimated_load %> 
+					<dt>Charge estimée:</dt> <dd><%= @project.estimated_load  %> jours</dd> 
+				<% end %>
+				<dt>Posté par:</dt> <dd><%=link_to @project.employer.login, user_path(@project.employer.id) %></dd> 
+		
+				<div rel="#report-details" class="button button-green">Détails du projet</div>	
+			</dl>
+		</div>
+		<div class="grid_3 ">
+			<h3>Avancement</h3>
+			<table class="simple full">
+                   <tr>
+                       <td style="width: 40%">Avancement global</td>
+						<td style="width: 10%" class="ar"></td>
+						<td style="width: 60%"><div class="progress progress-green"><span style="width: 20%"><b>20%</b></span></div></td>
+                   </tr>
+                   <tr>
+                       <td>Tâches</td>
+					   <td class="ar">2/4</td>
+						<td><div class="progress progress-orange"><span style="width: 50%"><b>50%</b></span></div></td>
+                   </tr>
+                   <tr>
+                       <td>jalons</td><td class="ar">1/2	</td><td><div class="progress progress-blue"><span style="width: 50%"><b>50%</b></span></div></td>
+
+                   </tr>
+
+               </table>
+		</div>
+
+
+
+		
+	</section>
+</div>
+
+
+<div class="overlay-details" id="report-details">
+
+       <section>
+     		
+			<h3>Objectif du projet</h3>
+
+			<%= simple_format (h @project.objective) %>
+	
+			<h3>Contraintes d'utlisation</h3>
+
+			<dl class="labelsAndData"> 
+			<% if @project.pr_nb_user %> 
+				<dt>Nombre d'utlisateurs:</dt> <dd><%= @project.pr_nb_user.number %></dd>
+			<% end %> 
+			<% if @project.pr_process_time %> 
+				<dt>Temps de réponse:</dt> <dd><%= @project.pr_process_time.time %></dd>
+			<% end %>
+			<% if @project.pr_usage_freq %> 
+				<dt>Fréquence d'utilisation:</dt> <dd><%= @project.pr_usage_freq.freq %></dd>
+			<% end %>
+
+			<h3>Contraintes techniques</h3>
+
+			<% if @project.pr_arch %> 
+				<dt>Architecture:</dt> <dd><%= @project.pr_arch.arch %></dd>
+			<% end %>
+			<% if @project.func_skills %> 
+				<dt>Compétences fonctionnelles:</dt> <dd><%= @project.func_skills %></dd>
+			<% end %>
+	
+			<dt>Langages et frameworks:</dt>
+			<div class="clear"> </div>
+			<dd>		
+			<ul>
+				<% for lang in @project.prog_langs %>
+					<li><%= lang.name %></li>
+				<% end %>
+			</ul>
+			</dd>
+	
+			<h3>Applications autour</h3>
+
+			<dd>
+			<ul>
+			<% for app in @project.applications %>
+				<li><%= app.name %></li>
+			<% end %>
+			</ul>
+			</dd>
+
+
+			
+       </section>
+   </div>

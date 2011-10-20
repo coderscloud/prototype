@@ -19,6 +19,9 @@ class Project < ActiveRecord::Base
   
   has_many :offers
   has_many :tasks  
+  has_many :milestones
+  
+    
 
   mount_uploader :specfile, SpecfileUploader #for specs files upload
   

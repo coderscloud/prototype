@@ -28,6 +28,12 @@ CodersCloud::Application.routes.draw do
         post 'post_data'
       end
     end
+    
+    resources :milestones do
+      collection do
+        post 'post_data'
+      end
+    end
   end
   
   root :to => 'pages#home'
