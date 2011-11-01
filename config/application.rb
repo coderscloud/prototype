@@ -43,5 +43,7 @@ module CodersCloud
     
     # Set french locale 
     config.i18n.default_locale = :fr
+    
+    config.autoload_paths << "#{Rails.root}/lib"
   end
 end

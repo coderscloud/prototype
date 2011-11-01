@@ -1,0 +1,13 @@
+<%
+# The following three variables are used in the "common" layout
+%>
+<% @page_title=" FusionCharts - Array Example using Single Series Column 3D Chart " %>
+<%=	l  Time.now , :format=>"%B" %>
+<% @page_subheading="Plotting single series chart from data contained in Array." %>
+<%
+	# The xml is obtained as a string from builder template.
+	str_xml = render :file=>"fusioncharts/array_example/ss_array_data",:locals=>{:tasks => @tasks}
+
+	#Create the chart - Column 3D Chart with data contained in str_xml
+	render_chart '/FusionCharts/FCF_Gantt.swf', '', str_xml, 'Tasks', 800, 400, false, false
+%>

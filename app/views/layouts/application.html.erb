@@ -14,6 +14,9 @@
 
 <%= jqgrid_stylesheets "gray" %>
 <%=jqgrid_javascripts%>
+<%= javascript_include_tag "lib" %>
+<%= javascript_include_tag "DD_belatedPNG_0.0.8a-min" %>
+<%= javascript_include_tag "FusionCharts" %>
 
   </head>
  <body>
@@ -22,9 +25,10 @@
           <div class="clearfix">
               <div class="shortcuts">
                   <ul class="clearfix">
+		<% if signed_in? %>
                       <li><a href="/" title="Aller au menu principal"><img src="/images/woofunction-icons/home_32.png" /><span>Home</span></a></li>
 
-
+					
                       <li><a href="#" title="Gérer mes projets"><img src="/images/woofunction-icons/basket_32.png" /><span>Mes projets</span><em>20</em></a></li>
                       <li><a href="#" title="Consulter mes messages"><img src="/images/woofunction-icons/email_32.png" /><span>Messages</span><em>4</em></a></li>
 
@@ -33,6 +37,7 @@
                       <li><a href="#" title="Consulter les rapports"><img src="/images/woofunction-icons/chart_32.png" /><span>Rapports</span></a></li>
  
                       <li><a href="#" title="Editer mes connections"><img src="/images/woofunction-icons/user_32.png" /><span>Connections</span><em>5</em></a></li>
+  <% end %>	
                   </ul>
               </div>
 

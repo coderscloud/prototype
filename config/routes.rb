@@ -16,7 +16,7 @@ CodersCloud::Application.routes.draw do
   resources :projects
   match '/signout',    :to => 'sessions#destroy'
   match '/dashboard',    :to => 'pages#dashboard'
-   
+  match '/gantt',    :to => 'pages#gantt'  
 
   resources :projects do
     resources :offers
@@ -38,6 +38,7 @@ CodersCloud::Application.routes.draw do
   
   root :to => 'pages#home'
 
+  match ':controller(/:action(/:id))', :controller => /fusioncharts\/[^\/]+/	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
