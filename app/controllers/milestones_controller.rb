@@ -3,8 +3,8 @@ class MilestonesController < ApplicationController
    def index
        @project = Project.find(params[:project_id])
 
-
-         index_columns ||= [ :id, :name, :date, :status, :task_id]
+       @tasks = @project.tasks
+         index_columns ||= [ :id, :name, :date, :task_id, :status]
          current_page = params[:page] ? params[:page].to_i : 1
          rows_per_page = params[:rows] ? params[:rows].to_i : 10
 
@@ -22,7 +22,7 @@ class MilestonesController < ApplicationController
            format.json { render :json => @milestones.to_jqgrid_json(index_columns, current_page, rows_per_page, @milestones.count) }
 
          end
-
+        
 
     end
 
@@ -30,8 +30,9 @@ class MilestonesController < ApplicationController
       if params[:oper] == "del"
         Milestone.find(params[:id]).destroy
       else
-        milestone_params = { :project_id => params[:project_id], :name => params[:name], :date => params[:date], :status => params[:status],
-          :task_id => params[:task_id]  }
+        task=Task.where(:id => params[:task_id])
+        milestone_params = { :project_id => params[:project_id], :name => params[:name], :date => task[0].end_date.to_s,:task_id => params[:task_id] , :status => params[:status],
+           }
         if params[:id] == "_empty"
           Milestone.create(milestone_params)
         else

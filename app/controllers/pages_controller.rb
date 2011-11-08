@@ -33,6 +33,7 @@ class PagesController < ApplicationController
     @begin_date=@sorted_tasks[0].start_date.beginning_of_month
     @finish_date=@last_date.end_date.end_of_month
     @monthes_list=get_monthes(@begin_date,@finish_date)
+    @milestones= @project.milestones
     
     
   end
