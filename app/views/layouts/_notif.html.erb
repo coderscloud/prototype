@@ -1,0 +1,10 @@
+<% @unread=current_user.notifications.unread 
+	@unread.each do |notif|  
+		if notif.notification_type==1 #if it's a new offer notif
+		 %>	
+		<div class="notif"><%= link_to "Vous avez reçu une nouvelle offre pour un projet", project_path(notif.target.project, :anchor =>"offer_#{notif.target.id}") %></div>
+		<%	end %>
+		
+<%	end %>
+
+

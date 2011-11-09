@@ -25,7 +25,9 @@ var menuYloc = null;
 var sortableCookieExpiry = 365;
 var sortableCookie = "sortable-order"
 var sortableName = ".sortable";
-
+jQuery.ajaxSetup({ 
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})
 // perform JavaScript after the document is scriptable.
 $(document).ready(function() {
 	
@@ -325,6 +327,13 @@ $(document).ready(function() {
         $(this).next().fadeIn();
         return false;
     });
+	$('html').click(function() {
+ 		$('.popupballoon').fadeOut();
+ 	});
+
+ 	$('.popupballoon').click(function(event){
+     	event.stopPropagation();
+ 	});
 
     $('.popupballoon .close').click(function(){
         $(this).parents('.popupballoon').fadeOut();

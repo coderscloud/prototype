@@ -1049,3 +1049,85 @@ color:#fff;
 	margin-top:5px;
 }
 
+.has-popupballoon1  em {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #C80606;
+    background-image: -moz-linear-gradient(center top , #FF2222, #C80606);
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: #993333;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: #993333;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: solid;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 1px;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: #993333;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: solid;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 1px;
+    border-top-color: #993333;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 14px;
+    padding-bottom: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+.notif {
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:3px;
+	padding-right:3px;
+	border-top-color: #EEEEEE;
+	border-bottom-color: #EEEEEE;
+	border-bottom-style: solid;
+    border-bottom-width: 1px;
+	cursor: pointer;
+	
+}
+.notif a{
+
+	color:#000000;
+}
+.notif:hover{
+	background-color:#0078A5;
+	color:#FFFFFF;	
+	
+}
+.notif:hover a{
+	
+	color:#FFFFFF;
+	text-decoration:none;	
+	
+}

@@ -21,6 +21,13 @@ class UsersController < ApplicationController
         render 'new'
       end
    end
+   def setread
+     Notification.update_all(:is_read => true)
+     respond_to do |format|
+           format.js 
+     end
+
+   end
     private
 
    def authenticate

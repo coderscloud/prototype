@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019133508) do
+ActiveRecord::Schema.define(:version => 20111108132538) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(:version => 20111019133508) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id",                              :null => false
+    t.integer  "notification_type",                    :null => false
+    t.integer  "target_id",                            :null => false
+    t.string   "target_type",                          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "is_read",           :default => false
+  end
+
+  add_index "notifications", ["target_id", "target_type"], :name => "index_notifications_on_target_id_and_target_type"
+  add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
 
   create_table "offers", :force => true do |t|
     t.integer  "project_id"

@@ -38,5 +38,14 @@ class PagesController < ApplicationController
     
   end
   
+  def all_read
+    @project = Project.find(params[:projectid])
+  end
+    
+
+    
+    
+    
+  
 
 end

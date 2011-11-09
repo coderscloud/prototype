@@ -58,10 +58,10 @@
 	</ul>
 	</dd>
 	</br>
-	<h3>Fichiers joints</h3>
-	
-
-	<%= link_to @project.specfile_identifier, @project.specfile.url %>
+	<% if !@project.specfile.blank?  %>
+		<h3>Fichiers joints</h3>
+		<%= link_to @project.specfile_identifier, @project.specfile.url %>
+	<%end%>
 </div>
 
 <div class="widgetc grid_2 ">
@@ -94,6 +94,25 @@
 
     </section> 
 </div>
+
+<% @offers.each do |offer|  %>
+	<% div_for(offer, :class => "main-content", :name =>"offer_#{offer.id}") do %> 
+		<header> 
+			<h2>
+				<%= offer.submitter.login %>
+	       		<ul class="small-btn clearfix fr"> 
+	 				<li><%= link_to "Contacter", "#", :class=>"button-green" %></li>
+					<li><%= link_to "Choisir", "#", :class=>"button-orange" %></li>
+				</ul>
+			</h2>
+	    </header>
+
+		<section class="clearfix container_6">
+			<%= offer.message %>
+		</section>
+	<%end%>
+<%end%>
+
 
 
 

@@ -6,7 +6,11 @@ CodersCloud::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
 
-  resources :users
+  resources :users do
+  member do
+    get 'setread'
+  end
+end
   resources :sessions, :only => [:new, :create, :destroy]
   match '/proj_search',    :to => 'pages#projsearch'
   match '/help',    :to => 'pages#help'
@@ -21,7 +25,15 @@ CodersCloud::Application.routes.draw do
   resources :projects do
     resources :offers
   end
-
+ 
+  resources :users do 
+    resources :notifications do
+      collection do
+        get 'all_read'
+      end
+  end
+  end
+  
   resources :projects do
     resources :tasks do
       collection do
@@ -37,7 +49,7 @@ CodersCloud::Application.routes.draw do
   end
   
   root :to => 'pages#home'
-
+	
   match ':controller(/:action(/:id))', :controller => /fusioncharts\/[^\/]+/	
   # The priority is based upon order of creation:
   # first created -> highest priority.

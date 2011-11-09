@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
+    @offers= @project.offers
   end
 
   def authenticate
@@ -34,7 +35,8 @@ class ProjectsController < ApplicationController
     @search = Project.search(params[:search])
     @projects = @search.all
   end
-  
+ 
+ 
   
   
 

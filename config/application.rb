@@ -45,5 +45,7 @@ module CodersCloud
     config.i18n.default_locale = :fr
     
     config.autoload_paths << "#{Rails.root}/lib"
+    
+    config.active_record.observers = :offer_observer
   end
 end
