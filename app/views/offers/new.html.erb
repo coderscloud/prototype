@@ -29,7 +29,10 @@
 				
 				<%= f.input :nb_days, :label => "Charge estimée (jours)", :input_html => { :type => 'range', :min=>"0", 
 				:max => "300", :value => "0", :class=>"range" }, :wrapper_html => { :class => "clearfix"}%>
-				
+
+				<%= f.input :amount, :label => "Montant (€)", :input_html => { :type => 'range', :min=>"0", 
+				:max => "20000", :value => "0",:step => "100", :class=>"range" }, :wrapper_html => { :class => "clearfix"}%>
+								
 				<%= f.input :message, :required => true, :label => "Offre", :input_html => { :class => "large" ,:cols => 60, :rows => 10 },:wrapper_html => { :class => " clearfix"}%> 
 				
 				<div class="action clearfix"> 	

@@ -28,7 +28,7 @@
 		</legend>
 		<ul class="multi-check no-scroll" style="height: 70px; overflow-y: auto; ">
 			<% f.checks :status_in,
-    		[['Actif', 'Actif'], ['En cours', 'En cours'], ['Realisé', 'Realisé']], :class => 'checkboxy' do |check| %>
+    		[['Actif', Project::ACTIVE], ['En cours', Project::IN_PROGRESS], ['Realisé', Project::CLOSED]], :class => 'checkboxy' do |check| %>
  				<li> 
 				<%= check.box %> <%= check.label %> 
 				</li>

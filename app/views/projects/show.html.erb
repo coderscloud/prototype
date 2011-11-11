@@ -94,24 +94,40 @@
 
     </section> 
 </div>
+<div id="offers">
 
-<% @offers.each do |offer|  %>
-	<% div_for(offer, :class => "main-content", :name =>"offer_#{offer.id}") do %> 
-		<header> 
-			<h2>
-				<%= offer.submitter.login %>
-	       		<ul class="small-btn clearfix fr"> 
-	 				<li><%= link_to "Contacter", "#", :class=>"button-green" %></li>
-					<li><%= link_to "Choisir", "#", :class=>"button-orange" %></li>
-				</ul>
-			</h2>
-	    </header>
 
-		<section class="clearfix container_6">
-			<%= offer.message %>
-		</section>
+	<% @offers.each do |offer|  %>
+		<% div_for(offer, :class => "main-content", :name =>"offer_#{offer.id}") do %> 
+			<header> 
+				<h2>
+					Offre de: <%= link_to offer.submitter.login, offer.submitter  %>
+					<% if @project.chosen_offer_id == offer.id%>
+						<span id="selected_offer">Offre sélectionnée<span>
+					<%end%>
+		       		<ul class="small-btn clearfix fr"> 
+		 				<li><%= link_to "Contacter", "#", :class=>"button-green" %></li>
+						<% if @project.status == Project::ACTIVE %>
+							<li>
+							<% form_for @project,  :url => assign_project_path(@project), :html => {  :class => "assign_form"} do |f| %>
+								<div><%= f.hidden_field :chosen_offer_id, :value => offer.id %></div>
+								<div><%= f.submit "Assigner" ,:class => "button-orange offersubmit", :id => "offersubmit_#{offer.id}"%></div>
+							</li>
+							<% end %>
+						<% end %>
+					</ul>
+				</h2>
+		    </header>
+			<%if @project.chosen_offer_id == offer.id %>
+				<section class="clearfix container_6 selected">
+			<%else%>
+				<section class="clearfix container_6 ">
+			<%end%>
+				<%= offer.message %>
+			</section>
+		<%end%>
 	<%end%>
-<%end%>
+</div>
 
 
 

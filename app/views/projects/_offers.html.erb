@@ -1,0 +1,24 @@
+<% @offers.each do |offer|  %>
+	<% div_for(offer, :class => "main-content", :name =>"offer_#{offer.id}") do %> 
+		<header> 
+			<h2>
+				Offre de: <%= link_to offer.submitter.login, offer.submitter  %>
+	       		<ul class="small-btn clearfix fr"> 
+	 				<li><%= link_to "Contacter", "#", :class=>"button-green" %></li>
+					<% if @project.status == Project::ACTIVE %>
+						<li>
+						<% form_for @project, :remote => true, :url => assign_project_path(@project), :html => { :multipart => :true, :class => "assign_form"} do |f| %>
+							<div><%= f.hidden_field :chosen_offer_id, :value => offer.id %></div>
+							<div><%= f.submit "Assigner" , :confirm => "Etes vous sur de vouloir assigner ce projet",:class => "button-orange offersubmit", :id => "offersubmit_#{offer.id}"%></div>
+						</li>
+						<% end %>
+					<% end %>
+				</ul>
+			</h2>
+	    </header>
+
+		<section class="clearfix container_6">
+			<%= offer.message %>
+		</section>
+	<%end%>
+<%end%>

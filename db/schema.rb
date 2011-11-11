@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111108132538) do
+ActiveRecord::Schema.define(:version => 20111109134517) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20111108132538) do
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "amount"
   end
 
   create_table "pr_arches", :force => true do |t|
@@ -135,7 +136,8 @@ ActiveRecord::Schema.define(:version => 20111108132538) do
     t.datetime "deliv_date"
     t.integer  "estimated_load"
     t.string   "specfile"
-    t.string   "status"
+    t.integer  "status",             :limit => 255
+    t.integer  "chosen_offer_id"
   end
 
   create_table "specfiles", :force => true do |t|

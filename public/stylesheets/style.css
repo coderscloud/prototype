@@ -448,6 +448,14 @@ z-index:999;
 position:relative;
 top:-6px;
 }
+.main-content>header input{
+position:relative;
+top:-6px;
+}
+.main-content>header .small-btn input{
+position:relative;
+top:0px;
+}
 .main-content>section{
 -moz-border-radius:0 0 5px 5px;
 -webkit-border-bottom-left-radius:5px;
@@ -1130,4 +1138,10 @@ color:#fff;
 	color:#FFFFFF;
 	text-decoration:none;	
 	
+}
+.selected {
+	background-color:#B6E4D6;
+}
+#selected_offer{
+	color:#5c9425;
 }

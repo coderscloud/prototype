@@ -23,7 +23,11 @@ end
   match '/gantt',    :to => 'pages#gantt'  
 
   resources :projects do
+    member do
+      put 'assign'
+    end    
     resources :offers
+
   end
  
   resources :users do 

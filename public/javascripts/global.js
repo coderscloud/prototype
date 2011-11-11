@@ -25,12 +25,20 @@ var menuYloc = null;
 var sortableCookieExpiry = 365;
 var sortableCookie = "sortable-order"
 var sortableName = ".sortable";
+
 jQuery.ajaxSetup({ 
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
 // perform JavaScript after the document is scriptable.
 $(document).ready(function() {
+
+			var submitButtonId;
+			$('.offersubmit').click(function() {
+				submitButtonId = this.id;
+				
+			});
 	
+		
 		//used for project types animations
 		$(".proj_type_select label img").hover(function(){
 		   $(this).addClass("hover").stop()

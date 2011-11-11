@@ -35,10 +35,17 @@ class ProjectsController < ApplicationController
     @search = Project.search(params[:search])
     @projects = @search.all
   end
- 
- 
   
-  
+  def assign
+    @project = Project.find(params[:id])
+    
+    @project.assign(params[:project][:chosen_offer_id])
+    @project.save
+    flash[:success] = "Projet assigné avec succès"
+    redirect_to @project;
+
+ 
+  end
 
 end
 
