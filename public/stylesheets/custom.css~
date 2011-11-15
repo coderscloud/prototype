@@ -1,0 +1,47 @@
+/* User show page */
+
+/*.profile-header {*/
+/*    background: -moz-linear-gradient(center top , #FFFFFF 5%, #F2F2F2 90%) repeat scroll 0 0 transparent;*/
+/*    border: 2px solid #D6D6D6;*/
+/*    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.08);*/
+/*    overflow: hidden;*/
+/*    padding: 16px 0 0;*/
+/*    position: relative;*/
+/*}*/
+
+/*.global-nav:after, #body:after, #main:after, #footer:after, .primary:after, .wrapper:after {*/
+/*    clear: both;*/
+/*    content: ".";*/
+/*    display: block;*/
+/*    height: 0;*/
+/*    visibility: hidden;*/
+/*}*/
+
+.stars {
+  background: url(/images/sprite.png) repeat-x top left;
+  height: 43px; }
+  .stars.empty {
+    background-position: 0 -43px;
+    width: 100px; }
+  .stars.filled_0 {
+    width: 0px; }
+  .stars.filled_1 {
+    width: 10px; }
+  .stars.filled_2 {
+    width: 20px; }
+  .stars.filled_3 {
+    width: 30px; }
+  .stars.filled_4 {
+    width: 40px; }
+  .stars.filled_5 {
+    width: 50px; }
+  .stars.filled_5 {
+    width: 60px; }
+  .stars.filled_7 {
+    width: 70px; }
+  .stars.filled_8 {
+    width: 80px; }
+  .stars.filled_9 {
+    width: 90px; }
+  .stars.filled_10 {
+    width: 100px; }
