@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111109134517) do
+ActiveRecord::Schema.define(:version => 20111111183938) do
+
+  create_table "actions", :force => true do |t|
+    t.integer  "user_id",     :null => false
+    t.integer  "action_type", :null => false
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.integer  "status"
+    t.integer  "priority"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -168,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20111109134517) do
     t.string   "salt"
     t.integer  "fb_user_id"
     t.string   "email_hash"
+    t.integer  "user_type"
   end
 
 end

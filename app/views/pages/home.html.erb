@@ -10,21 +10,21 @@
                 <div class="grid_1">
                     <div class="widget black ac">
                         <header><h2>Projets ouverts</h2></header>
-                        <section><h1>20</h1></section>
+                        <section><h1><%= @myprojects ? @myprojects.count : "0" %></h1></section>
 
                     </div>
                 </div>
                 <div class="grid_1">
                     <div class="widget black ac">
                         <header><h2>Anos ouvertes</h2></header>
-                        <section><h1>11</h1></section>
+                        <section><h1>0</h1></section>
                     </div>
                 </div>
 
                 <div class="grid_1 omega">
                     <div class="widget black ac">
                         <header><h2>Alertes</h2></header>
-                        <section><h1>3</h1></section>
+                        <section><h1><%= @nbalerts %></h1></section>
                     </div>
                 </div>
                 
@@ -44,16 +44,32 @@
         </h2>
 
     </header>
-                <section>
-                <div class="error">
-                    Le jalon <a>livraison intermédiaire</a> a été depassé
-                </div>
-                <div class="alert">
-                    La tâche <a>développemment du lot 1</a>arrive à sa fin dans 2 jours
-                </div>
-                <div class="error">
-                    La tâche <a>rédaction des specs</a> a expiré
-                </div>
+                <section>  
+	
+				<%@actions.each do |action|%>
+					<div class="error">
+						<%if action.action_type == Action::VALIDATE_PROJECT and action.status==1%>
+	                  		Vous avez un <%= link_to "projet", project_path(action.target)%> à confirmer
+						<%end%>
+	             	</div>
+				<%end%>
+				<%if @expiredtasks.count 
+					@expiredtasks.each do |task| %>
+                	<div class="error">
+                    	La tâche <a><%=task.name%></a> a expiré
+                	</div>
+
+				<%	end
+				end%>
+               
+				<%if @expiredmilestones
+					@expiredmilestones.each do |milestone| %>
+                	<div class="error">
+                    	Le jalon <a><%=milestone.name%></a> a été depassé
+                	</div>
+
+				<%	end
+				end%>
               
                 </section>
 
@@ -61,20 +77,21 @@
 
 <div class="clear"></div>
 
-
      <!-- Accordion Section -->
      <div class="main-content list_proj ">
          <header><h2>Mes projets en cours</h2></header>
          <section class="accordion clearfix">
-
+		   <% if  @myprojects.count > 0%>
+	
            	<% @myprojects.each do |project| %>
+				
              <header>
 				<ul class="small-btn clearfix fr">    
 										<li>
 											<div title="Avancement du projet" class="progress progress-green">
-											 <%	p=rand(100)  %>
-												<%=  ('<span style="width: ' + p.to_s + '%">').html_safe %>
-													<b><%= p.to_s + "%" %></b> 
+											 
+												<%=  ('<span style="width: ' + total_progress(project).to_s + '%">').html_safe %>
+													<b><%= total_progress(project).to_s + "%" %></b> 
 												</span>
 											</div>
 										</li>
@@ -86,7 +103,13 @@
              <section>
                  <p><%= project.objective %></p>
              </section>
-			<% end %>
+				<%end%>
+			<%else%>
+				<header>
+					<h2>Aucun projet en cours</h2>
+				</header>
+			 
+			<%end%>
          </section>
      </div>
      <!-- End Accordion Section -->

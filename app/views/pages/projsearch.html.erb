@@ -28,7 +28,7 @@
 					<label class="alllabel" for="chk_proj_status">Tous les status</label>
 				</li>
 				<% f.checks :status_in,
-	    		[['Actif', 'Actif'], ['En cours', 'En cours'], ['Realisé', 'Realisé']] ,:class => 'checkboxy' do |check| %>
+	    		[['Actif', Project::ACTIVE], ['En cours', Project::IN_PROGRESS], ['Realisé', Project::CLOSED]] ,:class => 'checkboxy' do |check| %>
 	 				<li> 
 					<%= check.box %> <%= check.label %> 
 					</li>

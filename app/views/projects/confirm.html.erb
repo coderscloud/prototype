@@ -1,0 +1,238 @@
+
+
+   <div class="main-content"> 
+        <header> 
+            <h2> 
+				Validation du projet et mise en place d'un planning
+            </h2> 
+        </header> 
+        <section class="container_6 clearfix"> 
+                <div class="grid_6"> 
+				
+						<section >
+
+						        
+						
+										<div id="wizard_form">
+								<%= simple_form_for @project, :html => {:multipart => true} do |f| %>
+
+									<div id="wizard_confirm" class="swMain">
+									  <ul>
+									    <li><a href="#step-1">
+									          <label class="stepNumber">1</label>
+									          <span class="stepDesc">
+									             <!-- Step 1<br /> -->
+									             <small>Validation</small>
+									          </span>
+									      </a></li>
+									    <li><a href="#step-2">
+									          <label class="stepNumber">2</label>
+									          <span class="stepDesc">
+									             <!-- Step 2<br /> -->
+									             <small>Tâches</small>
+									          </span>
+									      </a></li>
+									    <li><a href="#step-3">
+									          <label class="stepNumber">3</label>
+									          <span class="stepDesc">
+									             <!-- Step 3<br /> -->
+									             <small>Jalons</small>
+									          </span>                   
+									       </a></li>
+									    
+									  </ul>
+										  <div id="step-1">   
+											<h2 class="StepTitle">Validation du projet</h2>
+											<div id="Step1_content">
+													Afin de Valider le projet et que vous puissiez travailler dessus, il faut saisir un planning prévisionnel de l'exécution du projet. Veuillez appuyer sur "Suivant" pour saisir les tâches et les jalons.
+											</div>	
+
+										 	<div class="clear"> </div>	      
+										  </div>
+
+										<div id="step-2">
+										      <h2 class="StepTitle">Appuyez sur le bouton + pour ajouter des tâches</h2> 
+												<div id="Step2_content">
+													<div id="flash_alert" style="display:none;padding:0.7em;" class="ui-state-highlight ui-corner-all"></div>
+													 <table id="tasks" class="scroll" cellpadding="0" cellspacing="0"></table>
+														<div id="tasks_pager" class="scroll" style="text-align:center;"></div>
+										  		</div>  
+										</div>                     
+										<div id="step-3">						
+											<h2 class="StepTitle">Appuyez sur le bouton + pour ajouter des jalons</h2>  
+											<div id="Step3_content"> 
+										        <table id="milestones" class="scroll" cellpadding="0" cellspacing="0"></table>
+										        <div id="milestones_pager" class="scroll" style="text-align:center;"></div>
+										  	</div>
+										</div>	  
+
+
+									
+
+									</div>
+
+
+								<% end %> 
+									</div>
+
+
+
+						</section>
+                </div> 
+			
+             
+        </section> 
+    </div> 
+
+	<%=h "<script>
+	var lastsel;
+
+		jQuery(document).ready(function(){
+			/*Grid fot tasks*/
+		          var mygrid = jQuery('#tasks').jqGrid({
+		              url:window.location.href.replace('confirm','tasks'),
+		              editurl:window.location.href.replace('confirm','tasks')+'/post_data',
+		              datatype: 'json',
+		              colNames:['ID','Nom','Date de début','Date de fin','Nombre de jours'],
+		              colModel:[{name:'id', index:'id',width:35,resizable:false},
+								{name:'name', index:'name',editable:true, editrules:{ required:true},width:300},
+								{name:'start_date', index:'start_date',editable:true, editrules:{ required:true,date:true}, formatter:'date', formatoptions:{srcformat:'d/m/Y', newformat:'d/m/Y'}, editoptions:{dataInit: function(elm){setTimeout(function(){ jQuery(elm).dateinput({format: 'dd/mm/yyyy'}); },200);}}, width:130},
+								{name:'end_date', index:'end_date',editable:true, editrules:{ required:true,date:true},formatter:'date', formatoptions:{srcformat:'d/m/Y', newformat:'d/m/Y'},editoptions:{dataInit: function(elm){setTimeout(function(){ jQuery(elm).dateinput({format: 'dd/mm/yyyy'}); },200);}},  width:130},
+								{name:'nb_days', index:'nb_days',editable:true,editrules:{ integer:true}, width:110}
+							],
+		              pager: '#tasks_pager',
+		              pagerpos:'center', 
+		              rowNum:10,
+		              rowList:[10,25,50,100],
+		              imgpath: '/images/jqgrid',
+		              viewrecords:true,
+		              height: '195',
+		              gridview: false,
+		              scrollrows: true,
+		              autowidth: false,
+		              loadui: 'enable',
+		              rownumbers: false,
+		              hiddengrid: false,
+		              hidegrid: false, 
+		              shrinkToFit: true, 
+		              footerrow: false,
+		              loadonce: false,
+		              cellsubmit: 'remote',
+		              cellEdit: 'false',
+		              userDataOnFooter: false,
+		              multiselect: false,
+
+		        onSelectRow: function(id){
+		          if(id && id!==lastsel){
+		            jQuery('#tasks').restoreRow(lastsel);
+		            jQuery('#tasks').editRow(id, true, null, null);
+		            lastsel=id;
+		          }
+		        },
+
+		              subGrid:false,
+
+		              caption: 'liste des tâches'             
+		            })
+		            .navGrid('#tasks_pager',
+		              {edit:false,add:true,del:true,view:false,search:false,refresh:true},
+		              // Edit options
+		              {closeOnEscape:true,modal:true,recreateForm:true,width:300,closeAfterEdit:true,afterSubmit:function(r,data){return true;(r,data,'edit');},beforeShowForm:function(form){return true;(form);}},
+		              // Add options
+		              {closeOnEscape:true,modal:true,recreateForm:true,width:300,closeAfterAdd:true,afterSubmit:function(r,data){return true;(r,data,'add');},beforeShowForm:function(form){return true;(form);}},
+		              // Delete options
+		              {closeOnEscape:true,modal:true,afterSubmit:function(r,data){return true;(r,data,'delete');}}
+		            )
+		            .navButtonAdd('#tasks_pager',{caption:'',title:$.jgrid.nav.searchtitle, buttonicon :'ui-icon-search', onClickButton:function(){ mygrid[0].toggleToolbar() } })
+
+
+
+		            mygrid.filterToolbar();mygrid[0].toggleToolbar()
+		});
+
+		function getUrlVars()
+		{
+		    var vars = [], hash;
+		    var hashes = window.location.href.slice(window.location.href.indexOf('project') - 1);
+			alert(hashes);
+		    return vars;
+		}
+
+	</script>".html_safe %>
+	
+	
+	<% 
+		select=":;"
+		@tasks.each do |task| 
+			select= select + task.id.to_s + ":" + task.name.to_s+";"
+		end
+		select=select[0,select.length-1]
+	%>
+	
+
+	<%=h "<script> ".html_safe%>
+	<%= ("var lastsel;
+		jQuery(document).ready(function(){
+
+		  var mygrid = jQuery('#milestones').jqGrid({
+		      url:window.location.href.replace('confirm','milestones'),
+		      editurl:window.location.href.replace('confirm','milestones')+'/post_data',
+		      datatype: 'json',
+		      colNames:['ID','Nom','Date','Tâche associée'],
+		      colModel:[{name:'id', index:'id',width:35,resizable:false},
+						{name:'name', index:'name',editable:true, editrules:{ required:true},width:300},
+
+						{name:'date', index:'date',editable:false, editrules:{ required:true,date:true}, formatter:'date', formatoptions:{srcformat:'d/m/Y', newformat:'d/m/Y'}, editoptions:{dataInit: function(elm){setTimeout(function(){ jQuery(elm).dateinput({format: 'dd/mm/yyyy'}); },200);}}, width:130},
+						{name:'task_id', index:'task_id',editable:true,  formatter:'select',width:250, edittype:'select', editoptions:{value:'"+select+"'}}],
+		      pager: '#milestones_pager',
+		      pagerpos:'center', 
+		      rowNum:10,
+		      rowList:[10,25,50,100],
+		      imgpath: '/images/jqgrid',
+		      viewrecords:true,
+		      height: '195',
+		      gridview: false,
+		      scrollrows: true,
+		      autowidth: false,
+		      loadui: 'enable',
+		      rownumbers: false,
+		      hiddengrid: false,
+		      hidegrid: false, 
+		      shrinkToFit: true, 
+		      footerrow: false,
+		      loadonce: false,
+		      cellsubmit: 'remote',
+		      cellEdit: 'false',
+		      userDataOnFooter: false,
+		      multiselect: false,
+
+		onSelectRow: function(id){
+
+		  if(id && id!==lastsel){
+		    jQuery('#milestones').restoreRow(lastsel);
+		    jQuery('#milestones').editRow(id, true, null, null);
+		    lastsel=id;
+		  }
+		},
+
+		      subGrid:false,
+
+		      caption: 'liste des Jalons'             
+		    })
+		    .navGrid('#milestones_pager',
+		      {edit:false,add:true,del:true,view:false,search:false,refresh:true},
+		      // Edit options
+		      {closeOnEscape:true,modal:true,recreateForm:true,width:300,closeAfterEdit:true,afterSubmit:function(r,data){return true;(r,data,'edit');},beforeShowForm:function(form){return true;(form);}},
+		      // Add options
+		      {closeOnEscape:true,modal:true,recreateForm:true,width:300,closeAfterAdd:true,afterSubmit:function(r,data){return true;(r,data,'add');},beforeShowForm:function(form){return true;(form);}},
+		      // Delete options
+		      {closeOnEscape:true,modal:true,afterSubmit:function(r,data){return true;(r,data,'delete');}}
+		    )
+		    .navButtonAdd('#milestones_pager',{caption:'',title:$.jgrid.nav.searchtitle, buttonicon :'ui-icon-search', onClickButton:function(){ mygrid[0].toggleToolbar() } })
+
+
+
+		    mygrid.filterToolbar();mygrid[0].toggleToolbar()
+
+		});").html_safe %>
+	<%=h "</script> ".html_safe%>

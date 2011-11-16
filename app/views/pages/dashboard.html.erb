@@ -66,8 +66,13 @@
 								 		</tr>
 									<% end %>
 								<% end %>
+	                            <% if @nbtasks==0 %>
+									<div class="free_message">
+										Aucune tâche crée pour l'instant
+									</div>
+								<% end %>								
 							</table>
-                            
+
                         </section> 
                     </div> 
                 </div> 
@@ -106,6 +111,11 @@
 											<td style="width: 20%"><%= distance_of_time_in_words_to_now(mil.date) %></td>
 								 		</tr>
 									<% end %>
+								<% end %>
+								<% if @nbmilestones==0 %>
+									<div class="free_message">
+										Aucun jalon crée pour l'instant
+									</div>
 								<% end %>
 							</table>
                         </section> 

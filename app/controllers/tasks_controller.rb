@@ -50,8 +50,21 @@ class TasksController < ApplicationController
     if params[:oper] == "del"
       Task.find(params[:id]).destroy
     else
+      if params[:progress]
+        progress= params[:progress] 
+      else 
+        progress=0
+      end
+      
+      if params[:status]
+        status= params[:status] 
+      else 
+        status="Active"
+      end
+      
+      
       task_params = { :project_id => params[:project_id], :name => params[:name], :start_date => params[:start_date], :end_date => params[:end_date], 
-                      :progress => params[:progress], :status => params[:status], :nb_days => params[:nb_days] }
+                      :progress => progress, :status => status, :nb_days => params[:nb_days] }
       if params[:id] == "_empty"
         Task.create(task_params)
       else

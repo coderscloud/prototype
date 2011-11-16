@@ -2,7 +2,7 @@
 
 <div class="main-content">
 	<header> 
-        <h2>Création d'un nouveau projet</h2> 
+        <h2>Informations du projet</h2> 
     </header>
 
 	<section class="clearfix container_6" id="project_show">
@@ -87,9 +87,18 @@
 	</dl>
 	</section>
 </div>
+
+
 <div class="center">
-	<%= link_to  "Postuler",new_project_offer_path(@project),:class => "button button-blue" %>
+	<%if @project.status==Project::ACTIVE and @project.employer != current_user%>
+		<%= link_to  "Postuler",new_project_offer_path(@project),:class => "button button-blue" %>
+	<%end%>
+	<%if @project.status==Project::ASSIGNED and @project.chosen_offer.submitter==current_user%>
+		<%= link_to  "Valider et soumettre un planning",confirm_project_path(@project),:class => "button button-blue" %>
+	<%end%>
 </div>
+
+
 </div>
 
     </section> 
@@ -105,8 +114,9 @@
 					<% if @project.chosen_offer_id == offer.id%>
 						<span id="selected_offer">Offre sélectionnée<span>
 					<%end%>
+					<%if @project.employer== current_user%>
 		       		<ul class="small-btn clearfix fr"> 
-		 				<li><%= link_to "Contacter", "#", :class=>"button-green" %></li>
+		 				<li><a  class="button-green"><div rel="#message_send">Contacter</div></a></li>
 						<% if @project.status == Project::ACTIVE %>
 							<li>
 							<% form_for @project,  :url => assign_project_path(@project), :html => {  :class => "assign_form"} do |f| %>
@@ -116,6 +126,7 @@
 							<% end %>
 						<% end %>
 					</ul>
+					<%end%>
 				</h2>
 		    </header>
 			<%if @project.chosen_offer_id == offer.id %>
@@ -130,5 +141,22 @@
 </div>
 
 
+<div class="overlay-details" id="message_send">
+
+       <section>
+     		
+			<h3>Envois de message</h3>
+			<div><label for="address">Objet</label></div>
+			<div><input id="address" name="address" size="73" type="text" value="" /></div>
+			</br>
+			<div><label for="body">Message</label></div>
+			
+			<div><textarea name="body" id="body" cols="75" rows="10"></textarea></div>
+			
+			<div class="button button-blue">Envoyer</div>
+
+			
+       </section>
+   </div>
 
 

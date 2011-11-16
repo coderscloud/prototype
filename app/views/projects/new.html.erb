@@ -25,47 +25,47 @@
 	          <label class="stepNumber">1</label>
 	          <span class="stepDesc">
 	             <!-- Step 1<br /> -->
-	             <small>Step 1 description</small>
+	             <small>Type du projet</small>
 	          </span>
 	      </a></li>
 	    <li><a href="#step-2">
 	          <label class="stepNumber">2</label>
 	          <span class="stepDesc">
 	             <!-- Step 2<br /> -->
-	             <small>Step 2 description</small>
+	             <small>Utilisation</small>
 	          </span>
 	      </a></li>
 	    <li><a href="#step-3">
 	          <label class="stepNumber">3</label>
 	          <span class="stepDesc">
 	             <!-- Step 3<br /> -->
-	             <small>Step 3 description</small>
+	             <small>Applications interfacées</small>
 	          </span>                   
 	       </a></li>
 	    <li><a href="#step-4">
 	          <label class="stepNumber">4</label>
 	          <span class="stepDesc">
 	             <!-- Step 4<br /> -->
-	             <small>Step 4 description</small>
+	             <small>Description du projet</small>
 	          </span>                   
 	      </a></li>
 	    <li><a href="#step-5">
 	          <label class="stepNumber">5</label>
 	          <span class="stepDesc">
 	             <!-- Step 5<br /> -->
-	             <small>Step 5 description</small>
+	             <small>Détails techniques</small>
 	          </span>                   
 	      </a></li>
 		<li><a href="#step-6">
 	          <label class="stepNumber">6</label>
 	          <span class="stepDesc">
 	             <!-- Step 6<br /> -->
-	             <small>Step 6 description</small>
+	             <small>Délais</small>
 	          </span>                   
 	      </a></li>
 	  </ul>
 		  <div id="step-1">   
-			<h2 class="StepTitle">Step 1 Content</h2>
+			<h2 class="StepTitle">Quel type de projet voulez vous lancer?</h2>
 			<div id="Step1_content">
 				<div class="proj_type_select">
 			
@@ -83,7 +83,7 @@
 		  </div>
 	  
 		<div id="step-2">
-		      <h2 class="StepTitle">Step 2 Content</h2> 
+		      <h2 class="StepTitle">Ce projet est destiné pour quel type d'utilisation?</h2> 
 				<div id="Step2_content">
 					<%= f.association :pr_nb_user , :label_method => :number, :label => "Nombre d'utilisateurs", :prompt => "Selectionnez une valeur",  :wrapper_html => { :class => "clearfix"} %>
 					<%= f.association :pr_usage_freq , :label_method => :freq, :label => "Fréquence d'utilisation",:prompt => "Selectionnez une valeur", :wrapper_html => { :class => "clearfix"} %>
@@ -91,7 +91,7 @@
 		  		</div>  
 		</div>                     
 		<div id="step-3">						
-			<h2 class="StepTitle">Step 3 Title</h2>  
+			<h2 class="StepTitle">Veuillez indiquer les applications existantes qui seront reliées à ce projet: bases de données partagées, données partagées en entrée ou en sortie...</h2>  
 			<div id="Step3_content"> 
 		       	<%= f.input :application_tokens, :as => :text, :label => "Applications" %>
 		  	</div>
@@ -99,7 +99,7 @@
 	
 	
 		<div id="step-4">
-			<h2 class="StepTitle">Step 4 Title</h2>
+			<h2 class="StepTitle">Indiquez le nom et l(es) ojectif(s) du projet. Soyez précis et commencez par le plus important.</h2>
 			<div id="Step4_content">   
 				<%= f.input :title, :required => false, :label => "Nom du projet", :wrapper_html => { :class => "clearfix"}%> 
 				<%= f.input :objective, :required => false, :label => "Objectif", :input_html => { :cols => 47, :rows => 7 }, :wrapper_html => { :class => "clearfix"}%> 
@@ -109,7 +109,7 @@
 		</div>
 	
 		<div id="step-5">
-			<h2 class="StepTitle">Step 5 Title</h2> 
+			<h2 class="StepTitle">Remplissez cette partie uniquement si vous avez déjà fait des choix technologiques.</h2> 
 				<div id="Step5_content">  
 					<%= f.association :pr_arch , :label_method => :arch, :label => "Architecture", :prompt => "Selectionnez une valeur", :wrapper_html => { :class => "clearfix"} %>		
 					<%= f.input :prog_lang_tokens, :as => :text, :label => "Langages de programmation", :wrapper_html => { :class => "clearfix"} %>  
@@ -118,7 +118,7 @@
 		</div>
 	
 		<div id="step-6">
-			<h2 class="StepTitle">Step 6 Title</h2> 
+			<h2 class="StepTitle">Délais</h2> 
 			<div id="Step6_content"> 
 				<%= f.input :start_date, :label => "Date de début estimée", :discard_hour => true, :as => :string, :input_html => { :class => 'datepicker' }, :wrapper_html => { :class => "clearfix"}%>  
 				<%= f.input :deliv_date, :label => "Date de livraison estimée", :discard_hour => true, :as => :string, :input_html => { :class => 'datepicker' }, :wrapper_html => { :class => "clearfix"} %> 

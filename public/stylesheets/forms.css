@@ -456,6 +456,7 @@ ul.action-buttons.small a span.close{
 .widget-container section{
 	position:relative;
 	bottom:0;
+	min-height:200px;
 	}
 .widget.modal{
 	display:none;

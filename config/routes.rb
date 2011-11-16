@@ -23,10 +23,7 @@ end
   match '/gantt',    :to => 'pages#gantt'  
 
   resources :projects do
-    member do
-      put 'assign'
-    end    
-    resources :offers
+    
 
   end
  
@@ -49,6 +46,15 @@ end
       collection do
         post 'post_data'
       end
+    end
+    
+    member do
+      put 'assign'
+    end    
+    resources :offers
+    
+    member   do
+      get 'confirm'
     end
   end
   

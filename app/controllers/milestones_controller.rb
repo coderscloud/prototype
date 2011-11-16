@@ -1,3 +1,4 @@
+# encoding: utf-8
 class MilestonesController < ApplicationController
     protect_from_forgery :except => [:post_data]
    def index
@@ -31,7 +32,13 @@ class MilestonesController < ApplicationController
         Milestone.find(params[:id]).destroy
       else
         task=Task.where(:id => params[:task_id])
-        milestone_params = { :project_id => params[:project_id], :name => params[:name], :date => task[0].end_date.to_s,:task_id => params[:task_id] , :status => params[:status],
+           if params[:status]
+              status= params[:status] 
+            else 
+              status="Active"
+            end
+        
+        milestone_params = { :project_id => params[:project_id], :name => params[:name], :date => task[0].end_date.to_s,:task_id => params[:task_id] , :status => status,
            }
         if params[:id] == "_empty"
           Milestone.create(milestone_params)

@@ -46,6 +46,6 @@ module CodersCloud
     
     config.autoload_paths << "#{Rails.root}/lib"
     
-    config.active_record.observers = :offer_observer
+    config.active_record.observers = :offer_observer, :action_observer
   end
 end

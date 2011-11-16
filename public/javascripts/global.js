@@ -151,6 +151,29 @@ $(document).ready(function() {
 					$('#project_prog_lang_tokens').tokenInput('/prog_langs.json', { crossDomain: false, theme: 'facebook' }  );				
 
 
+//project_confirmation wizard
+			  $('#wizard_confirm').smartWizard(
+						 {
+						  // Properties
+						    selected: 0,  // Selected Step, 0 = first step   
+						    keyNavigation: true, // Enable/Disable key navigation(left and right keys are used if enabled)
+						    enableAllSteps: false,  // Enable/Disable all steps on first load
+						    transitionEffect: 'slideleft', // Effect on navigation, none/fade/slide/slideleft
+						    contentURL:null, // specifying content url enables ajax content loading
+						    contentCache:true, // cache step contents, if false content is fetched always from ajax url
+						    cycleSteps: false, // cycle step navigation
+						    enableFinishButton: false, // makes finish button enabled always
+						    errorSteps:[],    // array of step numbers to highlighting as error steps
+						    labelNext:'Suivant', // label for Next button
+						    labelPrevious:'Precédant', // label for Previous button
+						    labelFinish:'Terminer',  // label for Finish button        
+						  // Events
+						    onLeaveStep: null, // triggers when leaving a step
+						    onShowStep: null,  // triggers when showing a step
+						    onFinish: null  // triggers when Finish button is clicked
+						 }
+						);
+		
 
 	
 
@@ -388,6 +411,7 @@ $(document).ready(function() {
         }
 
     });
+
 
     /**
      * Form Validators

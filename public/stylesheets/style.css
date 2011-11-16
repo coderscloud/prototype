@@ -530,36 +530,36 @@ color:#fff;
 	}
 
 
-	#Step1_content{
+#wizard	#Step1_content{
 		padding-left: 100px;
 		padding-top: 40px;
 	}
 
-	#Step2_content{
+#wizard	#Step2_content{
 		margin-left: 160px;
 		padding-top: 70px;
 	}
 
-	#Step3_content{
+#wizard	#Step3_content{
 
 		padding-left: 100px;
 		padding-top: 100px;
 	}
 
 
-	#Step4_content{
+#wizard	#Step4_content{
 		padding-left: 50px;
 		padding-top: 30px;
 	}
 
-	#Step4_content input {
+#wizard	#Step4_content input {
 	  width: 300px;
 
 	}
-	#Step4_content input.text {
+#wizard	#Step4_content input.text {
 	  width: 300px;
 	}
-	#Step4_content label {
+#wizard	#Step4_content label {
 	  float: left;
 	  width: 150px;
 	  text-align: left;
@@ -571,16 +571,16 @@ color:#fff;
 		boder:transparent;
 	}
 
-	#Step5_content{
+#wizard	#Step5_content{
 		padding-left: 110px;
 		padding-top: 50px;
 	}
 
-	#Step6_content{
+#wizard	#Step6_content{
 		padding-left: 100px;
 		padding-top: 50px;
 	}
-	#Step5_content input {
+#wizard	#Step5_content input {
 	  width: 280px;
 
 	}
@@ -1140,8 +1140,34 @@ color:#fff;
 	
 }
 .selected {
-	background-color:#B6E4D6;
+	background-color:#C0F2C8;
 }
 #selected_offer{
 	color:#5c9425;
+	margin-left:200px;
+	padding-left:40px;
+	background:transparent url(/images/Select.png) no-repeat left -7px;
+	
 }
+
+.free_message{
+	font-size:17px;
+	color:#DDDFE1;
+}
+
+
+#wizard_confirm	#Step1_content{
+		padding-left: 30px;
+		padding-top: 10px;
+	}
+
+#wizard_confirm	#Step2_content{
+		margin-left: 35px;
+		padding-top: 5px;
+	}
+
+#wizard_confirm	#Step3_content{
+
+		padding-left: 35px;
+		padding-top: 5px;
+	}

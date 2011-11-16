@@ -17,8 +17,12 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :password, :password_confirmation
   
   has_many :projects, :foreign_key => "employer_id"
-  has_one :offers, :foreign_key => "submitter_id"
+  has_many :offers, :foreign_key => "submitter_id"
   has_many :notifications
+  has_many :actions
+  
+  FREELANCER = 2
+  EMPLOYER = 1
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

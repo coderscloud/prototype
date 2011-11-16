@@ -1,8 +1,28 @@
 # encoding: utf-8
 class PagesController < ApplicationController
   def home
-    @title = "CodersCloud"
-    @myprojects = Project.first(3)
+    @title = "Linkao"
+    
+    if current_user
+      @actions=Action.where("user_id== ? AND status=?", current_user.id, 1)
+      if current_user.user_type == User::EMPLOYER
+        @myprojects = Project.where("employer_id== ? ",current_user.id)
+      end
+      if current_user.user_type == User::FREELANCER
+        @myprojects = Project.joins(:chosen_offer => :submitter).where("submitter_id=? AND projects.status=4",current_user.id)
+      end
+      @nbexpired=0
+      if @myprojects
+        @expiredtasks = []
+        @expiredmilestones = []
+        @myprojects.each do |proj|
+          @expiredtasks = @expiredtasks + proj.tasks.where("end_date < ? AND status!= ?", Time.now, "Terminée") 
+          @expiredmilestones =  @expiredmilestones +  proj.milestones.where("date < ? AND status= ?", Time.now, "Actif")          
+        end
+      end
+       @nbalerts=  @expiredtasks.count + @expiredmilestones.count +  @actions.count
+    end
+    
   end
 
   def projsearch
@@ -14,13 +34,13 @@ class PagesController < ApplicationController
     @project = Project.find(params[:projectid])
     @expiredtasks = @project.tasks.where("end_date < ? AND status!= ?", Time.now, "Terminée")
     @currenttasks = @project.tasks.where("end_date > ? AND status = ?", Time.now,"En cours")
-    @comingtasks = @project.tasks.where("status= ?", "Active")
-    
+    @comingtasks = @project.tasks.where("status= ? AND end_date > ?", "Active",Time.now)
+    @nbtasks=@project.tasks.count
     @expiredmilestones = @project.milestones.where("date < ? AND status= ?", Time.now, "Actif")
     @comingmilestones = @project.milestones.where("date > ? AND status= ?", Time.now,"Actif")
-    
-    
+    @nbmilestones = @project.milestones.count
 
+   
   end
 
   def gantt
