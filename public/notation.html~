@@ -21,9 +21,9 @@
     <title>Evaluation sur la base des projets exécutés</title>
 </head>
 <body>
-<section>
+<section class=container_6>
     <div>
-        <div class="contents">
+        <div class="grid_5">
             <div class=grid_2>
                 <h3> Evaluation globale </h3>
             </div>
@@ -36,26 +36,43 @@
     </div>
     <div class="clear"> </div>
     <div>
-        <div class="contents">
+        <div class="grid_5">
             <div class="grid_2">
                 <h3>Relationnel:</h3>
             </div>
             <div class="grid_2">
+            <h3>
                 <div class="stars empty">
                     <div class="stars filled_9"></div>
-                </div>	        
+                </div>
+            </h3>	        
             </div>
         </div>
     </div>
     <div class="clear"> </div>
     <div>
-        <div class="contents">
+        <div class="grid_5">
             <div class="grid_2">
                 <h3>Maitrise technique:</h3>
             </div>
             <div class="grid_2">
+            <h3>
                 <div class="stars empty">
-                    <div class="stars filled_9"></div>
+                    <div class="stars filled_8"></div>
+                </div>
+            </h3>
+            </div>
+        </div>
+    </div>
+    <div class="clear"> </div>
+    <div>
+        <div class="grid_5">
+            <div class="grid_2">
+                <h3>Planning et organisation:</h3>
+            </div>
+            <div class="grid_2">
+                <div class="stars empty">
+                    <div class="stars filled_10"></div>
                 </div>	        
             </div>
         </div>

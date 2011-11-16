@@ -32,6 +32,7 @@ $(function() {
 <div class="main-content">
 	<header>
 	    <ul class="action-buttons clearfix fr">
+	        <li>
                 <button class="button button-gray">
                     <span class="add"></span>
                     Ajouter
@@ -80,7 +81,7 @@ $(function() {
     </section>
 </div>
 
-<!--Partie des onglets-->
+<!--Tabs -->
 <div class="main-content">
     <section>
         <ul class="tabs">
@@ -95,15 +96,81 @@ $(function() {
 		    </li>
 	    </ul>
 	    <div class="panes1 clearfix">
+<!--	    First tab content-->
             <div id=project_show class=grid_4>
-                <br>
-                <h3>Work History and feedback</h3>
-                <strong> FollowMyRacer Website </strong>
-                
+                <div>
+                    <br>
+                    <h3> Poste actuel : </h3>
+                    <h4>Chef de projet – Equipe facturation </h4>
+                    <h3> Postes précédents : </h3>
+                    <h4> Développeur – Equipe support </h4>
+                    <h4> Stagiaire – Equipe support </h4>
+                    <h3> Education : </h3>
+                    <h4> Telecom Paristech </h4>
+    <!--                <h3> Lien pour le profil : </h3>-->
+    <!--                Users/1-->
+                    <h3> Coordonnées : </h3>
+    <!--            	<dl class="labelsAndData">-->
+    <!--                	<dt> </dt> <dd> </dd>-->
+    <!--            		<dt> </dt> <dd> </dd> -->
+    <!--        			<dt> </dt> <dd> </dd> -->
+    <!--        			<dt> </dt> <dd> </dd> -->
+    <!--        			<dt> </dt> <dd> </dd> -->
+    <!--            	</dl>-->
+                	<dl class="labelsAndData">
+                    	<dt> •	Adresse mail principale </dt> <dd> cedric@email.com  </dd>
+                		<dt> •	Extension </dt> <dd> 2281 </dd> 
+            			<dt> •	Téléphone mobile </dt> <dd> 06 12 34 12 34 </dd> 
+            			<dt> •	Site web </dt> <dd> www.linkao.fr </dd>
+                	</dl>
+                	<br>
+                    <h3> Compétences : </h3>
+                	<dl class="labelsAndData">
+                    	<dt> •	Langages de programmation : </dt> <dd> php c++ </dd>
+                		<dt> •	Applications : </dt> <dd> Asterisk Caterpillar</dd> 
+                	</dl>
+                	<br>
+                    <h3> Informations supplémentaires : </h3>
+                	<dl class="labelsAndData">
+                    	<dt> •	Bureau : </dt> <dd> AD34 </dd>
+                		<dt> •	Adresse : </dt> <dd> 122, Fleet St.</dd> 
+                	</dl>
+                </div>
             </div>
 <!--            Second tab content-->
-            <div>
-            
+            <div id="project_show" class="grid_5">
+                <br>
+                <h3> Projets : </h3>
+                <div>
+                    <div class="grid_3">
+                        <h5> Intégration du module paiement à distance. lot #1 </h5>
+                    </div>
+                    <div class="grid_1">
+                        <h5> <%= link_to "Jean A.", "#" %> </h5>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div class="grid_3">
+                        <h5> Intégration du module paiement à distance. lot #2 </h5>
+                    </div>
+                    <div class="grid_1">
+                        <h5> <%= link_to "Jean A.", "#" %> </h5>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div class="grid_3">
+                        <h5> Déploiement d’une nouvelle solution de facturation. </h5>
+                    </div>
+                    <div class="grid_1">
+                        <h5> <%= link_to "Noel T.", "#" %> </h5>
+                    </div>                    
+                </div>
+                <br>
+                <div class="grid_4">
+                    <%= link_to "Voir tous les projets", "#" %>
+                </div>
             </div>
 <!--            Third tab content-->
             <div>
