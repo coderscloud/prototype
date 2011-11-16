@@ -5,7 +5,7 @@ class MilestonesController < ApplicationController
        @project = Project.find(params[:project_id])
 
        @tasks = @project.tasks
-         index_columns ||= [ :id, :name, :date, :task_id, :status]
+         index_columns ||= [ :id, :name, :date,  :status]
          current_page = params[:page] ? params[:page].to_i : 1
          rows_per_page = params[:rows] ? params[:rows].to_i : 10
 
@@ -31,15 +31,22 @@ class MilestonesController < ApplicationController
       if params[:oper] == "del"
         Milestone.find(params[:id]).destroy
       else
-        task=Task.where(:id => params[:task_id])
+       
            if params[:status]
               status= params[:status] 
             else 
               status="Active"
             end
-        
-        milestone_params = { :project_id => params[:project_id], :name => params[:name], :date => task[0].end_date.to_s,:task_id => params[:task_id] , :status => status,
-           }
+      @tasks = Project.find(params[:project_id]).tasks
+      taskid=0
+      @tasks.each do |task|
+        if task.end_date.to_s== params[:date]
+          taskid=task.id
+        end
+          
+      end
+     
+        milestone_params = { :project_id => params[:project_id], :name => params[:name], :date =>params[:date]  , :status => status, :task_id=>taskid}
         if params[:id] == "_empty"
           Milestone.create(milestone_params)
         else

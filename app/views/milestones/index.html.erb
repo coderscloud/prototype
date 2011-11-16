@@ -16,6 +16,9 @@
 	                    <li><%= link_to "Tâches", project_tasks_path(@project.id)%></li>
 	                    <li><%= link_to "Jalons", project_milestones_path(@project.id), :class => "current" %></a></li>
 						<li><%= link_to "Planning",gantt_path(:projectid => @project.id) %></li>
+						<li><%= link_to "Fichiers","#" %></li>
+						<li><%= link_to "Messages","#" %></li>
+						<li><%= link_to "Anomalies","#" %></li>
 	                </ul>
 						<section >
 
@@ -51,12 +54,11 @@
 	      url:window.location.href.slice(window.location.href.indexOf('project') - 1) + '?q=1',
 	      editurl:window.location.href.slice(window.location.href.indexOf('project') - 1) +'/post_data',
 	      datatype: 'json',
-	      colNames:['ID','Nom','Date','Tâche associée','Status'],
+	      colNames:['ID','Nom','Date','Status'],
 	      colModel:[{name:'id', index:'id',width:35,resizable:false},
 					{name:'name', index:'name',editable:true, editrules:{ required:true},width:300},
 					
-					{name:'date', index:'date',editable:false, editrules:{ required:true,date:true}, formatter:'date', formatoptions:{srcformat:'d/m/Y', newformat:'d/m/Y'}, editoptions:{dataInit: function(elm){setTimeout(function(){ jQuery(elm).dateinput({format: 'dd/mm/yyyy'}); },200);}}, width:130},
-					{name:'task_id', index:'task_id',editable:true,  formatter:'select', edittype:'select', editoptions:{value:'"+select+"'}},
+					{name:'date', index:'date',editable:true, editrules:{ required:true,date:true}, formatter:'date', formatoptions:{srcformat:'d/m/Y', newformat:'d/m/Y'}, editoptions:{dataInit: function(elm){setTimeout(function(){ jQuery(elm).dateinput({format: 'dd/mm/yyyy'}); },200);}}, width:130},
 					{name:'status', index:'status',editable:true,  edittype:'select', editoptions:{value:'Actif:Actif;Terminé:Terminé'}}],
 	      pager: '#milestones_pager',
 	      pagerpos:'center', 

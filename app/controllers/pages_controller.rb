@@ -54,6 +54,8 @@ class PagesController < ApplicationController
     @finish_date=@last_date.end_date.end_of_month
     @monthes_list=get_monthes(@begin_date,@finish_date)
     @milestones= @project.milestones
+
+      
     
     
   end

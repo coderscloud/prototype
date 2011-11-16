@@ -110,7 +110,8 @@
 		<% div_for(offer, :class => "main-content", :name =>"offer_#{offer.id}") do %> 
 			<header> 
 				<h2>
-					Offre de: <%= link_to offer.submitter.login, offer.submitter  %>
+					Offre de: <%= link_to offer.submitter.login, user_path(offer.submitter)  %> 
+					
 					<% if @project.chosen_offer_id == offer.id%>
 						<span id="selected_offer">Offre sélectionnée<span>
 					<%end%>
@@ -134,7 +135,11 @@
 			<%else%>
 				<section class="clearfix container_6 ">
 			<%end%>
-				<%= offer.message %>
+				<div class="grid_3 offer_attribute"><strong>Date de début:</strong> <%=offer.start_date%></div>
+				<div class="grid_3 offer_attribute"><strong>Date de fin:</strong> <%=offer.start_date%></div>
+				<div class="grid_3 offer_attribute"><strong>Nombre de jours:</strong> <%=offer.nb_days%></div>
+				<div class="grid_3 offer_attribute"><strong>Prix:</strong> <%=offer.amount%>€</div>
+				<div class=" grid_6 offer_text"><%= offer.message %></div>
 			</section>
 		<%end%>
 	<%end%>

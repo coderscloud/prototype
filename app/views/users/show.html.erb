@@ -1,22 +1,218 @@
-<div class="aside">
-	<div class="content-switcher-list">
-		<ul>
-			<li class="active">
-				<%= link_to "Overview", @user %>	
-			</li>
-			<li >
-				<%= link_to "Skills", root_path %>	
-			</li>
-		</ul>
-	</div>
+<!--<div class="aside">-->
+<!--	<div class="content-switcher-list">-->
+<!--		<ul>-->
+<!--			<li class="active">-->
+<!--				<%= link_to "Overview", @user %>	-->
+<!--			</li>-->
+<!--			<li >-->
+<!--				<%= link_to "Skills", root_path %>	-->
+<!--			</li>-->
+<!--		</ul>-->
+<!--	</div>-->
+<!--</div>-->
+<!--<div class="contents">-->
+<!--	<div id="content-switcher-placeholder">-->
+<!--  		<%= gravatar_for @user %>-->
+<!--  		<%= @user.login %>-->
+<!--	</div>-->
+<!--</div>-->
+<!--<div class="clear"> </div>-->
+
+
+<!--j'ai du ajouter cette partie script pour les tabs marchent-->
+
+<script>
+$(function() {
+	$(".tabs").tabs(".panes1 > div");
+});
+</script>
+
+
+<!--Partie supérieure du profil-->
+<div class="main-content">
+	<header>
+	    <ul class="action-buttons clearfix fr">
+	        <li>
+                <button class="button button-gray">
+                    <span class="add"></span>
+                    Ajouter
+                </button>
+            </li>
+            <li>
+                <button class="button button-blue">envoyer un message</button>
+            </li>
+        </ul>
+        <h2>Expert Magento - E-commerce - CMS</h2>
+    </header>
+    <section>
+        <div>
+            <div class="contents">
+	            <div class="grid_1">
+              		<img src="/images/profile_photo.jpg" />	
+	            </div>
+	            <div class="grid_2">
+	                <h1>
+	                    Cédric Boulanger
+	                </h1>
+	                <h5>
+	                    Team leader - Systèmes de facturation
+	                </h5>
+	                <h5>
+	                    cedric@email.com
+	                </h5>
+	            </div>
+	            <div class="grid_4">
+	                <h5>
+	                - Total 7 ans d'expérience dans le développement de logiciels <br> 
+	                - Grandes aptitudes dans le domaine de l'apprentissage et de la pensée logique. <br>
+	                - Maîtrise de la conception, le développement et la mise en Å“uvre d'applications Web en PHP, AJAX, XHTML, HTML et JavaScript et SGBDR comme MySQL, MS SQL, MS Access. <br>
+	                - Bonne exposition à toutes les phases d'un développement.<br>
+	                - Excellente communication et compétences en analyse
+	                </h5>
+	            </div>
+            </div>
+            <div class="clear"> </div>
+            <a rel="#overlay" class="button button-gray help" href="/notation.html">
+                <div class="stars empty">
+                    <div class="stars filled_9"></div>
+                </div>
+            </a>
+        </div>
+    </section>
 </div>
-<div class="contents">
-	<div id="content-switcher-placeholder">
-  		<%= gravatar_for @user %>
-  		<%= @user.login %>
-	</div>
+
+<!--Tabs -->
+<div class="main-content">
+    <section>
+        <ul class="tabs">
+		    <li>
+			    <a href="#"> Informations </a>
+		    </li>
+		    <li >
+			    <a href="#"> Projets </a>	
+		    </li>
+		    <li >
+			    <a href="#"> Conversations </a>	
+		    </li>
+	    </ul>
+	    <div class="panes1 clearfix">
+<!--	    First tab content-->
+            <div id=project_show class=grid_4>
+                <div>
+                    <br>
+                    <h3> Poste actuel : </h3>
+                    <h4>Chef de projet – Equipe facturation </h4>
+                    <h3> Postes précédents : </h3>
+                    <h4> Développeur – Equipe support </h4>
+                    <h4> Stagiaire – Equipe support </h4>
+                    <h3> Education : </h3>
+                    <h4> Telecom Paristech </h4>
+    <!--                <h3> Lien pour le profil : </h3>-->
+    <!--                Users/1-->
+                    <h3> Coordonnées : </h3>
+    <!--            	<dl class="labelsAndData">-->
+    <!--                	<dt> </dt> <dd> </dd>-->
+    <!--            		<dt> </dt> <dd> </dd> -->
+    <!--        			<dt> </dt> <dd> </dd> -->
+    <!--        			<dt> </dt> <dd> </dd> -->
+    <!--        			<dt> </dt> <dd> </dd> -->
+    <!--            	</dl>-->
+                	<dl class="labelsAndData">
+                    	<dt> •	Adresse mail principale </dt> <dd> cedric@email.com  </dd>
+                		<dt> •	Extension </dt> <dd> 2281 </dd> 
+            			<dt> •	Téléphone mobile </dt> <dd> 06 12 34 12 34 </dd> 
+            			<dt> •	Site web </dt> <dd> www.linkao.fr </dd>
+                	</dl>
+                	<br>
+                    <h3> Compétences : </h3>
+                	<dl class="labelsAndData">
+                    	<dt> •	Langages de programmation : </dt> <dd> php c++ </dd>
+                		<dt> •	Applications : </dt> <dd> Asterisk Caterpillar</dd> 
+                	</dl>
+                	<br>
+                    <h3> Informations supplémentaires : </h3>
+                	<dl class="labelsAndData">
+                    	<dt> •	Bureau : </dt> <dd> AD34 </dd>
+                		<dt> •	Adresse : </dt> <dd> 122, Fleet St.</dd> 
+                	</dl>
+                </div>
+            </div>
+<!--            Second tab content-->
+            <div id="project_show" class="grid_5">
+                <br>
+                <h3> Projets : </h3>
+                <div>
+                    <div class="grid_3">
+                        <h5> Intégration du module paiement à distance. lot #1 </h5>
+                    </div>
+                    <div class="grid_1">
+                        <h5> <%= link_to "Jean A.", "#" %> </h5>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div class="grid_3">
+                        <h5> Intégration du module paiement à distance. lot #2 </h5>
+                    </div>
+                    <div class="grid_1">
+                        <h5> <%= link_to "Jean A.", "#" %> </h5>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div class="grid_3">
+                        <h5> Déploiement d’une nouvelle solution de facturation. </h5>
+                    </div>
+                    <div class="grid_1">
+                        <h5> <%= link_to "Noel T.", "#" %> </h5>
+                    </div>                    
+                </div>
+                <br>
+                <div class="grid_4">
+                    <%= link_to "Voir tous les projets", "#" %>
+                </div>
+            </div>
+<!--            Third tab content-->
+            <div>
+                <div class="grid_6 "> 
+                    <h2 class="message-icon">Messages</h2> 
+                    <div class="widget "> 
+                        <section> 
+							<table class="widget-in  full">
+
+					              <tr class="blue-list">
+									<td style="width: 80%">Objet</td>
+									<td style="width: 20%">Date</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%" class="new-message">Heure du point téléphonique</td>
+									<td style="width: 20%"  class="new-message">2 oct</td>
+
+					              </tr>
+								  <tr >
+					                <td style="width: 80%" class="new-message">Liste des objets à utiliser</td>
+									<td style="width: 20%" class="new-message">1 oct</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Charte graphique incomplète</td>
+
+									<td style="width: 20%">29 sept</td>
+					              </tr>
+								  <tr >
+					                <td style="width: 80%">Suite à notre échange ce matin</td>
+									<td style="width: 20%">28 sept</td>
+					              </tr>
+
+							</table>
+
+                        </section> 
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </section>
 </div>
 
 
-<div class="clear"> </div>
 
+</section>
