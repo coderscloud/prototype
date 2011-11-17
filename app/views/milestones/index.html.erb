@@ -59,7 +59,7 @@
 					{name:'name', index:'name',editable:true, editrules:{ required:true},width:300},
 					
 					{name:'date', index:'date',editable:true, editrules:{ required:true,date:true}, formatter:'date', formatoptions:{srcformat:'d/m/Y', newformat:'d/m/Y'}, editoptions:{dataInit: function(elm){setTimeout(function(){ jQuery(elm).dateinput({format: 'dd/mm/yyyy'}); },200);}}, width:130},
-					{name:'status', index:'status',editable:true,  edittype:'select', editoptions:{value:'Actif:Actif;Terminé:Terminé'}}],
+					{name:'status', index:'status',editable:true,  edittype:'select', formatter:'select', editoptions:{value:'Actif:Non entamé;Terminé:Terminé'}}],
 	      pager: '#milestones_pager',
 	      pagerpos:'center', 
 	      rowNum:10,

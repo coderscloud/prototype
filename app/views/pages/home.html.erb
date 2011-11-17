@@ -53,7 +53,7 @@
 						<%end%>
 	             	</div>
 				<%end%>
-				<%if @expiredtasks.count 
+				<%if @expiredtasks
 					@expiredtasks.each do |task| %>
                 	<div class="error">
                     	La tâche <a><%=task.name%></a> a expiré
@@ -81,7 +81,7 @@
      <div class="main-content list_proj ">
          <header><h2>Mes projets en cours</h2></header>
          <section class="accordion clearfix">
-		   <% if  @myprojects.count > 0%>
+		   <% if  @myprojects %>
 	
            	<% @myprojects.each do |project| %>
 				
@@ -96,6 +96,7 @@
 											</div>
 										</li>
 					<li><%= link_to "Afficher", project_path(project.id), :class=>"button-blue" %></li>
+				
 					<li><%= link_to "Gérer", dashboard_path(:projectid => project.id), :class=>"button-orange" %></li>
              	</ul>
 				<h2><%= project.title %></h2>

@@ -35,7 +35,7 @@ class MilestonesController < ApplicationController
            if params[:status]
               status= params[:status] 
             else 
-              status="Active"
+              status="Actif"
             end
       @tasks = Project.find(params[:project_id]).tasks
       taskid=0

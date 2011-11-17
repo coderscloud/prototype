@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     if current_user
       @actions=Action.where("user_id== ? AND status=?", current_user.id, 1)
       if current_user.user_type == User::EMPLOYER
-        @myprojects = Project.where("employer_id== ? ",current_user.id)
+        @myprojects = Project.where("employer_id== ? AND projects.status=4",current_user.id)
       end
       if current_user.user_type == User::FREELANCER
         @myprojects = Project.joins(:chosen_offer => :submitter).where("submitter_id=? AND projects.status=4",current_user.id)
@@ -20,7 +20,10 @@ class PagesController < ApplicationController
           @expiredmilestones =  @expiredmilestones +  proj.milestones.where("date < ? AND status= ?", Time.now, "Actif")          
         end
       end
-       @nbalerts=  @expiredtasks.count + @expiredmilestones.count +  @actions.count
+      nbexptasks= @expiredtasks ? @expiredtasks.count : 0
+      nbexpmilestones= @expiredmilestones ? @expiredmilestones.count : 0
+      nbactions = @actions ? @actions.count : 0
+      @nbalerts=  nbexptasks + nbexpmilestones + nbactions
     end
     
   end

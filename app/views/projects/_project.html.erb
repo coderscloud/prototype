@@ -7,9 +7,11 @@
 		<div class="projstatus">
 			<%= Project::STATUS[project.status] %>
 	 	</div>
+		<%if project.status==Project::ACTIVE%>
 		<div class="small-btn">
 			<%= link_to  "Postuler", project_path(project.id),:class => "button-blue" %>
 	 	</div>
+		<%end%>
 		
  	</div>
 	<div class="projleft">

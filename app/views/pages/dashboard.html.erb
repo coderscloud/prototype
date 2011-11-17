@@ -133,7 +133,9 @@
                             </ul> 
                             <h2><a >Afficher les messages</a></h2> 
                         </header> 
-                        <section> 
+						<section> 
+						<% if @project.id==14%>
+                        
 							<table class="widget-in  full">
 					              <tr class="blue-list">
 									<td style="width: 80%">Objet</td>
@@ -157,7 +159,13 @@
 					              </tr>
 				
 							</table>
-                        </section> 
+                       
+						<%else%>
+						<div class="free_message">
+							Aucun message n'a été échangé pour l'instant
+						</div>
+						<%end%>	
+						 </section> 						
                     </div> 
                 </div> 
                 <div class="grid_3 widget-container" id="sortable-4" draggable="true"> 
@@ -169,47 +177,54 @@
                             </ul> 
                             <h2><a >Afficher les anomalies</a></h2> 
                         </header> 
-                        <section> 
+                        <section>
+						<% if @project.id==14%> 
 							<table class="widget-in  full">
 					              <tr class="red-list">
 					                <td style="width: 10%">N°</td>
 									<td style="width: 60%">Description (ouverte)</td>
-									<td style="width: 20%">respo</td>
+									<td style="width: 20%">Respo</td>
 					              </tr>
 								  <tr >
 					                <td style="width: 10%">8</td>
-									<td style="width: 60%">liste d'employés incomplète</td>
-									<td style="width: 20%">moi</td>
+									<td style="width: 60%">Liste d'employés incomplète</td>
+									<td style="width: 20%">Freelancer</td>
 					              </tr>
 
 					
 					              <tr class="blue-list">
 					                <td style="width: 10%">N°</td>
 									<td style="width: 60%">Description (en correction)</td>
-									<td style="width: 20%">respo</td>					            
+									<td style="width: 20%">Respo</td>					            
 					              </tr>
 								  <tr >
 					                <td style="width: 10%">2</td>
-									<td style="width: 60%">quand on choisi le type "correction", on a une erreur 202</td>
-									<td style="width: 20%">moi</td>
+									<td style="width: 60%">Quand on choisit le type "correction", on a une erreur 202</td>
+									<td style="width: 20%">Freelancer</td>
 					              </tr>
 								  <tr >
 					                <td style="width: 10%">4</td>
-									<td style="width: 60%">liste d'employés incomplète</td>
-									<td style="width: 20%">moi</td>
+									<td style="width: 60%">Liste d'employés incomplète</td>
+									<td style="width: 20%">Freelancer</td>
 					              </tr>								 
 									
 					              <tr class="green-list">
 					                <td style="width: 10%">N°</td>
 									<td style="width: 60%">Description (en validation)</td>
-									<td style="width: 20%">respo</td>					               
+									<td style="width: 20%">Respo</td>					               
 					              </tr>
 								  <tr >
 					                <td style="width: 10%">3</td>
 									<td style="width: 60%">Temps de calcul très long si le provider=1</td>
-									<td style="width: 20%">hichem</td>
+									<td style="width: 20%">Employer</td>
 					              </tr>							
 							</table>
+
+						<%else%>
+							<div class="free_message">
+								Aucune anomalie n'est crée pour l'instant
+							</div>
+						<%end%>
                         </section> 
                     </div> 
                 </div> 

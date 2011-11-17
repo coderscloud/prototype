@@ -52,4 +52,6 @@ end
   ProgLang.find_or_create_by_name(lang)
 end
 
+User.find_or_create_by_id(:id => '10', :login => "emplodyer",:email => "empldoyer@linkao.fr", :encrypted_password => "b66a74ff12f29939acdf4f320eab75e2c7e969249274bd0364639dacf20b83c5", :salt => "09bbc1f00a66bcffe11957b781b247e1186cf08b356c4f1c22cc2a170e634824", :user_type => "1")
+User.find_or_create_by_id(:id => '11', :login => "freelancer",:email => "freelancer@linkao.fr", :encrypted_password => "0ea9195b1ed80f0665d948fd2a2345611cfc56a859c0b7bd5d9ac7c4ff52d866", :salt => "8f6ae6cfdb661bb1c3808dc54e57bce3a86ef6c4b4b07c00caba7434e21ad7f3", :user_type => "2")
 

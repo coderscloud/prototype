@@ -66,7 +66,9 @@ class TasksController < ApplicationController
       task_params = { :project_id => params[:project_id], :name => params[:name], :start_date => params[:start_date], :end_date => params[:end_date], 
                       :progress => progress, :status => status, :nb_days => params[:nb_days] }
       if params[:id] == "_empty"
-        Task.create(task_params)
+        @task=Task.new(task_params)
+        @task.save
+
       else
         Task.find(params[:id]).update_attributes(task_params)
       end

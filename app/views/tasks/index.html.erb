@@ -51,7 +51,7 @@ var lastsel;
 							{name:'end_date', index:'end_date',editable:true, editrules:{ required:true,date:true},formatter:'date', formatoptions:{srcformat:'d/m/Y', newformat:'d/m/Y'},editoptions:{dataInit: function(elm){setTimeout(function(){ jQuery(elm).dateinput({format: 'dd/mm/yyyy'}); },200);}},  width:130},
 							{name:'nb_days', index:'nb_days',editable:true,editrules:{ integer:true}, width:110},
 							{name:'progress', index:'progress',editable:true, editrules:{ integer:true, maxValue:100},formatter:'currency', formatoptions:{suffix:'%',decimalPlaces:'0'}, width:90},
-							{name:'status', index:'status',editable:true,  edittype:'select', editoptions:{value:'Active:Active;En cours:En cours;Terminée:Terminée'}}],
+							{name:'status', index:'status',editable:true,  edittype:'select', formatter:'select', editoptions:{value:'Active:Non entamée;En cours:En cours;Terminée:Terminée'}}],
 	              pager: '#tasks_pager',
 	              pagerpos:'center', 
 	              rowNum:10,
