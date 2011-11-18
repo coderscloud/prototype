@@ -8,12 +8,11 @@
     <![endif]-->    
 
 
-    <%= stylesheet_link_tag  'smart_wizard','token-input','token-input-mac','token-input-facebook','jquery-ui',"reset","grid","style","messages","forms","tables", "custom" %>
+    <%= stylesheet_link_tag  'smart_wizard','token-input','token-input-mac','token-input-facebook','jquery-ui',"reset","grid","style","messages","forms","tables", "custom", "jqgrid/themes/default/jquery-ui-1.8.custom", "jqgrid/ui.jqgrid" %>
     
-<%= javascript_include_tag :defaults,"jquery","jquery.tools.min.js","jquery.cookie.js","jquery.tables.js","jquery.flot.js","jquery.ui.min.js","livevalidation","rails.validations","jquery.tokeninput","jquery.smartWizard-2.0.js","global.js"   %>
+<%= javascript_include_tag :defaults,"jquery","jquery.tools.min.js","jquery.cookie.js","jquery.tables.js","jquery.flot.js","jquery.ui.min.js","livevalidation","rails.validations","jquery.tokeninput","jquery.smartWizard-2.0.js","global.js", "jqgrid/i18n/grid.locale-fr.js", "jqgrid/jquery.jqGrid.min.js", "jqgrid/jquery.contextmenu.r2.packed.js", "jqgrid/jquery.cookie.js"   %>
 
-<%= jqgrid_stylesheets "default" %>
-<%=jqgrid_javascripts%>
+
 <%= javascript_include_tag "lib" %>
 <%= javascript_include_tag "DD_belatedPNG_0.0.8a-min" %>
 <%= javascript_include_tag "FusionCharts" %>
