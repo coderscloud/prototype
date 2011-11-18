@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   
    attr_accessor :password
-  attr_accessible :login, :email, :password, :password_confirmation
+  attr_accessible :login, :email, :password, :password_confirmation, :user_type
   
   has_many :projects, :foreign_key => "employer_id"
   has_many :offers, :foreign_key => "submitter_id"

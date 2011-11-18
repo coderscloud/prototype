@@ -7,6 +7,9 @@
 		
 				
 			<%= simple_form_for @user, :validate => true, :html => { :class => "form"} do |f| %>
+				<div class="clearfix"> 
+			    <%= f.input :user_type, :required => true, :label => "Type d'utlisateur",:as => :select , :collection => [["Employer",1], ["Freelancer",2]], :include_blank => false  %>
+				</div>
 		
 			    <%= f.input :login, :required => true, :wrapper_html => { :class => "clearfix"} %> 
 				
