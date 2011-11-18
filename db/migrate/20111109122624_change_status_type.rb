@@ -1,10 +1,9 @@
 class ChangeStatusType < ActiveRecord::Migration
-  def self.up
-      change_table :projects do |t|
-        t.change :status, :integer
-      end
+  def up
+      remove_column :projects, :status
+      add_column :projects, :status, :integer
   end
 
-  def self.down
+  def down
   end
 end
