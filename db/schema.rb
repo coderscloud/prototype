@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111111183938) do
+ActiveRecord::Schema.define(:version => 20111113150618) do
 
   create_table "actions", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(:version => 20111111183938) do
     t.datetime "deliv_date"
     t.integer  "estimated_load"
     t.string   "specfile"
-    t.integer  "status",             :limit => 255
+    t.integer  "status"
     t.integer  "chosen_offer_id"
   end
 
