@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ApplicationsController < ApplicationController
   def index
         @applications = Application.where("name like ?", "%#{params[:q]}%") 

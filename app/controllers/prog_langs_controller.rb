@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ProgLangsController < ApplicationController
   def index
         @langs = ProgLang.where("name like ?", "%#{params[:q]}%") 

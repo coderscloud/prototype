@@ -1,3 +1,4 @@
+# encoding: utf-8
 # Contains functions to generate chart by
 # * adopting the dataURL method of FusionCharts and using render_chart function from the helper class.
 # * adopting  the dataXML method of FusionCharts and using render_chart function from the helper class.
