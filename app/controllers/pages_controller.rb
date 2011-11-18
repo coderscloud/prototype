@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @title = "Linkao"
     
     if current_user
-      @actions=Action.where("user_id== ? AND status=?", current_user.id, 1)
+      @actions=Action.where("user_id= ? AND status=?", current_user.id, 1)
       if current_user.user_type == User::EMPLOYER
         @myprojects = Project.where("employer_id== ? AND projects.status=4",current_user.id)
       end
