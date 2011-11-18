@@ -1019,9 +1019,12 @@ color:#fff;
     word-wrap: break-word;
 	color:#CCCCCC;
 }
+.pilar {
+	height:180px;
+}
 .pilar .red-title{
 	display: block;
-    font-size: 2em;
+    font-size: 1.8em;
     width: 100%;
 	text-align:center;
 	margin-bottom:20px;
@@ -1030,7 +1033,7 @@ color:#fff;
 }
 .pilar .blue-title{
 	display: block;
-    font-size: 2em;
+    font-size: 1.8em;
     width: 100%;
 	text-align:center;
 	margin-bottom:20px;
@@ -1039,7 +1042,7 @@ color:#fff;
 }
 .pilar .green-title{
 	display: block;
-    font-size: 2em;
+    font-size: 1.8em;
     width: 100%;
 	text-align:center;
 	margin-bottom:20px;
@@ -1052,6 +1055,12 @@ color:#fff;
     font-size: 1.2em;
 	color:#000;
 }
+
+.pilar ul li{
+	margin-bottom:5px;
+	font-size:12px;
+}
+
 
 #logo {
 	margin-top:5px;
