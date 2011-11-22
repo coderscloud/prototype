@@ -24,6 +24,12 @@ module SessionsHelper
     def deny_access
       redirect_to signin_path, :alert => "<h3>Alerte</h3>Veuillez vous connecter pour accéder à cette page.".html_safe
     end
+    def is_employer?
+      current_user.user_type == User::EMPLOYER
+    end
+    def deny_post
+      redirect_to root_path, :alert => "<h3>Alerte</h3>Il faut  être un employeur pour pouvoir poster un projet ".html_safe
+    end
 
   private
 
