@@ -1538,6 +1538,7 @@ input.search{
 	margin:0 ;
 	padding:0;
 	height:22px;
+
 }
 
 
@@ -1549,7 +1550,7 @@ input.search{
 
 	}
 
-.small-btn li a,.small-btn  a, .small-btn input  {
+.small-btn li a,.small-btn  a, .small-btn input, .small-btn  a:visited  {
 	font-family:'Lucida Grande',Verdana,Arial,'Bitstream Vera Sans',sans-serif;
 
 	padding:0 6px;

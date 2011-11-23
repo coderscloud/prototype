@@ -67,7 +67,10 @@ class PagesController < ApplicationController
     @project = Project.find(params[:projectid])
   end
     
-
+  def files
+    @project = Project.find(params[:projectid])
+    
+  end
     
     
     

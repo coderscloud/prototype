@@ -21,6 +21,7 @@ end
   match '/signout',    :to => 'sessions#destroy'
   match '/dashboard',    :to => 'pages#dashboard'
   match '/gantt',    :to => 'pages#gantt'  
+  match '/files',    :to => 'pages#files'  
 
   resources :projects do
     
