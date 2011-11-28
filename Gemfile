@@ -12,10 +12,12 @@ gem 'client_side_validations'
 gem 'carrierwave'
 gem 'sunspot_rails'
 gem "meta_search"
+gem "railroady"
 
 group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'faker', '0.3.1'
   gem "nifty-generators", :group => :development
+  
 end
 gem "mocha", :group => :test

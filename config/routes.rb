@@ -1,6 +1,4 @@
 CodersCloud::Application.routes.draw do
-
-  match '/messages', :to => 'pages#messages'
   
   resources :applications, :only => [:index]
   match '/prog_langs',    :to => 'prog_langs#index'
@@ -22,7 +20,9 @@ end
   match '/signout',    :to => 'sessions#destroy'
   match '/dashboard',    :to => 'pages#dashboard'
   match '/gantt',    :to => 'pages#gantt'  
-
+  match '/files',    :to => 'pages#files'  
+  match '/messages', :to => 'pages#messages'
+  
   resources :projects do
     
 

@@ -66,12 +66,15 @@ class PagesController < ApplicationController
   def all_read
     @project = Project.find(params[:projectid])
   end
-    
 
   def messages
     @project = Project.find(params[:projectid])   
   end  
+
+  def files
+    @project = Project.find(params[:projectid])
     
+  end    
     
   
 

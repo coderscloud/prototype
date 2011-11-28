@@ -28,7 +28,10 @@ class ProjectsController < ApplicationController
 
   def authenticate
        deny_access unless signed_in?
+       deny_post unless is_employer?
   end
+  
+  
   
   def index
     

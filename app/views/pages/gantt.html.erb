@@ -15,7 +15,7 @@
 	                    <li><%= link_to "Tâches", project_tasks_path(@project.id) %></li>
 	                    <li><%= link_to "Jalons", project_milestones_path(@project.id) %></li>
 						<li><%= link_to "Planning", gantt_path(:projectid => @project.id), :class => "current" %></li>
-						<li><%= link_to "Fichiers","#" %></li>
+						<li><%= link_to "Fichiers",files_path(:projectid => @project.id) %></li>
 						<li><%= link_to "Messages","#" %></li>
 						<li><%= link_to "Anomalies","#" %></li>
 	                </ul>
