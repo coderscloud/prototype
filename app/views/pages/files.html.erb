@@ -1,0 +1,67 @@
+
+<%= render 'pages/dashboardHeader' %>
+
+   <div class="main-content"> 
+        <header> 
+            <h2> 
+				Tableau de bord
+            </h2> 
+        </header> 
+        <section class="sortable container_6 clearfix"> 
+	
+                <div class="grid_6"> 
+					<ul class="tabs">
+	                    <li><%= link_to "Dashboard",dashboard_path(:projectid => @project.id) %></li>
+	                    <li><%= link_to "Tâches", project_tasks_path(@project.id) %></li>
+	                    <li><%= link_to "Jalons", project_milestones_path(@project.id) %></li>
+						<li><%= link_to "Planning", gantt_path(:projectid => @project.id)%></li>
+						<li><%= link_to "Fichiers",files_path(:projectid => @project.id), :class => "current"  %></li>
+						<li><%= link_to "Messages","#" %></li>
+						<li><%= link_to "Anomalies","#" %></li>
+	                </ul>
+                </div> 
+				<div class="grid_6"> 
+					<br/>
+					<div class="button button-blue clearfix">Ajouter</div> 
+                  	<div class="asset_list_header">  
+				       <div class="file_name_header">Nom du fichier</div>  
+				       <div class="file_size_header">Taille</div>  
+				       <div class="file_last_updated_header">Modifié lé</div>  
+				   </div>  
+					<%if @project.id == 14%>
+				   <div class="asset_list">  
+ 
+				           <div class="asset_details folder small-btn">  
+				               <div class="file_name"><a>Fichiers images</a></div>  
+				               <div class="file_size">-</div>  
+				               <div class="file_last_updated">20/11/2011</div>  
+							    <%= link_to "Supprimer", "#", :class=>"button-green" %>
+								<%= link_to "Renommer", "#", :class=>"button-orange" %>
+				           </div>  
+
+				           <div class="asset_details file small-btn">  
+				               <div class="file_name"><a>Spec.doc</a></div>  
+				               <div class="file_size">30.5 ko</div>  
+				               <div class="file_last_updated">12/90/3005</div> 
+							    <%= link_to "Supprimer", "#", :class=>"button-green" %>
+								<%= link_to "Renommer", "#", :class=>"button-orange" %>
+				           </div>
+
+				   </div>
+					<%else%>
+						<br/><br/>
+						<div class="free_message">
+							Pas de Fichiers pour le moment
+						</div>
+						
+					<%end%>
+					<br/><br/>
+              </div>
+
+        </section> 
+    </div> 
+
+
+    <!-- End Analytics Section --> 
+
+ 

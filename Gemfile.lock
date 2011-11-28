@@ -115,6 +115,7 @@ GEM
       ruby-openid (>= 2.1.8)
     rack-test (0.5.7)
       rack (>= 1.0)
+    railroady (1.0.2)
     rails (3.0.7)
       actionmailer (= 3.0.7)
       actionpack (= 3.0.7)
@@ -178,6 +179,7 @@ DEPENDENCIES
   mocha
   nifty-generators
   omniauth
+  railroady
   rails (= 3.0.7)
   rspec-rails (= 2.5.0)
   simple_form
