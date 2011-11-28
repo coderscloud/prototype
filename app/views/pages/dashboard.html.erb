@@ -7,20 +7,18 @@
 				Tableau de bord
             </h2> 
         </header> 
-        <section class="sortable container_6 clearfix"> 
-		
+        <section class="sortable container_6 clearfix">
                 <div class="grid_6"> 
 					<ul class="tabs">
-	                    <li><%= link_to "Dashboard",dashboard_path(:projectid => @project.id), :class => "current" %></li>
+						<li><%= link_to "Dashboard",dashboard_path(:projectid => @project.id), :class => "current" %></li>
 	                    <li><%= link_to "Tâches", project_tasks_path(@project.id) %></li>
 	                    <li><%= link_to "Jalons", project_milestones_path(@project.id) %></li>
-						<li><%= link_to "Planning",gantt_path(:projectid => @project.id) %></li>
-						<!-- a modifier -->
-						<li><%= link_to "Fichiers","#" %></li>
-						<li><%= link_to "Messages","#" %></li>
+	               		<li><%= link_to "Planning", gantt_path(:projectid => @project.id) %></li>
+	               	    <li><%= link_to "Fichiers","#" %></li>
+	               	    <li><%= link_to "Messages", messages_path(:projectid => @project.id) %></li>
 						<li><%= link_to "Anomalies","#" %></li>
 	                </ul>
-                </div> 
+                </div>
                 <div class="grid_3 widget-container" id="sortable-1" draggable="true"> 
                     <h2 class="task-icon">Tâches</h2> 
                     <div class="widget "> 
@@ -29,8 +27,8 @@
                                 <li><a href="#" class="widget-close"><span class="close"></span></a></li> 
                             </ul> 
                             <h2><a >Afficher les tâches</a></h2> 
-                        </header> 
-                        <section> 
+                        </header>
+                        <section>
 							<table class="widget-in  full">
 					            <% if !@expiredtasks.empty? %>
 					  			 	<tr class="red-list">

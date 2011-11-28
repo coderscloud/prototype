@@ -1,6 +1,7 @@
 CodersCloud::Application.routes.draw do
 
- 
+  match '/messages', :to => 'pages#messages'
+  
   resources :applications, :only => [:index]
   match '/prog_langs',    :to => 'prog_langs#index'
   match '/auth/:provider/callback' => 'authentications#create'

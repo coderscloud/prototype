@@ -68,7 +68,9 @@ class PagesController < ApplicationController
   end
     
 
-    
+  def messages
+    @project = Project.find(params[:projectid])   
+  end  
     
     
   

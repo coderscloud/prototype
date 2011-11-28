@@ -1,0 +1,145 @@
+
+<%= render 'pages/dashboardHeader' %>
+
+<div class="main-content">
+	<header>
+		<h2>Tableau de bord
+		</h2> 
+    </header>
+    <section class="sortable container_6 clearfix">
+		<div class="grid_6">
+			<ul class="tabs">
+				<li><%= link_to "Dashboard",dashboard_path(:projectid => @project.id) %></li>
+				<li><%= link_to "Tâches", project_tasks_path(@project.id) %></li>
+	            <li><%= link_to "Jalons", project_milestones_path(@project.id) %></li>
+	            <li><%= link_to "Planning", gantt_path(:projectid => @project.id) %></li>
+	            <li><%= link_to "Fichiers","#" %></li>
+	            <li><%= link_to "Messages", messages_path(:projectid => @project.id), :class => "current" %></li>
+			   	<li><%= link_to "Anomalies","#" %></li>
+			</ul>
+		</div>
+		
+		<table class="datatable tablesort selectable paginate full">
+			<thead>
+				<tr>
+					<th style="width: 30px" ><a href="#"></a></th>
+					<th style="width: 30px"><a href="#"></a></th>
+					<th style="width: 200px"><a href="#">Expediteur</a></th>
+					<th style="width: 500px"><a href="#">Sujet</a></th>
+					<th style="width: 100px"><a href="#">Date</a></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th></th>
+					<th></th>
+					<th>Expediteur</th>
+                    <th>Sujet</th>
+                    <th>Date</th>
+                    <th></th>
+				</tr>
+			</tfoot>
+
+	        <tbody style="display: table-row-group;">
+				<tr class="">
+					<td style="padding:5px"><img src="images/mail_sprite1.png"></td>
+		            <td style="padding:5px"><img src="images/Outlook-Flag.gif"></td>
+		            <td>Cedric Boulanger</td>
+		            <td>Heure du point téléphonique</td>
+		            <td>2 oct</td>
+		            <td>
+		                <a class="view-details" href="#">Apercu</a>
+		                <div class="overlay-details"><a class="close"></a>
+		                    <header class="clearfix">
+		                        <div class="avatar fl">
+		                            <img width="50" height="50" src="/images/profile_photo.jpg">
+		                        </div>
+		                        <hgroup>
+		                            <h2>Cedric Boulanger</h2>
+		                            <h6>Team leader - Systèmes de facturation</h6>
+		                            <h6>Ext. 2281</h6>
+		                        </hgroup>
+		                    </header>
+		                    <section>
+								Ceci est le corps du message.
+		                    </section>
+		                </div>
+		            </td>
+		        </tr><tr class="">
+					<td style="padding:5px"><img src="images/mail_sprite1.png"></td>
+		            <td style="padding:5px"><img src="images/Outlook-Flag.gif"></td>
+		            <td>Cedric Boulanger</td>
+		            <td>Liste des objets à utiliser</td>
+		            <td>1 oct</td>
+		            <td>
+		                <a class="view-details" href="#">Apercu</a>
+		                <div class="overlay-details"><a class="close"></a>
+		                    <header class="clearfix">
+		                        <div class="avatar fl">
+		                            <img width="50" height="50" src="/images/profile_photo.jpg">
+		                        </div>
+		                        <hgroup>
+		                            <h2>Cedric Boulanger</h2>
+		                            <h6>Team leader - Systèmes de facturation</h6>
+		                            <h6>Ext. 2281</h6>
+		                        </hgroup>
+		                    </header>
+		                    <section>
+								Ceci est le corps du message.
+		                    </section>
+		                </div>
+		            </td>
+		        </tr><tr class="">
+					<td style="padding:5px"><img src="images/mail_sprite1.png"></td>
+		            <td style="padding:5px"><img src="images/Outlook-Flag.gif"></td>
+		            <td>Cedric Boulanger</td>
+		            <td>Charte graphique incomplète</td>
+		            <td>29 sept</td>
+		            <td>
+		                <a class="view-details" href="#">Apercu</a>
+		                <div class="overlay-details"><a class="close"></a>
+		                    <header class="clearfix">
+		                        <div class="avatar fl">
+		                            <img width="50" height="50" src="/images/profile_photo.jpg">
+		                        </div>
+		                        <hgroup>
+		                            <h2>Cedric Boulanger</h2>
+		                            <h6>Team leader - Systèmes de facturation</h6>
+		                            <h6>Ext. 2281</h6>
+		                        </hgroup>
+		                    </header>
+		                    <section>
+								Ceci est le corps du message.
+		                    </section>
+		                </div>
+		            </td>
+		        </tr><tr class="">
+					<td style="padding:5px"><img src="images/mail_sprite1.png"></td>
+		            <td style="padding:5px"><img src="images/Outlook-Flag.gif"></td>
+		            <td>Cedric Boulanger</td>
+		            <td>Suite à notre échange ce matin</td>
+		            <td>28 sept</td>
+		            <td>
+		                <a class="view-details" href="#">Apercu</a>
+		                <div class="overlay-details"><a class="close"></a>
+		                    <header class="clearfix">
+		                        <div class="avatar fl">
+		                            <img width="50" height="50" src="/images/profile_photo.jpg">
+		                        </div>
+		                        <hgroup>
+		                            <h2>Cedric Boulanger</h2>
+		                            <h6>Team leader - Systèmes de facturation</h6>
+		                            <h6>Ext. 2281</h6>
+		                        </hgroup>
+		                    </header>
+		                    <section>
+								Ceci est le corps du message.
+		                    </section>
+		                </div>
+		            </td>
+		        </tr>
+			</tbody>
+		</table>
+	</section>
+</div>
