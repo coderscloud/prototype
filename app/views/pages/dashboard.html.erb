@@ -16,7 +16,7 @@
 	               		<li><%= link_to "Planning", gantt_path(:projectid => @project.id) %></li>
 	               	    <li><%= link_to "Fichiers", files_path(:projectid => @project.id) %></li>
 	               	    <li><%= link_to "Messages", messages_path(:projectid => @project.id) %></li>
-						<li><%= link_to "Anomalies","#" %></li>
+						<li><%= link_to "Anomalies", anomalies_path(:projectid => @project.id) %></li>
 	                </ul>
                 </div>
                 <div class="grid_3 widget-container" id="sortable-1" draggable="true"> 
@@ -133,7 +133,7 @@
                             <h2><a >Afficher les messages</a></h2> 
                         </header> 
 						<section> 
-						<% if @project.id==14%>
+						<% if @project.id==1%>
                         
 							<table class="widget-in  full">
 					              <tr class="blue-list">
@@ -177,7 +177,7 @@
                             <h2><a >Afficher les anomalies</a></h2> 
                         </header> 
                         <section>
-						<% if @project.id==14%> 
+						<% if @project.id==1%> 
 							<table class="widget-in  full">
 					              <tr class="red-list">
 					                <td style="width: 10%">N°</td>

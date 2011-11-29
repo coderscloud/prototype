@@ -69,13 +69,14 @@ class PagesController < ApplicationController
 
   def messages
     @project = Project.find(params[:projectid])   
-  end  
+  end
 
   def files
     @project = Project.find(params[:projectid])
-    
-  end    
-    
+  end
   
+  def anomalies
+    @project = Project.find(params[:projectid])
+  end
 
 end

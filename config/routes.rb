@@ -22,6 +22,7 @@ end
   match '/gantt',    :to => 'pages#gantt'  
   match '/files',    :to => 'pages#files'  
   match '/messages', :to => 'pages#messages'
+  match '/anomalies', :to => 'pages#anomalies'
   
   resources :projects do
     

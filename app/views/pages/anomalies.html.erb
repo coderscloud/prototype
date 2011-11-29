@@ -14,39 +14,39 @@
                 <li><%= link_to "Jalons", project_milestones_path(@project.id) %></li>
            		<li><%= link_to "Planning", gantt_path(:projectid => @project.id) %></li>
            	    <li><%= link_to "Fichiers", files_path(:projectid => @project.id) %></li>
-           	    <li><%= link_to "Messages", messages_path(:projectid => @project.id), :class => "current" %></li>
-				<li><%= link_to "Anomalies", anomalies_path(:projectid => @project.id) %></li>
+           	    <li><%= link_to "Messages", messages_path(:projectid => @project.id) %></li>
+				<li><%= link_to "Anomalies", anomalies_path(:projectid => @project.id), :class => "current" %></li>
             </ul>
 		</div>
 		
 		<table class="datatable tablesort selectable paginate full">
 			<thead>
 				<tr>
-					<th style="width: 30px" ><a href="#"></a></th>
-					<th style="width: 30px"><a href="#"></a></th>
-					<th style="width: 200px"><a href="#">Expediteur</a></th>
-					<th style="width: 500px"><a href="#">Sujet</a></th>
+					<th style="width: 30px" ><a href="#">N</a></th>
+					<th style="width: 100px"><a href="#">Description</a></th>
+					<th style="width: 200px"><a href="#">Responsable</a></th>
+					<th style="width: 430px"><a href="#">Description</a></th>
 					<th style="width: 100px"><a href="#">Date</a></th>
 					<th></th>
 				</tr>
 			</thead>
 			<tfoot>
 				<tr>
-					<th></th>
-					<th></th>
-					<th>Expediteur</th>
-                    <th>Sujet</th>
+					<th>N</th>
+					<th>Description</th>
+					<th>Responsable</th>
+                    <th>Description</th>
                     <th>Date</th>
                     <th></th>
 				</tr>
 			</tfoot>
 <% if @project.id==1%>
 	        <tbody style="display: table-row-group;">
-				<tr class="">
-					<td style="padding:5px"><img src="images/mail_sprite1.png"></td>
-		            <td style="padding:5px"><img src="images/Outlook-Flag.gif"></td>
+				<tr class="red-list">
+					<td style="padding:5px">8</td>
+		            <td style="padding:5px">ouverte</td>
 		            <td>Freelancer</td>
-		            <td>Heure du point téléphonique</td>
+		            <td>Liste d'employés incomplète</td>
 		            <td>2 oct</td>
 		            <td>
 		                <a class="view-details" href="#">Apercu</a>
@@ -66,11 +66,11 @@
 		                    </section>
 		                </div>
 		            </td>
-		        </tr><tr class="">
-					<td style="padding:5px"><img src="images/mail_sprite1.png"></td>
-		            <td style="padding:5px"><img src="images/Outlook-Flag.gif"></td>
-		            <td>Cedric Boulanger</td>
-		            <td>Liste des objets à utiliser</td>
+		        </tr><tr class="blue-list">
+					<td style="padding:5px">2</td>
+		            <td style="padding:5px">en correction</td>
+		            <td>Freelancer</td>
+		            <td>Quand on choisit le type "correction", on a une erreur 202</td>
 		            <td>1 oct</td>
 		            <td>
 		                <a class="view-details" href="#">Apercu</a>
@@ -90,12 +90,12 @@
 		                    </section>
 		                </div>
 		            </td>
-		        </tr><tr class="">
-					<td style="padding:5px"><img src="images/mail_sprite1.png"></td>
-		            <td style="padding:5px"><img src="images/Outlook-Flag.gif"></td>
-		            <td>Cedric Boulanger</td>
-		            <td>Charte graphique incomplète</td>
-		            <td>29 sept</td>
+		        </tr><tr class="blue-list">
+					<td style="padding:5px">4</td>
+		            <td style="padding:5px">en correction</td>
+		            <td>Freelancer</td>
+		            <td>Liste d'employés incomplète</td>
+		            <td>28 sept</td>
 		            <td>
 		                <a class="view-details" href="#">Apercu</a>
 		                <div class="overlay-details"><a class="close"></a>
@@ -114,11 +114,11 @@
 		                    </section>
 		                </div>
 		            </td>
-		        </tr><tr class="">
-					<td style="padding:5px"><img src="images/mail_sprite1.png"></td>
-		            <td style="padding:5px"><img src="images/Outlook-Flag.gif"></td>
-		            <td>Freelancer</td>
-		            <td>Suite à notre échange ce matin</td>
+		        </tr><tr class="green-list">
+					<td style="padding:5px">3</td>
+		            <td style="padding:5px">en validation</td>
+		            <td>Cedric Boulanger</td>
+		            <td>Temps de calcul très long si le provider=1</td>
 		            <td>28 sept</td>
 		            <td>
 		                <a class="view-details" href="#">Apercu</a>
