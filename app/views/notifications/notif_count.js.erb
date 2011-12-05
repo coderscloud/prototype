@@ -1,0 +1,4 @@
+<% if @nb_notif >0 %>
+	$("#notif_link").html("<%=raw escape_javascript(('Notifications<em>'+@nb_notif.to_s+'</em>').html_safe) %>");
+<%end%>
+

@@ -106,14 +106,12 @@
 					<li class="fr action">
 						<% if signed_in? %> 
 						   	<li class="fr action">
-								<% nbnotif = current_user.notifications.unread.count %>
-								<% if nbnotif >0 %>
-							   		<%= link_to ("Notifications<em>"+ current_user.notifications.unread.count.to_s+ "</em>").html_safe,  setread_user_path(current_user.id), :remote => true,  :class => "has-popupballoon1 button button-blue" %> 
-								<%else%>
-								 	<%= link_to "Notifications",  setread_user_path(current_user.id), :remote => true,  :class => "has-popupballoon1 button button-blue" %> 
-								<%end%>
-								 <div class="popupballoon bottom"> 
-										<%= render 'layouts/notif' %>
+							
+
+								 	<%= link_to "Notifications",  "#",  :class => "notif-list button button-blue" ,:id=>"notif_link" %> 
+
+								 <div id="notifications" class="popupballoon bottom"> 
+									
 							     </div>
 							</li>
 					     <% end %>					

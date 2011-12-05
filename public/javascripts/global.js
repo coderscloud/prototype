@@ -31,7 +31,21 @@ jQuery.ajaxSetup({
 })
 // perform JavaScript after the document is scriptable.
 $(document).ready(function() {
-
+	
+		// $('.offersubmit').click(function() {
+		// 	  if ($("#comments").length > 0) {
+		// 	    setTimeout(updateComments, 10000);
+		// 	  }
+		// 	});
+	
+		function showNotifs () {
+		  $.getScript("/users/1/notifications.js")
+		 
+		}
+		
+		
+		
+		
 			var submitButtonId;
 			$('.offersubmit').click(function() {
 				submitButtonId = this.id;
@@ -352,6 +366,28 @@ $(document).ready(function() {
     /**
      * setup popup balloons (add contact / add task)
      */
+    $('.notif-list').click(function(){
+		$('.notif-list > em').css("display","none");
+		// close all open popup balloons
+		$('.popupballoon').fadeOut();
+		//display notifications
+		$('.notif-list').next().fadeIn();
+		$.getScript("/users/1/notifications.js")
+	    return false;
+	});
+	
+	$(function() {
+	  if ($("#notif_link").length > 0) { //if we have a notif_link id, get the count of new notifications every 10 seconds
+	    setTimeout(countNotifs, 10000);
+	  }
+	});
+
+	function countNotifs () {
+	  $.getScript("/users/1/notifications/notif_count.js")
+	  setTimeout(countNotifs, 10000);
+	}
+	
+	
     $('.has-popupballoon').click(function(){
         // close all open popup balloons
         $('.popupballoon').fadeOut();
